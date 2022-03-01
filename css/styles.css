@@ -95,3 +95,9 @@ section{
   background-color: #278CBA;
   width: 85%;
 }
+.input-busca{
+  width: 150px;
+  height: 20px;
+  background-color: #203B49;
+  border: 2px solid #278CBA;
+}
