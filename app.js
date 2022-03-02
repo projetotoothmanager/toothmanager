@@ -1,6 +1,5 @@
-console.log('teste');
-
-function soma (a,b) {
-    return a+b;
+function multiplicacao (a, b){
+    return a*b
 }
-console.log(2,6)
+
+multiplicacao(2,2);
