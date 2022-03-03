@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #278CBA;
+}
+header {   
+    background-color: #203B49 ;
+    display: flex;
+    justify-content: space-around;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 80%; 
+}
+
+.logo{
+  
+  display: flex;
+  flex-wrap: wrap;
+justify-content: flex-start;
+}
+
+.login-suporte{
+  display: flex;
+  align-items: flex-end;
+  align-items: center;
+  
+}
+.login-suporte ul{
+  display: flex;
+  list-style: none;
+}
+.login-suporte img{
+  margin: 10px;
+}
+
+main{
+  display: flex;
+  height: 1000px;
+
+
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  background-color: #278CBA;
+  width: 15%;
+  height: 100%;
+  border-right: 4px solid #278CBA;
+}
+.navbar{
+    display: flex;
+    width: 100%;
+    background-color: #e8e8e8;
+}
+.navbar li:hover {
+  background-color: rgb(148, 148, 148);
+  cursor: pointer;
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.navbar li{
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-top: 5px solid #278CBA;
+}
+.navbar li a{
+    color: #203B49;
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* ====prontuario===== */
+section{
+  display: flex;
+  background-color: #278CBA;
+  width: 85%;
+  justify-content: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-prontuario{
+  width: 70%;
+  margin-top: 80px;
+}
+.busca{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  
+}
+
+.busca input{
+  width: 100%;
+  height: 34px;
+  padding-left: 6px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: #D3DDE2;
+}
+
+.busca img{
+  width: 34px;
+  height: 34px;
+  align-items: center;
+}
+
+.cards-prontuario{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.cards{
+  margin: 10px;
+  display: flex;
+  border: 2px solid black;
+  border-radius: 30px;
+  justify-content: space-between;
+  padding: 3px;
+  align-items: center;
+  background-color: #203B49;
+  
+}
+.cards a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.cards img{
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
