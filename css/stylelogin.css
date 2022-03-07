@@ -2,7 +2,6 @@ body{
     Background-image: url(../img/Fundo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
 }
 
 .form{
@@ -16,6 +15,7 @@ body{
     background-color: white;
     padding: 30px;
     border-radius: 5px;
+    margin-top: 250px
 }
 
 .CardTop{
@@ -63,7 +63,7 @@ body{
 .footer address { 
     font-weight: 300; 
     overflow: hidden; 
-    padding-top: 70px
+    padding-top: 5px
 }
 
 .footer address a { 
