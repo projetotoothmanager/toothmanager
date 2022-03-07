@@ -1,0 +1,72 @@
+body{
+    Background-image: url(../img/Fundo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.form{
+    width: 400px;
+    margin:auto;
+    padding-top: 40px;
+}
+
+.Card{
+    box-shadow: 1px 1px 5px #ccc;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.CardTop{
+    text-align: center;
+}
+
+.CardGroup{
+    margin-bottom: 20px;
+}
+
+.CardGroup >Label{
+    width: 100%;
+    color: rgb(75,75,75);
+    display: block;
+}
+
+.CardGroup >input{
+    border-radius: 5px;
+    outline: 0;
+    width: 95%;
+    height: 25px;
+    padding: 5px;
+}
+
+.CardGroup> button{
+    background-image: linear-gradient(to right, red, #bb1021);
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 0px;
+    outline: 0;
+}
+
+.btn button:hover{
+    background-image: linear-gradient(to right, red, #500d13);
+}
+
+.imglogin {
+    border-radius: 75px;
+    width: 150px;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+.footer address { 
+    font-weight: 300; 
+    overflow: hidden; 
+    padding-top: 70px
+}
+
+.footer address a { 
+    font-weight: 400; 
+    color: blue; 
+}

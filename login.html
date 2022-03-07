@@ -1,56 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <title>Tooth Manager</title>
+    <title>Controle de Acesso</title>
+
+    <link rel="stylesheet" href="css/stylelogin.css">
+
 </head>
 <body>
-        <header>
-
-            <div class="logo">
-                <img  src="/img/Logo.png" alt="logotipo">
-            </div>        
-            <div class="title">
-                <h1 >Tooth Manager</h1>
-            </div>
-
-            <div class=login-suporte>
-                <ul>
-                    <li><a href=""><img  src="img/Ellipse 1.png" alt="logout"></a></li>
-                    <li><a href=""><img  src="/img/Intersect.png" alt="suporte tecnico"></a></li>
-                </ul>
-            </div>
-        </header>
-        <main>
-            <aside>
-                <nav class="navbar">
-                    <ul>
-                        <li><a href="">Agenda</a></li>
-                        <li><a href="">Cadastro</a></li>
-                        <li><a href="">Caixa</a></li>
-                        <li><a href="">Prontuário</a></li>
-                    </ul>
-                    
-                </nav>
-            </aside>
-
-            <!--Corpo da pagina-->
-                <section>
-                    <div>
-                        <input type="text" name="buscar" placeholder="buscar" class="input-busca">
-                    </div>                    
-                </section>
-            
-
-        </main>
-
-        <footer>
-
-        </footer>
-
     
+    <form class="form" action="#">
+        <div class="Card">
+            <div class="CardTop">
+                <img class ="imglogin" src="img/Logo2.png" alt="Logo da Tooth">
+            </div>
+                <div class="CardGroup">
+                    <label><b>Email</b></label>
+                    <input type="email" name="email" placeholder="Digite seu email" required>
+                </div> 
+
+                <div class="CardGroup">
+                    <label><b>Senha</b></label>
+                    <input type="password" name="Senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="CardGroup">
+                    <label><input type="checkbox"> Lembre-me</label>
+                </div>
+
+                <div class="CardGroup btn">
+                    <button type="submit"><b>ACESSAR</b></button>
+                    
+                </div>
+        </div>    
 </body>
 </html>
