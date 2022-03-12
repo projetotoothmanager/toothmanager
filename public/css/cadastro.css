@@ -90,20 +90,20 @@ aside{
     text-decoration: none;
 }
 
-/* ====prontuario===== */
 section{
   display: flex;
   background-color: #278CBA;
   width: 85%;
   justify-content: center;
 }
-form{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.input-busca{
+  width: 150px;
+  height: 20px;
+  background-color: #203B49;
+  border: 2px solid #278CBA;
 }
 
-.container-prontuario{
+.container-caixa{
   width: 70%;
   margin-top: 80px;
 }
@@ -128,32 +128,59 @@ form{
 .busca img{
   width: 34px;
   height: 34px;
-  align-items: center;
 }
 
-.cards-prontuario{
+form{
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  gap: 10px;
 }
 
-.cards{
-  margin: 8px;
+.container-botoes{
+  height: 70px;
   display: flex;
-  border: 2px solid black;
-  border-radius: 12px;
-  justify-content: space-between;
-  padding: 3px;
   align-items: center;
-  background-color: #203B49;
-  
+  justify-content: space-between;
 }
-.cards a{
-  text-decoration: none;
-  color: #ffffff;
-}
-.cards img{
+.datas{
   display: flex;
-  width: 40px;
-  height: 40px;
+  gap: 20px;
 }
+.datas div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.datas input{
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: #D3DDE2;
+}
+
+.datas input:hover{
+  cursor: pointer;
+}
+.botao{
+  justify-content: center;
+  align-items: center;
+}
+.botao button{
+  font-weight: 700;
+  color: #002915;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00C767;
+}
+.botao button:hover{
+  cursor: pointer;
+  background-color: #60e7a6;
+}
+
+/* tr:nth-child(even) {
+  background-color: #D3DDE2;
+} */
