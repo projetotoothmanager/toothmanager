@@ -1,21 +1,25 @@
 const express = require('express');
+const mainController = require('../controller/maincontroller');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+
+/* quando chamar a '/' passa pela controller que renderiza o login */
+router.get('/', mainController.index)
 
 router.get('/login', function(req, res ,next) {
   res.render('login', { title: 'Express'})
 });
 
 router.get('/agenda', function(req, res , next) {
-  res.render('index', { title: 'Express'})
+  res.render('agenda', { title: 'Express'})
 });
 
 router.get('/cadastro', function(req, res , next) {
   res.render('cadastro', { title: 'Express'})
+});
+router.get('/teste', function(req, res , next) {
+  res.render('cadastro2', { title: 'Express'})
 });
 
 router.get('/caixa', function(req, res , next) {

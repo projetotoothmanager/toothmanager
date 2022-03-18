@@ -1,68 +1,92 @@
-<div>
-    <form method="post" action="index.php"></form><br>
-<h1>Cadastro</h1><br>
-<h2>Novo Paciente</h2><br>
-<div>
- <h3>Dados Pessoais</h3>
-    <label for="nome">Nome</label>
-     <input type="text"size="40"placeholder="Nome Completo">
-    <label for="cpf">CPF</label>
-        <input type="text"placeholder="123.123.123-00"><br>
-    <label for="sexo">Sexo</label>&nbsp;
-    <input type="radio"name="opção"id="op1">
-    <label for="mas">Masculino</label>
-    <input type="radio"name="opção"id="op1">
-    <label for="fem">Feminino</label><br>
-    <label for="nascimento">Data de nascimento</label>
-    <input type="text"placeholder="xx/xx/xxxx"><br>
-    <h3>Endereço</h3><br>
-        <label for="endereço">Endereço</label>
-        <input type="text"placeholder="Rua/Avenida + número">
-    <label for="bairro">Bairro</label>
-        <input type="text"placeholder="Nome do Bairro"><br>
-    <label for="cidade">Cidade</label>
-        <input type="text"placeholder="Nome da Cidade">
-        <label for="estado"id="uf"></label>
-    <select name="estado" id="uf">
-    <option value="0">Escolha sua Região</option>
-    <optgroup label="Norte"></optgroup>
-    <option value="1">AC</option>
-    <option value="2">AM</option>
-    <option value="3">AP</option>
-    <option value="4">PA</option>
-    <option value="5">RO</option>
-    <option value="6">RR</option>
-    <option value="7">TO</option>                
-    <optgroup label="Nordeste"></optgroup>
-    <option value="8">MA</option>
-    <option value="9">PI</option>
-    <option value="10">CE</option>
-    <option value="11">RN</option>
-    <option value="12">PB</option>
-    <option value="13">PE</option>
-    <option value="14">AL</option>
-    <option value="15">SE</option>
-    <option value="16">BA</option>
-    <optgroup label="Centro-Oeste"></optgroup>
-    <option value="17">MT</option>
-    <option value="18">DF</option>
-    <option value="19">GO</option>
-    <option value="20">MS</option>
-    <optgroup label="Sul"></optgroup>
-    <option value="21">PR</option>
-    <option value="22">SC</option>
-    <option value="23">RS</option>
-    <optgroup label="Suldeste"></optgroup>
-    <option value="24">MG</option>
-    <option value="25">SP</option>
-    <option value="26">RJ</option>
-    <option value="27">ES</option>
-</select>
-        <label for="cep">CEP</label>
-        <input type="text"placeholder="12345-000"><br>
-    <label for="telefone">Telefone</label>
-        <input type="text"placeholder="(xx) xxxx-xxxx">
-    <label for="email">E-mail</label>
-         <input type="text"size="40"placeholder="E-mail Válido"><br>
- </div>
-</div>
+<form action="">
+    <div class="dados-pessoais">
+        <h1>Dados Pessoais</h1>
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="Nome" id="Nome" placeholder="Nome Completo" required>
+        </div>
+        <div>
+            <label for="CPF">CPF</label>
+            <input type="text" name="CPF" id="CPF" placeholder="000 000 000 00" required>
+        </div>
+        <div>
+            <label for="">Sexo</label>
+            <input type="radio"name="opcaomas"id="mas">
+            <label for="mas">Masculino</label>
+            <input type="radio"name="opcaofem"id="fem">
+            <label for="fem">Feminino</label>
+        </div>
+        <div>
+            <label for="celular">Celular</label>
+            <input type="text" required>
+        </div>
+        <div>
+            <label for="">E-mail</label>
+            <input type="email">
+        </div>
+        <div>
+            <label for="">Data de Nascimento</label>
+            <input type="date">
+        </div>
+
+    </div>
+    <div class="endereco">
+        <h2>Endereço</h2>
+        <div>
+            <label for="endereço">Endereço</label>
+            <input type="text"placeholder="Rua/Avenida + número">
+        </div>
+        <div>
+            <label for="bairro">Bairro</label>
+            <input type="text"placeholder="Bairro">
+        </div>
+        <div>
+            <label for="cidade">Cidade</label>
+            <input type="text"placeholder="Cidade">
+            <label for="estado"id="uf">Estado</label>
+    
+            <select name="estado" id="estado">
+    
+            <option value="0">Selecione</option>
+            <optgroup label="Norte"></optgroup>
+            <option value="1">AC</option>
+            <option value="2">AM</option>
+            <option value="3">AP</option>
+            <option value="4">PA</option>
+            <option value="5">RO</option>
+            <option value="6">RR</option>
+            <option value="7">TO</option>                
+            <optgroup label="Nordeste"></optgroup>
+            <option value="8">MA</option>
+            <option value="9">PI</option>
+            <option value="10">CE</option>
+            <option value="11">RN</option>
+            <option value="12">PB</option>
+            <option value="13">PE</option>
+            <option value="14">AL</option>
+            <option value="15">SE</option>
+            <option value="16">BA</option>
+            <optgroup label="Centro-Oeste"></optgroup>
+            <option value="17">MT</option>
+            <option value="18">DF</option>
+            <option value="19">GO</option>
+            <option value="20">MS</option>
+            <optgroup label="Sul"></optgroup>
+            <option value="21">PR</option>
+            <option value="22">SC</option>
+            <option value="23">RS</option>
+            <optgroup label="Suldeste"></optgroup>
+            <option value="24">MG</option>
+            <option value="25">SP</option>
+            <option value="26">RJ</option>
+            <option value="27">ES</option>
+    
+            </select>
+
+        </div>
+        <div>
+            <label for="cep">CEP</label>
+            <input type="text"placeholder="12345-000">
+        </div>
+    </div>
+</form>

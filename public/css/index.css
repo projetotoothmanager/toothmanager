@@ -44,9 +44,6 @@ justify-content: flex-start;
 
 main{
   display: flex;
-  height: 1000px;
-
-
 }
 
 aside{
@@ -56,7 +53,6 @@ aside{
   width: 15%;
   height: 100%;
   margin-right: 5px;
-  border-right: 4px solid #278CBA;
 }
 .navbar{
     display: flex;
@@ -79,7 +75,7 @@ aside{
   align-items: center;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   list-style: none;
   border-top: 5px solid #278CBA;
 }
@@ -90,4 +86,9 @@ aside{
     text-decoration: none;
     font-size: 17px;
     text-decoration: none;
+}
+.navbar li img{
+  width: 40px;
+  height: 40px;
+  padding-left: 1.5rem;
 }
