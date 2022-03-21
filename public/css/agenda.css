@@ -10,29 +10,40 @@ body{
 }
 /*--formulário--*/
 .container-prontuario{
-    width: 600px;
+    width: 1100px;
     background: #E5E5E5;
     margin-left: 20px;
     margin-right: 20px;
-    height: 600px;
+    margin-top: 12px;
+    height: 580px;
     border: #203B49 2px solid;
     border-radius:20px;
-    padding: 20px 6px 20px 10px ;
-    
+    padding: 20px 6px 20px 10px ;  
   }
+
   .busca{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4px;
-    
+  }
+
+  .botaoadc {
+    font-weight: 700;
+    color: #002915;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #00C767;
   }
   
   .busca input{
-    width: 100%;
+    width: 75%;
     height: 34px;
     padding-left: 6px;
-    font-size: 18px;
+    font-size: 15px;
+    margin-top: 10px;
     border: 1px solid black;
     border-radius: 40px;
     background-color: #D3DDE2;
@@ -47,7 +58,7 @@ body{
   .cards-prontuario{
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 25px;
   }
   
   .cards{
@@ -59,16 +70,16 @@ body{
     justify-content: space-between;
     padding: 3px;
     align-items: center;
-    background-color: #6E9DC8;
+    background-color: #203B49;
+    border-radius: 15px;
     
   }
   .horas{
-      background-color: #407c4a;
+      background-color: #0686ee;
       margin-left: 25px;     
       padding: 10px;
       text-align: center;
-      
-
+      border-radius: 10px;
   }
 
   .cards a{
