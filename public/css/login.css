@@ -49,6 +49,11 @@ body{
     border: 0px;
     outline: 0;
 }
+.btn a{
+    list-style: none;
+    text-decoration: none;
+    color: #ccc;
+}
 
 .btn button:hover{
     background-image: linear-gradient(to right, red, #500d13);

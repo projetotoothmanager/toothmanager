@@ -8,37 +8,41 @@ const router = express.Router();
 router.get('/', mainController.index)
 
 router.get('/login', function(req, res ,next) {
-  /* aqui vai o codigo */
+
   res.render('login', { title: 'Express'})
 });
 
 router.get('/agenda', function(req, res , next) {
-  /* aqui vai o codigo */
+
   res.render('agenda', { title: 'Express'})
 });
 
 router.get('/cadastro', function(req, res , next) {
-  /* aqui vai o codigo */
+
   res.render('cadastro', { title: 'Express'})
 });
 router.get('/teste', function(req, res , next) {
-  /* aqui vai o codigo */
+
   res.render('cadastro2', { title: 'Express'})
 });
 
 router.get('/caixa', function(req, res , next) {
-  /* aqui vai o codigo */
+
   res.render('caixa', { title: 'Express'})
 });
 
 router.get('/prontuario', function(req, res , next) {
-  /* aqui vai o codigo */
+
   res.render('prontuario', { title: 'Express'})
 });
 
-router.get('/prontuarioii', function(req, res , next) {
-  /* aqui vai o codigo */
-  res.render('prontuarioii', { title: 'Express'})
+router.get('/login', function(req, res , next) {
+
+  res.render('login', { title: 'Express'})
+});
+router.get('/prontuario2', function(req, res , next) {
+
+  res.render('prontuario2', { title: 'Express'})
 });
 
 
