@@ -5,12 +5,11 @@
 }
 
 body{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins'/*  */, sans-serif;
 }
 section{
   display: flex;
   width: 85%;
-  justify-content: center;
 }
 
 form h1,h2{
@@ -19,17 +18,25 @@ form h1,h2{
 form{
   display: flex;
   margin-top: 30px;
+  justify-content: space-evenly;
+}
+
+.cidade {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
   justify-content: center;
 }
 
-.container-cadastro{
+section{
 background-color: #ffffff;
-margin: 15px;
 border-radius: 15px;
-display: flex;
 flex-direction: column;
-width: 60%;
-justify-content: space-around;
 }
 
 .dados-pessoais{
@@ -63,26 +70,5 @@ justify-content: space-around;
   border: none;
   background-color: #00C767;
   cursor: pointer;
-}
-
-.botao-editar{
-  font-weight: 700;
-  color: #002915;
-  width: 150px;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  background-color: rgb(255, 196, 0);
-  cursor: pointer;
-}
-
-.botao-deletar{
-  font-weight: 700;
-  color: #002915;
-  width: 150px;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  background-color: rgb(255, 17, 0);
-  cursor: pointer;
+  margin: 8px;
 }
