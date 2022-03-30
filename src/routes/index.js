@@ -4,22 +4,14 @@ const router = express.Router();
 
 /* GET home page. */
 
-/* quando chamar a '/' passa pela controller que renderiza o login */
-router.get('/', mainController.index)
-
-router.get('/login', function(req, res ,next) {
-
-  res.render('login', { title: 'Express'})
-});
-
 router.get('/agenda', function(req, res , next) {
 
-  res.render('agenda', { title: 'Express'})
+  res.render('agenda', { title: 'Agenda'})
 });
 
 router.get('/cadastro', function(req, res , next) {
 
-  res.render('cadastro', { title: 'Express'})
+  res.render('cadastro', { title: 'cadastro'})
 });
 router.get('/teste', function(req, res , next) {
 
@@ -33,7 +25,7 @@ router.get('/caixa', function(req, res , next) {
 
 router.get('/prontuario', function(req, res , next) {
 
-  res.render('prontuario', { title: 'Express'})
+  res.render('prontuario', { title: 'prontuario'})
 });
 
 router.get('/login', function(req, res , next) {
@@ -42,7 +34,7 @@ router.get('/login', function(req, res , next) {
 });
 router.get('/prontuario2', function(req, res , next) {
 
-  res.render('prontuario2', { title: 'Express'})
+  res.render('prontuario2', { title: 'prontuario'})
 });
 
 

@@ -14,7 +14,7 @@ section{
 }
 
 form h1,h2{
-  color: #ffffff;
+  color: #000000;
 }
 form{
   display: flex;
@@ -23,7 +23,7 @@ form{
 }
 
 .container-cadastro{
-background-color: #203B49;
+background-color: #ffffff;
 margin: 15px;
 border-radius: 15px;
 display: flex;
