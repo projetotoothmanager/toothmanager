@@ -2,3 +2,4 @@
 
 Desenvolvimento de um Sistema Web para Consultório Odontológico.
 Foram criadas as páginas de Caixa e Prontuario, junto com suas estilizações no CSS.
+Criada uma branch dev-main para desenvolvimento do projeto
