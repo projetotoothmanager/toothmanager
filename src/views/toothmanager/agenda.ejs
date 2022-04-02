@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/agenda.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css"> <!-- pagina agenda -->
+    <title>Tooth Manager</title>
+</head>
+
+<body>
+    <%- include('../partials/navbar')%>
+    <main>
+        <%- include('../partials/navbar')%>
+
+        <!--Corpo da pagina-->
+
+        <section>
+            <div class="container-prontuario">
+                <form action="">
+                    <div class="busca">
+                        <input type="text" placeholder="Buscar">
+                        <img class="lixeira" src="/img/search.png" alt="">
+                        <button class="botaoadc"> + Novo</button>
+                    </div>
+                </form>
+                <div class="cards-prontuario">
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Joãozinho Fulano de Tal</a></small>
+
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">08:00</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Maria Ciclana dos Santos</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">08:30</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Zezinho de Souza Ciclano</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">09:00</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Juaninha Ciclana</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">09:30</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Juaninha Ciclana</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">10:00</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Juaninha Ciclana</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">10:30</a></span>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img class="deletar" src="/img/lixeira.png" alt="">
+                        </div>
+                        <div>
+                            <small class="nome-cliente"> <a href="">Juaninha Ciclana</a></small>
+                        </div>
+                        <div>
+                            <span><a class="horas" href="">11:00</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
