@@ -6,11 +6,11 @@ const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita
 module.exports = class authController {
 
     static login(req, res) {
-        res.render('partials/login')
+        res.render('auth/login')
     }
 
     static register(req, res) {
-        res.render('partials/register')
+        res.render('auth/register')
     }
 
     // criar a autenticação

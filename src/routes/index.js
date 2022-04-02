@@ -10,12 +10,12 @@ const router = express.Router();
 /* quando chamar a '/' passa pela controller que renderiza o login */
 router.get('/', mainController.index)
 
-router.get('/login', function (req, res, next) {
+// router.get('/login', function (req, res, next) {
 
-  res.render('login', {
-    title: 'Express'
-  })
-});
+//   res.render('login', {
+//     title: 'Express'
+//   })
+// });
 
 router.get('/agenda', function (req, res, next) {
 
