@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+//const flash = require('express-flash')
 const app = express();
 
 //*importação controller
@@ -17,6 +18,7 @@ const authRoutes = require('./src/routes/authRoutes');
 
 //* view engine setup
 app.set('views', path.join(__dirname, 'src', 'views', 'toothmanager'));
+
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
 
@@ -27,6 +29,10 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
+
+
+//* flash messages
+//app.use(flash()) // msg do status de alteração de banco de dados
 
 
 //*Pagina de Style
