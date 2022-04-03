@@ -1,0 +1,32 @@
+/* CONTAINER */
+.message {
+  padding: 1em;
+  color: #f6f3f3;
+  background-color: #f60505a8;
+  border: 1px solid #ff0b0b;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2em;
+  max-width: 60%;
+}
+
+.container {
+  min-height: 60vh;
+  padding: 2em;
+}
+
+/* LOGIN E REGISTER */
+.auth-container {
+  max-width: 450px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container h2 {
+  margin-bottom: 1em;
+  color: #fff;
+  border-left: 4px solid #081223;
+  padding: 0.3em;
+  width: 100px;
+}

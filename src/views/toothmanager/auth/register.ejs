@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Acesso</title>
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
 
 </head>
+
 <body>
-<div class="auth-container">
-    <h2>Registrar</h2>
-    <form action="/register" method="POST">
-        <div class="form-control">
-            <label for="text">Nome completo:</label>
-            <input type="name" name="name" placeholder="Digite o seu nome completo" required>
+    <!-- Temos que altarar esta flash msg  -->
+        </nav>
+  <div class="container">
+    {{#if messages.message}}
+    <div class="message">
+      {{messages.message}}
+    </div>
+    {{/if}}
+    {{#if message}}
+    <div class="message">
+      {{message}}
+    </div>
+    {{/if}}
+ <!-- Temos que altarar esta flash msg  -->
+        <div class="auth-container">
+            <h2>Registrar</h2>
+            <form action="/register" method="POST">
+                <div class="form-control">
+                    <label for="text">Nome completo:</label>
+                    <input type="name" name="name" placeholder="Digite o seu nome completo" required>
+                </div>
+                <div class="form-control">
+                    <label for="email">E-mail:</label>
+                    <input type="text" name="email" placeholder="Digite o seu e-mail" required>
+                </div>
+                <div class="form-control">
+                    <label for="senha">Senha:</label>
+                    <input type="passaword" name="senha"
+                        placeholder="Senha deve conter 6 a 20 digitos,maiscula e minuscula e numeral" required>
+                </div>
+                <div class="form-control">
+                    <label for="confirmSenha">Confirmação de senha:</label>
+                    <input type="passaword" name="confirmSenha" placeholder="Confirme a sua senha" required>
+                </div>
+                <input type="submit" value="Cadastrar">
+                <p>Já tem conta? <a href="/login">Clique aqui</a></p>
+            </form>
         </div>
-        <div class="form-control">
-            <label for="email">E-mail:</label>
-            <input type="text" name="email" placeholder="Digite o seu e-mail" required>
-        </div>
-        <div class="form-control">
-            <label for="senha">Senha:</label>
-            <input type="passaword" name="senha"
-                placeholder="Senha deve conter 6 a 20 digitos,maiscula e minuscula e numeral" required>
-        </div>
-        <div class="form-control">
-            <label for="confirmSenha">Confirmação de senha:</label>
-            <input type="passaword" name="confirmSenha" placeholder="Confirme a sua senha" required>
-        </div>
-        <input type="submit" value="Cadastrar">
-        <p>Já tem conta? <a href="/login">Clique aqui</a></p>
-    </form>
-</div>
 </body>
+
 </html>
