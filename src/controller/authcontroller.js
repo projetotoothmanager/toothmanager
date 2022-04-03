@@ -77,7 +77,7 @@ module.exports = class AuthController {
             const createdUser = await User.create(user) // criação de dados no banco de dados
 
             //* inicializar session
-            req.session.userid = user.id
+            req.session.userid = createdUser.id
 
             req.flash('message', "Cadastro realizado com sucesso!")
 
@@ -88,6 +88,14 @@ module.exports = class AuthController {
         } catch (err) {
             console.error('err# % d ', err)
         }
+    }
+
+
+    //* Função de logout
+    static logout(req, res, next) {
+
+        req.session.destroy() // apagamos a ssesion dele dentro do navegador.
+        res.redirect('/login')
     }
 
 }
