@@ -45,6 +45,7 @@ module.exports = class authController {
             res.render('auth/register')
         };
 
+        //!aqui tera que alterar quando mudarmos para Banco
         const chek_email = await User.findOne({ // validamos se o email nao esta cadastrado
             where: {
                 email: email
@@ -67,9 +68,10 @@ module.exports = class authController {
             senha: dificult_senha
         }
 
-        //* Aqui temos que colocar em json
+        //! Aqui temos que colocar em json
         try { // rastreador de erros
-            await User.create(user) // criação de dados no banco de dados
+
+            await User.create(user) // criação de dados No Json
         } catch (err) {
             console.error('err# % d ', err)
         }
