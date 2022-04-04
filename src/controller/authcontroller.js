@@ -3,17 +3,15 @@ const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita
 //aqui seiria o banco de dados ++++
 //const User = require('models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
-module.exports = class authController {
+module.exports = class AuthController {
 
-    static login(req, res) {
+    static login(req, res, next) {
         res.render('auth/login')
     }
 
-    static register(req, res) {
+    static register(req, res, next) {
         res.render('auth/register')
     }
-
-    //@@@@@@ Temos que verificar e detalhar dados @@@@@@@
 
     static async registerpost(req, res, next) {
 
@@ -29,6 +27,7 @@ module.exports = class authController {
         if (regex_senha.test(senha) == false) { // se a senha tem mais de 6 e menos de 20 caratceres
             req.flash('message', 'Sua senha deve conter de 6 a 20 caracteres')
             res.render('auth/register')
+            return
         };
 
         const salt = bcrypt.genSaltSync(10) //Criptografia senha
@@ -37,28 +36,33 @@ module.exports = class authController {
         if (senha !== confirmSenha) { // se as senhas sao identicas
             req.flash('message', 'As senha nao sao identicas, favor conferir e tentar novamente.');
             res.render('auth/register')
+            return
 
         };
         name.split(' ')
         if (name.length <= 1) { // conferimos se o usuario digita mais de um nome
             req.flash('message', 'Favor digitar o nome completo')
             res.render('auth/register')
+            return
         };
 
+        //!alterar quando ativar o banco
         const chek_email = await User.findOne({ // validamos se o email nao esta cadastrado
             where: {
                 email: email
             }
         });
-        if (chek_email == true) {
+        if (chek_email) {
             req.flash('message', 'O e-mail ja esta cadastrado')
             res.render('auth/register')
+            return
         };
 
         const regexp = /\S+@\w+\.\w{2,6}(\.\w{2})?/g
-        if (regexp.test(email) == false) {
+        if ((regexp.test(email)) != true) {
             req.flash('message', 'O seu email nao esta no formato correto')
             res.render('auth/register')
+            return
         };
 
         const user = { // montamos os dados que sera enviado para o banco de dados
@@ -67,12 +71,31 @@ module.exports = class authController {
             senha: dificult_senha
         }
 
-        //* Aqui temos que colocar em json
+        //!Alterar pois ainda nao estamos no banco
+        //! temos que ativar o json para rodar
         try { // rastreador de erros
-            await User.create(user) // criação de dados no banco de dados
+            const createdUser = await User.create(user) // criação de dados no banco de dados
+
+            //* inicializar session
+            req.session.userid = createdUser.id
+
+            req.flash('message', "Cadastro realizado com sucesso!")
+
+            req.session.save(() => { //salvamos os dados da session antes de redirect
+                res.redirect('/')
+            })
+
         } catch (err) {
             console.error('err# % d ', err)
         }
+    }
+
+
+    //* Função de logout
+    static logout(req, res, next) {
+
+        req.session.destroy() // apagamos a ssesion dele dentro do navegador.
+        res.redirect('/login')
     }
 
 }
