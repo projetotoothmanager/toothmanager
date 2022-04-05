@@ -5,17 +5,14 @@ const mainController = require('../controller/maincontroller');
 const router = express.Router();
 
 
-/* GET home page. /
+// Rota principal
+router.get('/', mainController.showHome)
 
-/ quando chamar a '/' passa pela controller que renderiza o login */
-router.get('/', mainController.index)
 
-// router.get('/login', function (req, res, next) {
 
-//   res.render('login', {
-//     title: 'Express'
-//   })
-// });
+
+
+//Tem que ser alterado
 
 router.get('/agenda', function (req, res, next) {
 
