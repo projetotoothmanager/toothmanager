@@ -19,7 +19,7 @@ const authRoutes = require('./src/routes/authRoutes');
 
 
 //* view engine setup
-app.set('views', path.join(__dirname, 'src', 'views', 'toothmanager'));
+app.set('views', path.join(__dirname, 'src', 'views'));// caminho
 
 app.set('view engine', 'ejs');
 app.use(logger('dev'));

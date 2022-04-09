@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background-color: #278CBA;
+}
+/*--formulário--*/
+.container-prontuario{
+    width: 1100px;
+    background: #E5E5E5;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 12px;
+    height: 580px;
+    border: #203B49 2px solid;
+    border-radius:20px;
+    padding: 20px 6px 20px 10px ;  
+  }
+
+  .busca{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .botaoadc {
+    font-weight: 700;
+    color: #002915;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background-color: #00C767;
+  }
+  
+  .busca input{
+    width: 75%;
+    height: 34px;
+    padding-left: 6px;
+    font-size: 15px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 40px;
+    background-color: #D3DDE2;
+  }
+  
+  .busca img{
+    width: 34px;
+    height: 34px;
+    align-items: center;
+  }
+  
+  .cards-prontuario{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  
+  .cards{
+    margin: 8px;
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction:row-reverse;
+    justify-content: space-between;
+    padding: 3px;
+    align-items: center;
+    background-color: #203B49;
+    border-radius: 15px;
+    
+  }
+  .horas{
+      background-color: #0686ee;
+      margin-left: 25px;     
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+  }
+
+  .cards a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+section div  img{
+    width: 25px;
+    height: 25px;
+    margin: 0.5em;
+}
+ /*---calendário----*/
+section{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+ .month-indicator {
+   background: #62ABEE;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid;
+    font-family: 'Roboto'; 
+    font-size: 18px;
+    font-style: normal;
+    Line-height: 21px;
+  }
+  .calendar{
+      background: #E5E5E5;
+      width: 330px;
+      height: 300px;
+      border: #203B49 2px solid;
+      border-radius:20px;
+      padding: 22px 12px 30px 12px;
+      
+  }
+  
+  time{
+    Font-family: 'Roboto';
+    Font-style: normal;
+    Font-size: 18px;
+    color: #fff;
+  }
+  
+  .day-of-week, .date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  
+ 
+  .day-of-week {
+    margin-top: 1.25em;
+  }
+  
+  .day-of-week > * {
+    font-size: 14px;
+    font-style: normal;
+    font-family: 'Roboto';
+    text-align: center;
+    
+  }
+  
+ 
+  .date-grid {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+  }
+  
+  
+  .date-grid button:first-child {
+    grid-column: 6;
+  }
+  
+  
+  .date-grid button {
+    position: relative;
+    border: 0;
+    width: 28px;
+    height: 31px;
+    margin: 2px;
+    background-color:#616365;
+   
+  } 
+ 
+  .box2{
+      height: 500px;
+      
+  }
+  .legenda{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: flex-end;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+      font-family: 'Roboto';
+      font-size: 16px;  
+    }
+ .delete{
+     background: rgb(78, 4, 4);
+ }
