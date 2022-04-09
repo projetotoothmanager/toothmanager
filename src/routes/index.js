@@ -31,9 +31,9 @@ router.get('/cadastro', function (req, res, next) {
   })
 });
 
-router.get('/caixa', function (req, res, next) {
+router.get('/cadastroteste', function (req, res, next) {
 
-  res.render('caixa', {
+  res.render('cadastroteste', {
     title: 'Express'
   })
 });
@@ -41,6 +41,13 @@ router.get('/caixa', function (req, res, next) {
 router.get('/prontuario', function (req, res, next) {
 
   res.render('prontuario', {
+    title: 'Express'
+  })
+});
+
+router.get('/prontuarioteste', function (req, res, next) {
+
+  res.render('prontuarioteste', {
     title: 'Express'
   })
 });

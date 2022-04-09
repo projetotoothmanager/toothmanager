@@ -1,0 +1,46 @@
+:root{
+    /* color background */
+    --bg-color-ciano: #278CBA;
+    --bg-color-marine: #203B49;
+    --bg-color-white: #ffffff;
+    --bg-color-green: #00ff15;
+    --bg-color-light-green: #4cff5b;
+    --bg-color-yellow: #ffc400;
+    --bg-color-red: #ff0000;
+    --bg-color-white-dark: #f1f1f1;
+    /* color text */
+    --text-color-white: #fff;
+    --text-color-creme: #f5f5f5;
+    --text-color-black: #000;
+}
+body{
+    font-family: 'poppins';
+}
+/* prontuario */
+.container-cards{
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+.subtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards-pront{
+    cursor: pointer;
+    width: 80%;
+    border: 1px solid var(--bg-color-ciano);
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+}
+.cards-pront:hover{
+    background-color: var(--bg-color-ciano);
+    color: var(--bg-color-white-dark);
+}
+.cards-pront label,span{
+    height: 30px;
+    border: none;
+    padding: 4px;
+}

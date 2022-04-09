@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 :root{
-    /* color background*/
+    /* color background */
     --bg-color-ciano: #278CBA;
     --bg-color-marine: #203B49;
     --bg-color-white: #ffffff;
@@ -38,8 +38,8 @@ label #btn,label #cancel{
     margin: 15px 30px;
     font-size: 28px;
     background-color: var(--bg-color-ciano);
-    height: 45px;
-    width: 45px;
+    height: 28px;
+    width: 28px;
     text-align: center;
     transition: all .5s ease;
 }
@@ -116,10 +116,52 @@ label #cancel{
     visibility: hidden;
 }
 
-#check:checked ~ label #cancel {
+#check:checked ~ label #cancel{
     margin-left: 245px;
     opacity: 01;
     visibility: visible;
+}
+#check:checked ~ section {
+    margin-left: 15%;
+}
+
+/* tag <SECTION> */
+section{
+    display: flex;
+    flex-direction: column;
+    background-color:var(--bg-color-white-dark);
+    height: 100vh;
+}
+
+/* busca */
+.search-container{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+}
+.search-container .title-agenda{
+    margin-left: 5rem;
+}
+.search-container form{
+    display: flex;
+}
+
+.search-container form input{
+    width: 300px;
+    height: 30px;
+    border: none;
+    padding: 4px;
+}
+
+.search-container form button{
+    width: 30px;
+    height: auto;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-color-ciano);
+    color: var(--text-color-white);
 }
 /* RESPONSIVIDADE inicio--*/
 @media(max-width: 860px){.sidebar{
@@ -161,42 +203,3 @@ a:hover {
 }
 
 }/* RESPOSIVIDADE FIM-- */
-
-
-/* tag <SECTION> */
-section{
-    margin-right: 20%;
-    margin-left: 20%;
-    display: flex;
-    flex-direction: column;
-    background-color:var(--bg-color-white-dark);
-    height: 100vh;
-}
-
-/* busca */
-.search-container{
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    margin-top: 0.5rem;
-}
-.search-container form{
-    display: flex;
-}
-
-.search-container form input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    padding: 4px;
-}
-
-.search-container form button{
-    width: 30px;
-    height: auto;
-    border: none;
-    cursor: pointer;
-    background-color: var(--bg-color-ciano);
-    color: var(--text-color-white);
-}

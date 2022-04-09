@@ -1,0 +1,49 @@
+/* CADASTRO */
+
+.container-cadastro form{
+    display: flex;
+    justify-content: center;
+}
+.container-cadastro #Nome, #CPF,#celular-cadastro,#email-cadastro{
+    width: 300px;
+    height: 30px;
+    border: none;
+    padding: 4px;
+
+}
+.dados-pessoais{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+.dados-pessoais div{
+    margin: 20px;
+}
+.container-cadastro .endereco{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.container-cadastro #endereco, #bairro, #cidade,#CEP{
+    width: 300px;
+    height: 30px;
+    border: none;
+    padding: 4px;
+}
+#cadastro{
+    width: 300px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-color-ciano);
+    color: var(--text-color-white);
+}
+#cadastro:hover{
+    background-color: var(--bg-color-light-green);
+    border: 1px solid var(--bg-color-ciano);
+}
+.button-cadastrar{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
