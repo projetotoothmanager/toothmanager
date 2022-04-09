@@ -8,15 +8,12 @@ const session = require('express-session'); // uma pasta dinamica
 const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
 const app = express();
 
-
 //*importação controller
 const authController = require('./src/controller/authcontroller')
 const cadastro_cliente_Controller = require('./src/controller/cadastro_cliente_Controller')
 const Agenda_Controller = require('./src/controller/Agenda_controller')
 const Caixa_Controller = require('./src/controller/Caixa_controller')
 const prontuario_Controller = require('./src/controller/prontuario_controller')
-
-
 
 //*import routes
 //aqui importamos todos os dados da pagina
@@ -41,7 +38,6 @@ app.use(express.urlencoded({
   extended: false
 }));
 
-//app.use(cookieParser());
 
 //*sesion middleware
 app.use(session({ // onde o express vai salva session, para deixar o usuario logado
@@ -61,6 +57,7 @@ app.use(session({ // onde o express vai salva session, para deixar o usuario log
     httpOnly: true // como estamos em localhost fica em http
   }
 }))
+
 
 //* set session to res
 app.use((req, res, next) => { // criamos a session
@@ -86,7 +83,6 @@ app.use('/', cadastro_cliente_Router);
 app.use('/', Agenda_Router);
 app.use('/', Caixa_Router);
 app.use('/', prontuario_Router);
-
 
 
 //* catch 404 and forward to error handler

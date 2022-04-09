@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita
 //aqui seiria o banco de dados ++++
 //const User = require('models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
+//*Controller
 module.exports = class AuthController {
     static login(req, res, next) {
         res.render('auth/login')
