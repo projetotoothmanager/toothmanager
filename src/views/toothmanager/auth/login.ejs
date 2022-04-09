@@ -7,17 +7,29 @@
     <title>Login | ToothManager</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+
 <body>
+    <div class="container">
         <% if (messages.message){%>
         <div class="message">
             {messages.message}
         </div>
         <% } else { %>
         <% } %>
+    </div>
     <section>
         <div class="imgBx">
             <img src="img/img-dentista-login.jpg" alt="">
         </div>
+
+        <!-- Aqui precisa de um action como vamos pegar os dados sem
+        EX:     h2 > Registrar < /h2> <
+    form action = "/register"
+method = "POST" >
+    <
+    div class = "form-control" >
+    <
+        -->
         <div class="contentBx">
             <div class="formBx">
                 <h2>Login</h2>
@@ -36,12 +48,13 @@
                     <div class="inputBx">
                         <input type="submit" value='Login' name=''>
                     </div>
-                    <div class="inputBx">
-                        <p>Esqueceu sua senha? <a href="#">Clique aqui.</a></p>
+                    <!-- deixamos este registro sepadado pois, se der tempo vamos fazer, falo par a proxima entrega => <div class="inputBx">
+                        <p>Esqueceu sua senha? <a href="#">Clique aqui.</a></p> -->
                     </div>
                 </form>
             </div>
         </div>
     </section>
 </body>
+
 </html>

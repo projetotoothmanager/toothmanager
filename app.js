@@ -8,14 +8,24 @@ const session = require('express-session'); // uma pasta dinamica
 const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
 const app = express();
 
+
 //*importação controller
 const authController = require('./src/controller/authcontroller')
+const cadastro_cliente_Controller = require('./src/controller/cadastro_cliente_Controller')
+const Agenda_Controller = require('./src/controller/Agenda_controller')
+const Caixa_Controller = require('./src/controller/Caixa_controller')
+const prontuario_Controller = require('./src/controller/prontuario_controller')
+
 
 
 //*import routes
 //aqui importamos todos os dados da pagina
 const indexRouter = require('./src/routes/index');
 const authRoutes = require('./src/routes/authRoutes');
+const cadastro_cliente_Router = require('./src/routes/cadastro_cliente_Router');
+const Agenda_Router = require('./src/routes/Agenda_routes');
+const Caixa_Router = require('./src/routes/Caixa_Routes');
+const prontuario_Router = require('./src/routes/Prontuario_routes');
 
 
 //* view engine setup
@@ -72,6 +82,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 //* routes
 app.use('/', authRoutes)
 app.use('/', indexRouter);
+app.use('/', cadastro_cliente_Router);
+app.use('/', Agenda_Router);
+app.use('/', Caixa_Router);
+app.use('/', prontuario_Router);
 
 
 
