@@ -10,51 +10,31 @@ router.get('/', mainController.showHome)
 
 //Tem que ser alterado
 
-router.get('/agenda1', function (req, res, next) {
-
-  res.render('agenda', {
-    title: 'Express'
-  })
-});
-
+/* AGENDA */
 router.get('/agenda', function (req, res, next) {
 
   res.render('agendamento', {
     title: 'Express'
   })
 });
-
+/* CADASTRO */
 router.get('/cadastro', function (req, res, next) {
 
   res.render('cadastro', {
     title: 'Express'
   })
 });
-
-router.get('/cadastroteste', function (req, res, next) {
-
-  res.render('cadastroteste', {
-    title: 'Express'
-  })
-});
-
+/* PRONTUARIO */
 router.get('/prontuario', function (req, res, next) {
 
-  res.render('prontuario', {
+  res.render('listaProntuario', {
     title: 'Express'
   })
 });
 
-router.get('/prontuarioteste', function (req, res, next) {
+router.get('/prontuario/detalhes', function (req, res, next) {
 
-  res.render('prontuarioteste', {
-    title: 'Express'
-  })
-});
-
-router.get('/prontuario2', function (req, res, next) {
-
-  res.render('prontuario2', {
+  res.render('detalhesProntuario', {
     title: 'Express'
   })
 });
