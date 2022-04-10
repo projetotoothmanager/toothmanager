@@ -11,32 +11,24 @@ const app = express();
 //*importação controller
 const authController = require('./src/controller/authcontroller')
 const cadastro_cliente_Controller = require('./src/controller/cadastro_cliente_Controller')
-const Agenda_Controller = require('./src/controller/Agenda_controller')
-const Caixa_Controller = require('./src/controller/Caixa_controller')
-const prontuario_Controller = require('./src/controller/prontuario_controller')
+const Agendamento_Controller = require('./src/controller/Agendamento_controller')
+const Caixa_Controller = require('./src/controller/Pagamento_controller')
+const prontuario_Controller = require('./src/controller/Prontuario_controller')
 
 //*import routes
 //aqui importamos todos os dados da pagina
 const indexRouter = require('./src/routes/index');
 const authRoutes = require('./src/routes/authRoutes');
 const cadastro_cliente_Router = require('./src/routes/cadastro_cliente_Router');
-const Agenda_Router = require('./src/routes/Agenda_routes');
-const Caixa_Router = require('./src/routes/Caixa_Routes');
-const prontuario_Router = require('./src/routes/Prontuario_routes');
+const Agendamento_Router = require('./src/routes/Agendamento_router');
+const Pagamentos_router = require('./src/routes/Pagamento_routes');
+const Prontuario_router = require('./src/routes/Prontuario_routes');
 
 
 //* view engine setup
-app.set('views', path.join(__dirname, 'src', 'views'));// caminho
+app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
-//*Pagina de Style
-app.use(express.static(path.join(__dirname, 'public')));
-//* routes
-app.use('/', authRoutes)
-app.use('/', indexRouter);
-
-
-
 
 //*leito de json
 app.use(express.json());
@@ -86,9 +78,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', authRoutes)
 app.use('/', indexRouter);
 app.use('/', cadastro_cliente_Router);
-app.use('/', Agenda_Router);
-app.use('/', Caixa_Router);
-app.use('/', prontuario_Router);
+app.use('/', Agendamento_Router);
+app.use('/', Pagamentos_router);
+app.use('/', Prontuario_router);
 
 
 //* catch 404 and forward to error handler
