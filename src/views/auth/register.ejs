@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Toothmanager</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form action="/src/routes/authRoutes.js" method="post">
+            <div class="container">
+                <h1>Criar conta</h1>
+                <p>Por favor preencha os campos para criar sua conta</p>
+                <hr><!-- cria uma linha divisoria -->
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="exemplo@exemplo.com" name="email" id="email" required>
+
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="crie uma senha" name="psw" id="psw" required>
+
+                <label for="psw-repeat"><b>Confirme</b></label>
+                <input type="password" placeholder="Repita sua senha" name="psw-repeat" id="psw-repeat" required>
+                <hr><!-- cria uma linha divisoria -->
+                <p>Criando uma conta você concorda com os termos de políticas e de privacidade</p>
+                <button type="submit" class="registerbtn">Criar</button>
+            </div>
+
+            <div class="container login">
+                <p>Já tem uma conta? <a href="login">Login</a>.</p>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

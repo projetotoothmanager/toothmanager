@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/listaProntuario.css">
+    <!-- script -->
+    <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+    <title>Toothmanager</title>
+</head>
+<body>
+    <!-- button-menu-hamburguer -->
+    <input type="checkbox" id="check">
+    <label for="check" class="menu-hamburgue">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+
+    <!-- sidebar -->
+    <%- include('./partials/sidebar')%>
+
+    <!-- <main> coloque seu codigo dentro desta tag -->
+    <main>
+        <!-- barra de busca -->
+        <div class="search-container">
+            <div class="title-pagina">
+                <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
+            </div>
+            <div>
+                <img src="/img/logo.png" alt="logo Toothmanager">
+            </div>
+    
+    
+          <form action="#" method="get">
+            <input type="text" placeholder="Buscar paciente.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+
+        <!-- Prontuario -->
+
+        <div class="container-cards">
+
+            <div class="subtitulo">
+                <h2>Lista de Prontuarios</h2>
+            </div>
+
+            <div class="cards-pront">
+                <label for="">ID:</label>
+                <span>0123</span>
+                <a href="/prontuario/detalhes">
+                    <label for="">Nome:</label>
+                    <span> Wictor Hiago</span>
+
+                </a>
+                <label for="">Data de agendamento:</label>
+                <span>01/02/2022</span>
+                <label for="">Hora:</label>
+                <span>08:00</span>
+            </div>
+            <div class="cards-pront">
+                <label for="">ID:</label>
+                <span>0123</span>
+                <a href="agendamento.ejs">
+                    <label for="">Nome:</label>
+                    <span> Wictor Hiago</span>
+
+                </a>
+                <label for="">Data de agendamento:</label>
+                <span>01/02/2022</span>
+                <label for="">Hora:</label>
+                <span>08:00</span>
+            </div>
+            
+        </div>
+            
+
+    </main>
+
+</body>
+</html>

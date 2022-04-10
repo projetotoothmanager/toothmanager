@@ -1,74 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-}
+/* CADASTRO */
 
-body{
-  font-family: 'Poppins'/*  */, sans-serif;
+.container-cadastro form{
+    display: flex;
+    justify-content: center;
 }
-section{
-  display: flex;
-  width: 85%;
-}
+.container-cadastro #Nome, #CPF,#celular-cadastro,#email-cadastro{
+    width: 300px;
+    height: 30px;
+    border: none;
+    padding: 4px;
 
-form h1,h2{
-  color: #000000;
 }
-form{
-  display: flex;
-  margin-top: 30px;
-  justify-content: space-evenly;
-}
-
-.cidade {
-  display: flex;
-  justify-content: space-between;
-  gap: 4px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-  justify-content: center;
-}
-
-section{
-background-color: #ffffff;
-border-radius: 15px;
-flex-direction: column;
-}
-
 .dados-pessoais{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 25px;
+    border: 1px solid var(--bg-color-ciano);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
 }
 .dados-pessoais div{
-  display: flex;
-  justify-content: space-between;
-  margin-right: 30px;
+    margin: 20px;
 }
-
 .endereco{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    border: 1px solid var(--bg-color-ciano);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
 }
-.endereco div{
-  display: flex;
-  justify-content: space-between;
+.container-cadastro #endereco, #bairro, #cidade,#CEP{
+    width: 300px;
+    height: 30px;
+    border: none;
+    padding: 4px;
+}
+#cadastro{
+    width: 300px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-color-ciano);
+    color: var(--text-color-white);
+}
+#cadastro:hover{
+    background-color: var(--bg-color-light-green);
+    border: 1px solid var(--bg-color-ciano);
+}
+.button-cadastrar{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
-.botao-cadastrar{
-  font-weight: 700;
-  color: #002915;
-  width: 150px;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  background-color: #00C767;
-  cursor: pointer;
-  margin: 8px;
+@media (max-width: 860px){
+    .container-cadastro{
+        display: flex;
+        justify-content: center;
+        margin-left: 5rem;
+    }
+    .dados-pessoais{
+        margin-right: 0;
+    }
+    .endereco{
+        margin-left: 0;
+    }
+}
+@media (max-width: 720px){
+    .container-cadastro form{
+        display: flex;
+        flex-direction: column;
+    }
+    .button-cadastrar{
+        margin-left: 6rem;
+    }
 }

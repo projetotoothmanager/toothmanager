@@ -9,11 +9,10 @@ router.get('/login', mainController.showHome)
 
 router.get('/prontuario2', function (req, res, next) {
 
-  res.render('prontuario2', {
+  res.render('pagamentos', {
     title: 'Express'
   })
 });
-
 
 
 module.exports = router;
