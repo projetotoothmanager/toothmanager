@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/criarProntuario.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- script -->
+    <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+
+    <title>Toothmanager</title>
+</head>
+<body>
+
+        <!-- button-menu-hamburguer -->
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-hamburgue">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <%- include('./partials/sidebar')%>
+
+        <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
+            <main>
+        <!-- Busca -->
+        <div class="search-container">
+            <div class="title-pagina">
+                <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
+            </div>
+            <div>
+                <img src="/img/logo.png" alt="logo Toothmanager">
+            </div>
+    
+    
+          <form action="#" method="get">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <!-- REFERENCIA -->
+
+<!-- CRIAR PRONTUARIO -->
+
+<div class="container-criarPront">
+
+    <form action="/" method="post">
+
+        <label for=""> id:</label>
+        <input type="text" name="id">
+
+        <label for="">nome: </label>
+        <input type="text" id="nome">
+
+        <label for="atendimento"> agendado para:</label>
+        <input type="text">
+
+        <div>
+
+            <label for=""> Atendimento tipo:</label>
+            <br>
+            <label for=""> consulta</label>
+            <input type="radio" name="consulta">
+            <label for=""> retorno</label>
+            <input type="radio" name="retorno">
+        </div>
+
+        <label for=""> Dentista:</label>
+        <input type="text">
+
+        <label for="">Tratamento:</label>
+        <textarea name="" id="" cols="30" rows="5"></textarea>
+
+        <label for="">Extração:</label>
+        <textarea name="" id="" cols="30" rows="5"></textarea>
+
+        <label for="">Limpeza:</label>
+        <textarea name="" id="" cols="30" rows="5"></textarea>
+
+        <button class="criar-prontuario-button"> Salvar </button>
+
+
+
+    </form>
+</div>
+
+
+
+
+            </main>
+</body>
+</html>

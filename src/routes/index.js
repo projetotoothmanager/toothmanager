@@ -28,6 +28,13 @@ router.get('/prontuario', function (req, res, next) {
     title: 'Express'
   })
 });
+
+router.get('/criarprontuario', function (req, res, next) {
+
+  res.render('criarProntuario', {
+    title: 'Express'
+  })
+});
 /* PRONTUARIO DETALHADO DO PACIENTE */
 router.get('/prontuario/detalhes', function (req, res, next) {
 
