@@ -51,3 +51,26 @@
     justify-content: center;
     margin: 20px;
 }
+
+@media (max-width: 860px){
+    .container-cadastro{
+        display: flex;
+        justify-content: center;
+        margin-left: 5rem;
+    }
+    .dados-pessoais{
+        margin-right: 0;
+    }
+    .endereco{
+        margin-left: 0;
+    }
+}
+@media (max-width: 720px){
+    .container-cadastro form{
+        display: flex;
+        flex-direction: column;
+    }
+    .button-cadastrar{
+        margin-left: 6rem;
+    }
+}

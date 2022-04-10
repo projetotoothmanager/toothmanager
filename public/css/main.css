@@ -123,6 +123,7 @@ label #cancel{
 }
 #check:checked ~ main {
     margin-left: 15%;
+    transition: all .5s ease;
 }
 
 /* tag <MAIN> */
@@ -139,10 +140,11 @@ main{
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-    margin-top: 0.5rem;
+    background-color: var(--bg-color-marine);
 }
-.search-container .title-agenda{
+.title-pagina{
     margin-left: 5rem;
+    color: var(--text-color-white);
 }
 .search-container form{
     display: flex;
@@ -163,8 +165,11 @@ main{
     background-color: var(--bg-color-ciano);
     color: var(--text-color-white);
 }
-/* RESPONSIVIDADE inicio--*/
-@media(max-width: 860px){.sidebar{
+
+/*--RESPONSIVIDADE inicio--*/
+@media(max-width: 860px){
+
+.sidebar{
     height: auto;
     width: 70px;
     left: 0;
@@ -203,3 +208,9 @@ a:hover {
 }
 
 }/* RESPOSIVIDADE FIM-- */
+
+@media (max-width:860) {
+    .main{
+        margin-left: 4rem;
+    }
+}

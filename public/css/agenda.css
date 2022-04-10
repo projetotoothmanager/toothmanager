@@ -11,6 +11,9 @@
     height: 30px;
     border: none;
 }
+.container-agenda form #nome{
+    width: 300px;
+}
 /* button adicionar */
 .container-agenda form button{
     height: 30px;
@@ -63,4 +66,27 @@
 }
 .cliente #btn-deletar-cliente:hover{
     background-color: var(--bg-color-red);
+}
+
+@media (max-width: 900px) {
+
+.cliente{
+    border: 1px solid var(--bg-color-ciano);
+    padding: 4px;
+    height: 30px;
+    
+}
+.container-agenda{
+    padding: 4px;
+}
+.container-agenda form{
+    display: grid;
+    border: 1px solid var(--bg-color-ciano);
+    padding: 4px;
+}
+}
+@media (max-width: 860px) {
+    .container-agenda{
+        margin-left: 5rem;
+    }
 }
