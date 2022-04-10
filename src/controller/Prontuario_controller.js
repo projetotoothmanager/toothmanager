@@ -4,9 +4,9 @@ module.exports = class Prontuario_controller {
         res.render('listaProntuario')
     }
 
-    // static prontuario(req, res, next) {
-    //     res.render('./prontuario2')
-    // }
+    static detalhesProntuario(req, res, next) {
+        res.render('detalhesProntuario')
+    }
 
 
 
