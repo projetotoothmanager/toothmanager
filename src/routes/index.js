@@ -38,5 +38,13 @@ router.get('/prontuario/detalhes', function (req, res, next) {
     title: 'Express'
   })
 });
+/* PAGAMENTOS */
+router.get('/pagamentos', function (req, res, next) {
+
+  res.render('pagamentos', {
+    title: 'Express'
+  })
+});
+
 
 module.exports = router;

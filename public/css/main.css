@@ -121,12 +121,12 @@ label #cancel{
     opacity: 01;
     visibility: visible;
 }
-#check:checked ~ section {
+#check:checked ~ main {
     margin-left: 15%;
 }
 
-/* tag <SECTION> */
-section{
+/* tag <MAIN> */
+main{
     display: flex;
     flex-direction: column;
     background-color:var(--bg-color-white-dark);
