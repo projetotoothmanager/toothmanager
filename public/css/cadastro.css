@@ -12,6 +12,8 @@
 
 }
 .dados-pessoais{
+    border: 1px solid var(--bg-color-ciano);
+    padding: 8px;
     display: flex;
     flex-direction: column;
     margin-right: 50px;
@@ -19,7 +21,9 @@
 .dados-pessoais div{
     margin: 20px;
 }
-.container-cadastro .endereco{
+.endereco{
+    border: 1px solid var(--bg-color-ciano);
+    padding: 8px;
     display: flex;
     flex-direction: column;
     margin-left: 50px;

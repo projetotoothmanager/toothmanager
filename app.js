@@ -20,9 +20,15 @@ const authRoutes = require('./src/routes/authRoutes');
 
 //* view engine setup
 app.set('views', path.join(__dirname, 'src', 'views'));// caminho
-
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
+//*Pagina de Style
+app.use(express.static(path.join(__dirname, 'public')));
+//* routes
+app.use('/', authRoutes)
+app.use('/', indexRouter);
+
+
 
 
 //*leito de json
@@ -63,17 +69,6 @@ app.use((req, res, next) => { // criamos a session
 
 //* flash messages
 app.use(flash()) // msg do status de alteração de banco de dados
-
-
-//*Pagina de Style
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-//* routes
-app.use('/', authRoutes)
-app.use('/', indexRouter);
-
-
 
 //* catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -31,14 +31,12 @@ router.get('/prontuario', function (req, res, next) {
     title: 'Express'
   })
 });
-
+/* PRONTUARIO DETALHADO DO PACIENTE */
 router.get('/prontuario/detalhes', function (req, res, next) {
 
   res.render('detalhesProntuario', {
     title: 'Express'
   })
 });
-
-
 
 module.exports = router;

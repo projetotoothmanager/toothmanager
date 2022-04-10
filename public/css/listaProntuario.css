@@ -28,19 +28,27 @@ body{
     justify-content: center;
 }
 .cards-pront{
-    cursor: pointer;
     width: 80%;
     border: 1px solid var(--bg-color-ciano);
     margin: 4px;
     display: flex;
     justify-content: center;
+    gap: 16px;
 }
 .cards-pront:hover{
     background-color: var(--bg-color-ciano);
-    color: var(--bg-color-white-dark);
 }
 .cards-pront label,span{
     height: 30px;
     border: none;
     padding: 4px;
+}
+/* botao */
+#ver-detalhes-btn{
+    border: none;
+    background-color: var(--bg-color-ciano);
+}
+a{
+    display: flex;
+    color: var(--text-color-black);
 }
