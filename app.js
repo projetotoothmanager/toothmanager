@@ -14,10 +14,11 @@ const cadastro_cliente_Controller = require('./src/controller/cadastro_cliente_C
 const Agendamento_Controller = require('./src/controller/Agendamento_controller')
 const Caixa_Controller = require('./src/controller/Pagamento_controller')
 const prontuario_Controller = require('./src/controller/Prontuario_controller')
+const Index_controller = require('./src/controller/Index_controller')
 
 //*import routes
 //aqui importamos todos os dados da pagina
-const indexRouter = require('./src/routes/index');
+const Index_routes = require('./src/routes/Index_routes');
 const authRoutes = require('./src/routes/authRoutes');
 const cadastro_cliente_Router = require('./src/routes/cadastro_cliente_Router');
 const Agendamento_Router = require('./src/routes/Agendamento_router');
@@ -76,7 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //* routes
 app.use('/', authRoutes)
-app.use('/', indexRouter);
+app.use('/', Index_routes);
 app.use('/', cadastro_cliente_Router);
 app.use('/', Agendamento_Router);
 app.use('/', Pagamentos_router);
