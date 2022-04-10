@@ -1,12 +1,9 @@
 const express = require('express');
-
-//Conferir
 const mainController = require('../controller/maincontroller');
 const router = express.Router();
 
-
-// Rota principal
-router.get('/', mainController.showHome)
+//*routes
+router.get('/login', mainController.showHome)
 
 //Tem que ser alterado
 
