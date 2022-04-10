@@ -1,7 +1,7 @@
-module.exports = class prontuario_Controller {
+module.exports = class Prontuario_controller {
 
     static prontuario(req, res, next) {
-        res.render('./prontuario')
+        res.render('listaProntuario')
     }
 
     // static prontuario(req, res, next) {

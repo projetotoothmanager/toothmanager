@@ -3,7 +3,7 @@ const mainController = require('../controller/maincontroller');
 const router = express.Router();
 
 //*routes
-router.get('/login', mainController.showHome)
+router.get('./login', mainController.showHome)
 
 
 
