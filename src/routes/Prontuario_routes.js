@@ -7,6 +7,8 @@ router.get('/listaProntuario', Prontuario_controller.prontuario);
 
 router.get('/detalhesProntuario', Prontuario_controller.detalhesProntuario);
 
+router.get('/criarprontuario', Prontuario_controller.criarProntuario);
+
 
 
 //router.post('/cadastro_cliente', cadastro_cliente_Controller.cadastro_cliente);

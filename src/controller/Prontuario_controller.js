@@ -8,6 +8,10 @@ module.exports = class Prontuario_controller {
         res.render('detalhesProntuario')
     }
 
+    static criarProntuario(req, res ,next) {
+        res.render('criarProntuario')
+    }
+
 
 
 }
