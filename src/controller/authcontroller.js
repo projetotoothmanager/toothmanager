@@ -1,7 +1,5 @@
 const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita e desencript a senha do usuario
-
-//aqui seiria o banco de dados ++++
-//const User = require('models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
+const User = require('../models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
 //*Controller
 module.exports = class AuthController {
@@ -11,13 +9,15 @@ module.exports = class AuthController {
 
     static async loginpost(req, res, next) {
         const {
+            name,
             email,
             senha
         } = req.body
 
+        console.log(name)
+
         // se o usuario esta cadastrado
         //validador_banco => aqui retorna um Json do banco
-        //! Temos que alterar aqui pois estamos sem conexao com o banco
         const validador_banco = await User.findOne({
             where: {
                 email: email

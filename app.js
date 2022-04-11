@@ -7,6 +7,7 @@ const flash = require('express-flash')
 const session = require('express-session'); // uma pasta dinamica
 const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
 const app = express();
+const conn = require('./src/db/conn') // puxamos os dados da configuração do banco de dados
 
 //*importação controller
 const authController = require('./src/controller/authcontroller')
@@ -25,6 +26,9 @@ const Agendamento_Router = require('./src/routes/Agendamento_router');
 const Pagamentos_router = require('./src/routes/Pagamento_routes');
 const Prontuario_router = require('./src/routes/Prontuario_routes');
 
+//* models - config
+const toothmanager = require('./src/models/toothmanager')
+const User = require('./src/models/User')
 
 //* view engine setup
 app.set('views', path.join(__dirname, 'src', 'views'));
@@ -101,5 +105,18 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+
+
+
+
+//reset das tabelas no banco de dados
+// conn
+//     .sync({
+//         force: true
+//     })
+//     .then(() => {
+//         app.listen(3000);
+//     })
+//     .catch((err) => console.log(err));
 
 module.exports = app;
