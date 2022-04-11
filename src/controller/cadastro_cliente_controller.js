@@ -21,8 +21,8 @@ module.exports = class cadastro_cliente_Controller {
             Cidade,
             Estado,
             Cep
-
         } = req.body
+
         // Retiramos todos os caracteres especial
         cpf = cpf.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "");
         const validador_banco_usuario = await User.findOne({
