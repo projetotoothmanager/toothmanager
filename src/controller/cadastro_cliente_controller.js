@@ -65,7 +65,7 @@ module.exports = class cadastro_cliente_Controller {
 
         }
         let reg = /^(\d)+$/
-        if (!reg.test(numero_teste)) {
+        if (!reg.test(numero)) {
             req.flash('message', 'Ola no campo numero nao pode ter letras, qualquer outro dado no complemento!')
             res.render('./cadastro')
             return
