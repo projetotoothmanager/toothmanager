@@ -19,6 +19,8 @@
     align-items: center;
 }
 .container-criarPront form{
+    padding: 8px;
+    border: 1px solid var(--bg-color-ciano);
     display: flex;
     flex-direction: column;
     width: 40rem;
@@ -33,7 +35,11 @@
 }
 .criar-prontuario-button:hover{
     cursor: pointer;
+    border: 1px solid var(--bg-color-ciano);
     background-color:var(--bg-color-light-green);
+}
+.inputs-criar-pront{
+    height: 30px;
 }
 @media (max-width: 800px){
     .container-criarPront{

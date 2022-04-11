@@ -52,3 +52,19 @@ a{
     display: flex;
     color: var(--text-color-black);
 }
+
+.novo-prontuario-button a{
+    align-items: center;
+    height: 30px;
+    width: 300px;
+    background-color: var(--bg-color-ciano);
+    border: none;
+    color: var(--text-color-white);
+    justify-content: center;
+}
+
+.novo-prontuario-button a:hover{
+    cursor: pointer;
+    border: 1px solid var(--bg-color-ciano);
+    background-color: var(--bg-color-light-green);
+}

@@ -47,36 +47,36 @@
 
     <form action="/" method="post">
 
-        <label for=""> id:</label>
-        <input type="text" name="id">
+        <label for=""> ID:</label>
+        <input type="text" name="id" class="inputs-criar-pront">
 
-        <label for="">nome: </label>
-        <input type="text" id="nome">
+        <label for="">Nome: </label>
+        <input type="text" id="nome" class="inputs-criar-pront">
 
-        <label for="atendimento"> agendado para:</label>
-        <input type="text">
+        <label for="atendimento"> Realizado as:</label>
+        <input type="text" class="inputs-criar-pront">
 
         <div>
-
-            <label for=""> Atendimento tipo:</label>
+            <label for="">Atendimento:</label>
             <br>
-            <label for=""> consulta</label>
-            <input type="radio" name="consulta">
-            <label for=""> retorno</label>
-            <input type="radio" name="retorno">
+            <label for="consulta">Consulta</label>
+            <input type="radio" name="atendimento" id="consulta">
+            
+            <label for="retorno"> Retorno</label>
+            <input type="radio" name="atendimento" id="retorno">
         </div>
 
         <label for=""> Dentista:</label>
-        <input type="text">
+        <input type="text" class="inputs-criar-pront">
 
         <label for="">Tratamento:</label>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <textarea name="" id="" cols="30" rows="5" placeholder="Descricao..."></textarea>
 
         <label for="">Extração:</label>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <textarea name="" id="" cols="30" rows="5" placeholder="Descricao..."></textarea>
 
         <label for="">Limpeza:</label>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
+        <textarea name="" id="" cols="30" rows="5" placeholder="Descricao..."></textarea>
 
         <button class="criar-prontuario-button"> Salvar </button>
 

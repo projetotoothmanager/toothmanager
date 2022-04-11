@@ -37,7 +37,7 @@
 .cliente label,span {
     margin-right: 4px;
 }
-.cliente span{
+.cliente label{
     font-weight: 600;
 }
 .cliente button{
@@ -54,6 +54,7 @@
     margin-right: 4px;
 }
 .cliente #btn-edit-cliente:hover{
+    border: 1px solid var(--bg-color-ciano);
     background-color: var(--bg-color-yellow);
 }
 
@@ -65,6 +66,7 @@
     cursor: pointer;
 }
 .cliente #btn-deletar-cliente:hover{
+    border: 1px solid var(--bg-color-ciano);
     background-color: var(--bg-color-red);
 }
 
