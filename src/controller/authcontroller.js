@@ -14,10 +14,8 @@ module.exports = class AuthController {
             senha
         } = req.body
 
-        console.log(name)
+        console.log(email)
 
-        // se o usuario esta cadastrado
-        //validador_banco => aqui retorna um Json do banco
         const validador_banco = await User.findOne({
             where: {
                 email: email
@@ -31,23 +29,26 @@ module.exports = class AuthController {
             return
         }
 
+        //! tera que ser revisto
         // se a senha esta correta
-        const senha_verifica = bcrypt.compareSync(senha, validador_banco.senha)
+        /// const senha_verifica = bcrypt.compareSync(senha, validador_banco.senha)
 
-        if (!senha_verifica) {
+        const validador_senha = await User.findOne({
+            where: {
+                senha: senha
+            }
+        })
+        if (!validador_senha) {
             req.flash('messages', 'A senha esta incorreta');
             res.render('auth/login')
             return
         }
 
-
         //* inicializar session login
         req.session.userid = validador_banco.id
-
         req.flash('message', "login realizado com sucesso!")
-
         req.session.save(() => { //salvamos os dados da session antes de redirect
-            res.redirect('/')
+            res.redirect('/agendamento')
         })
     }
 
