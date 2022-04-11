@@ -14,8 +14,10 @@ module.exports = class cadastro_cliente_Controller {
             celular,
             e_mail,
             Data_Nacimento,
-            Endereco,
-            Bairro,
+            rua,
+            bairro,
+            completo,
+            numero,
             Cidade,
             Estado,
             Cep
@@ -38,7 +40,7 @@ module.exports = class cadastro_cliente_Controller {
         // conferindo se o usuario nao esta cadastrado
         if (validador_banco_usuario) {
             req.flash('message', 'O usuario ja esta cadastro')
-            res.render('./agenda')
+            res.render('./Agendamento_router')
             return
         };
         //conferindo data de nacimento
@@ -48,7 +50,9 @@ module.exports = class cadastro_cliente_Controller {
             res.render('./cadastro')
             return
         };
+        //Verificando o celular
         let celular_verificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('')
+
         if (celular_verificador.length > 12) {
             console.log('erro')
             req.flash('message', 'O numero digitado esta incorreto, maior que 12 digitos')
@@ -60,23 +64,12 @@ module.exports = class cadastro_cliente_Controller {
             return
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        let reg = /^(\d)+$/
+        if (!reg.test(numero_teste)) {
+            req.flash('message', 'Ola no campo numero nao pode ter letras, qualquer outro dado no complemento!')
+            res.render('./cadastro')
+            return
+        }
         // montamos os dados que sera enviado para o banco de dados
         const user = {
             nome,
@@ -85,8 +78,10 @@ module.exports = class cadastro_cliente_Controller {
             celular,
             e_mail,
             Data_Nacimento,
-            Endereco,
-            Bairro,
+            rua,
+            bairro,
+            completo,
+            numero,
             Cidade,
             Estado,
             Cep
@@ -95,7 +90,7 @@ module.exports = class cadastro_cliente_Controller {
         try {
             const createdUser = await User.create(user)
             req.flash('message', "Cadastro realizado com sucesso!")
-            res.redirect('/')
+            res.redirect('./Agendamento_router')
         } catch (err) {
             console.error("Cadastro:", err)
         }
