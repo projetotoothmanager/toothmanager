@@ -9,7 +9,6 @@ module.exports = class AuthController {
 
     static async loginpost(req, res, next) {
         const {
-            name,
             email,
             senha
         } = req.body
@@ -24,7 +23,7 @@ module.exports = class AuthController {
 
         //conferindo se o email esta cadastrado
         if (!validador_banco) {
-            req.flash('messages', 'O E-mail não esta cadastrado');
+            req.flash('messages', 'O E-mail não esta cadastrado'); //! alterar
             res.render('auth/login')
             return
         }
@@ -33,12 +32,8 @@ module.exports = class AuthController {
         // se a senha esta correta
         /// const senha_verifica = bcrypt.compareSync(senha, validador_banco.senha)
 
-        const validador_senha = await User.findOne({
-            where: {
-                senha: senha
-            }
-        })
-        if (!validador_senha) {
+
+        if (validador_banco.senha != senha) {
             req.flash('messages', 'A senha esta incorreta');
             res.render('auth/login')
             return
