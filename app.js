@@ -9,22 +9,14 @@ const FileStore = require('session-file-store')(session); // este modulo salva d
 const app = express();
 const conn = require('./src/db/conn') // puxamos os dados da configuração do banco de dados
 
-//*importação controller
-const authController = require('./src/controller/authcontroller')
-const cadastro_cliente_Controller = require('./src/controller/cadastro_cliente_Controller')
-const Agendamento_Controller = require('./src/controller/Agendamento_controller')
-const Caixa_Controller = require('./src/controller/Pagamento_controller')
-const prontuario_Controller = require('./src/controller/Prontuario_controller')
-const Index_controller = require('./src/controller/Index_controller')
 
 //*import routes
 //aqui importamos todos os dados da pagina
-const Index_routes = require('./src/routes/Index_routes');
-const authRoutes = require('./src/routes/authRoutes');
-const cadastro_cliente_Router = require('./src/routes/cadastro_cliente_Router');
-const Agendamento_Router = require('./src/routes/Agendamento_router');
-const Pagamentos_router = require('./src/routes/Pagamento_routes');
-const Prontuario_router = require('./src/routes/Prontuario_routes');
+const index_routes = require('./src/routes/index_routes');
+const auth_routes = require('./src/routes/auth_routes');
+const cadastro_cliente_router = require('./src/routes/cadastro_cliente_router');
+const agendamento_router = require('./src/routes/agendamento_router');
+const prontuario_router = require('./src/routes/prontuario_routes');
 
 //* models - config
 const toothmanager = require('./src/models/toothmanager')
@@ -80,12 +72,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //* routes
-app.use('/', authRoutes)
-app.use('/', Index_routes);
-app.use('/', cadastro_cliente_Router);
-app.use('/', Agendamento_Router);
-app.use('/', Pagamentos_router);
-app.use('/', Prontuario_router);
+app.use('/', auth_routes)
+app.use('/', index_routes);
+app.use('/', cadastro_cliente_router);
+app.use('/', agendamento_router);
+app.use('/', prontuario_router);
 
 
 //* catch 404 and forward to error handler

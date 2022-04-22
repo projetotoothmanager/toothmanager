@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Prontuario_controller = require('../controller/Prontuario_controller');
+const prontuario_controller = require('../controller/prontuario_controller');
 
 //*routes
-router.get('/listaProntuario', Prontuario_controller.prontuario);
+router.get('/lista_Prontuario', prontuario_controller.prontuario);
 
-router.get('/detalhesProntuario', Prontuario_controller.detalhesProntuario);
+router.get('/detalhes_Prontuario', prontuario_controller.detalhes_prontuario);
 
-router.get('/criarprontuario', Prontuario_controller.criarProntuario);
+router.get('/criar_prontuario', prontuario_controller.criar_prontuario);
 
 
 

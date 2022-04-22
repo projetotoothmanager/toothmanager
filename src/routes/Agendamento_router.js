@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Agendamento_Controller = require('../controller/Agendamento_controller');
+const agendamento_controller = require('../controller/agendamento_controller');
 
 //*routes
-router.get('/agendamento', Agendamento_Controller.agendamento)
+router.get('/agendamento', agendamento_controller.agendamento)
 
 
 module.exports = router;

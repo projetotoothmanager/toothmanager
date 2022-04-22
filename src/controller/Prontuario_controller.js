@@ -1,17 +1,17 @@
-module.exports = class Prontuario_controller {
+module.exports = class prontuario_controller {
 
     static prontuario(req, res, next) {
-        res.render('listaProntuario')
-    }
+        res.render('lista_prontuario')
+    };
 
-    static detalhesProntuario(req, res, next) {
-        res.render('detalhesProntuario')
-    }
+    static detalhes_prontuario(req, res, next) {
+        res.render('detalhes_prontuario')
+    };
 
-    static criarProntuario(req, res, next) {
+    static criar_prontuario(req, res, next) {
 
-        res.render('criarProntuario')
+        res.render('criar_prontuario')
 
-    }
+    };
 
-}
+};

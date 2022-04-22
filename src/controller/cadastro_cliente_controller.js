@@ -1,11 +1,11 @@
 const User = require('../models/User')
 
 //*Controller
-module.exports = class cadastro_cliente_Controller {
+module.exports = class cadastro_cliente_controller {
 
     static cadastro_cliente(req, res, next) {
         res.render('cadastro')
-    }
+    };
 
 
     static async cadastro_cliente_post(req, res, next) {
@@ -32,7 +32,7 @@ module.exports = class cadastro_cliente_Controller {
             req.flash('message', 'Favor digitar o nome completo')
             res.render('./cadastro')
             return
-        }
+        };
 
 
         // Retiramos todos os caracteres especial
@@ -46,7 +46,7 @@ module.exports = class cadastro_cliente_Controller {
             req.flash('message', 'Cpf esta com numero de caracteres maior')
             res.render('./cadastro')
             return
-        }
+        };
 
         const validador_banco_usuario = await User.findOne({
             where: {
@@ -59,7 +59,7 @@ module.exports = class cadastro_cliente_Controller {
             req.flash('message', 'O usuario ja esta cadastro')
             res.render('./cadastro')
             return
-        }
+        };
 
         let data_us = Data_Nacimento.split("-")
         let data_br = `${data_us[2]}/${data_us[1]}/${data_us[0]}`
@@ -83,13 +83,15 @@ module.exports = class cadastro_cliente_Controller {
             res.render('./cadastro')
             return
 
-        }
+        };
+
         let regex_numero = /^(\d)+$/
         if (!regex_numero.test(numero)) {
             req.flash('message', 'Ola no campo numero nao pode ter letras, qualquer outro dado no complemento!')
             res.render('./cadastro')
             return
-        }
+        };
+
         let cep_database = Cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "")
         let regx_cep = Cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('').length
 
@@ -101,7 +103,7 @@ module.exports = class cadastro_cliente_Controller {
             req.flash('message', 'Ola o CEP esta faltando numero!')
             res.render('./cadastro')
             return
-        }
+        };
 
         //montamos os dados que sera enviado para o banco de dados
 
@@ -119,7 +121,7 @@ module.exports = class cadastro_cliente_Controller {
             Cidade,
             Estado,
             Cep: cep_database
-        }
+        };
 
         // criação de dados no banco de dados
         try {
@@ -129,9 +131,9 @@ module.exports = class cadastro_cliente_Controller {
 
         } catch (err) {
             console.error("Cadastro:", err)
-        }
+        };
 
-    }
+    };
 
 
-}
+};
