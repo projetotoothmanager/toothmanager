@@ -5,7 +5,7 @@ const {
 const sequelize = new Sequelize("toothmanager", "root", '', { // criação  do banco de dados
     host: "localhost",
     dialect: "mysql"
-})
+});
 
 try {
     sequelize.authenticate()
@@ -13,6 +13,6 @@ try {
 
 } catch (err) {
     console.log("nao foi possivel Authenticated" + err.message)
-}
+};
 
 module.exports = sequelize

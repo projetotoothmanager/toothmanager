@@ -10,6 +10,14 @@
     <!-- SCRPIT -->
     <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
 
+   <div class="flash">
+        <% if ( messages.message ) { %>
+    <div class="message"><%= messages.message %>
+    </div>
+   <% } %>
+
+
+
     <title>Toothmanager</title>
 </head>
 <body>
@@ -26,6 +34,9 @@
         <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
         <main>
         <!-- Busca -->
+
+
+
         <div class="search-container">
             <div class="title-pagina">
                 <h1>Cadastro</h1>
@@ -43,37 +54,37 @@
         <!-- REFERENCIA -->
 
         <div class="container-cadastro">
-            <form action="" method="post">
+            <form action="/cadastro_cliente" method="post">
 
                 <div class="dados-pessoais">
                     <h2>Dados Pessoais</h2>
 
                         <label for="nome">Nome</label>
-                        <input type="text" name="Nome" id="Nome" placeholder="Nome Completo" required>
+                        <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required>
 
 
                         <label for="CPF">CPF</label>
-                        <input type="text" name="CPF" id="CPF" placeholder="000 000 000 00" required>
+                        <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required>
 
 
                         <label for="">Sexo</label>
                         <label for="mas">Masculino</label>
-                        <input type="radio" name="genero" id="mas">
+                        <input type="radio" name="sexo" VALUE="Masculino" id="mas">
 
                         <label for="fem">Feminino</label>
-                        <input type="radio" name="genero" id="fem">
-                        <br>
+                        <input type="radio" name="sexo" VALUE="Feminino"  id="fem">
+
 
                         <label for="celular">Celular</label>
-                        <input type="text" id="celular-cadastro" required>
+                        <input type="text" name="celular" id="celular-cadastro">
 
 
                         <label for="">E-mail</label>
-                        <input type="email" id="email-cadastro">
+                        <input type="email" name="e_mail" id="email-cadastro">
 
 
                         <label for="">Data de Nascimento</label>
-                        <input type="date">
+                        <input name="Data_Nacimento" type="date">
 
 
                 </div>
@@ -82,63 +93,64 @@
                     <h2>Endereço</h2>
 
                         <label for="endereço">Rua</label>
-                        <input type="text" placeholder="Rua ou Logradouro" id="endereco">
+                        <input type="text" name="rua"  placeholder="Rua ou Logradouro" id="endereco">
 
 
                         <label for="bairro">Bairro</label>
-                        <input type="text" placeholder="Bairro" id="bairro">
+                        <input type="text" name="bairro"  placeholder="Bairro" id="bairro">
 
-                        <label for="bairro">Numero</label>
-                        <input type="text" placeholder="256" id="bairro">
+                        <label for="Numero">Numero</label>
+                        <input type="text"  name="numero" placeholder="256" id="bairro">
 
-                        <label for="bairro">Complemento</label>
-                        <input type="text" placeholder="" id="bairro">
+                        <label for="Complemento">Complemento</label>
+                        <input type="text" name="completo"  placeholder="" id="bairro">
 
 
                         <label for="cidade">Cidade</label>
-                        <input type="text" placeholder="Cidade" id="cidade">
-                        <label for="estado" id="uf">Estado</label>
+                        <input type="text"  name="Cidade" placeholder="Cidade" id="cidade">
 
-                        <select name="estado" id="estado">
+                        <label for="estado"  id="uf">Estado</label>
+
+                        <select name="Estado" id="estado">
 
                             <option value="0">Selecione</option>
                             <optgroup label="Norte"></optgroup>
-                            <option value="1">AC</option>
-                            <option value="2">AM</option>
-                            <option value="3">AP</option>
-                            <option value="4">PA</option>
-                            <option value="5">RO</option>
-                            <option value="6">RR</option>
-                            <option value="7">TO</option>
+                            <option value="AC">AC</option>
+                            <option value="AM">AM</option>
+                            <option value="AP">AP</option>
+                            <option value="PA">PA</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="TO">TO</option>
                             <optgroup label="Nordeste"></optgroup>
-                            <option value="8">MA</option>
-                            <option value="9">PI</option>
-                            <option value="10">CE</option>
-                            <option value="11">RN</option>
-                            <option value="12">PB</option>
-                            <option value="13">PE</option>
-                            <option value="14">AL</option>
-                            <option value="15">SE</option>
-                            <option value="16">BA</option>
+                            <option value="MA">MA</option>
+                            <option value="PI">PI</option>
+                            <option value="CE">CE</option>
+                            <option value="RN">RN</option>
+                            <option value="PB">PB</option>
+                            <option value="PE">PE</option>
+                            <option value="AL">AL</option>
+                            <option value="SE">SE</option>
+                            <option value="BA">BA</option>
                             <optgroup label="Centro-Oeste"></optgroup>
-                            <option value="17">MT</option>
-                            <option value="18">DF</option>
-                            <option value="19">GO</option>
-                            <option value="20">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="DF">DF</option>
+                            <option value="GO">GO</option>
+                            <option value="MS">MS</option>
                             <optgroup label="Sul"></optgroup>
-                            <option value="21">PR</option>
-                            <option value="22">SC</option>
-                            <option value="23">RS</option>
+                            <option value="PR">PR</option>
+                            <option value="SC">SC</option>
+                            <option value="RS">RS</option>
                             <optgroup label="Suldeste"></optgroup>
-                            <option value="24">MG</option>
-                            <option value="25">SP</option>
-                            <option value="26">RJ</option>
-                            <option value="27">ES</option>
+                            <option value="MG">MG</option>
+                            <option value="SP">SP</option>
+                            <option value="RJ">RJ</option>
+                            <option value="ES">ES</option>
                         </select>
 
-<!--
+
                         <label for="cep">CEP</label>
-                        <input type="text" placeholder="12345-000" id="CEP"> -->
+                        <input type="text" name="Cep"  placeholder="12345-000" id="CEP">
 
                     </div>
 

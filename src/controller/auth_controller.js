@@ -2,10 +2,10 @@ const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita
 const User = require('../models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
 //*Controller
-module.exports = class AuthController {
+module.exports = class auth_controller {
     static login(req, res, next) {
         res.render('auth/login')
-    }
+    };
 
     static async loginpost(req, res, next) {
         const {
@@ -19,14 +19,14 @@ module.exports = class AuthController {
             where: {
                 email: email
             }
-        })
+        });
 
         //conferindo se o email esta cadastrado
         if (!validador_banco) {
             req.flash('messages', 'O E-mail não esta cadastrado'); //! alterar
             res.render('auth/login')
             return
-        }
+        };
 
         //! tera que ser revisto
         // se a senha esta correta
@@ -37,7 +37,7 @@ module.exports = class AuthController {
             req.flash('messages', 'A senha esta incorreta');
             res.render('auth/login')
             return
-        }
+        };
 
         //* inicializar session login
         req.session.userid = validador_banco.id
@@ -45,7 +45,7 @@ module.exports = class AuthController {
         req.session.save(() => { //salvamos os dados da session antes de redirect
             res.redirect('/agendamento')
         })
-    }
+    };
 
 
     //* Função de logout
@@ -53,6 +53,6 @@ module.exports = class AuthController {
 
         req.session.destroy() // apagamos a ssesion dele dentro do navegador.
         res.redirect('/login')
-    }
+    };
 
-}
+};
