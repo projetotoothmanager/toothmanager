@@ -1,3 +1,5 @@
+const Consulta = require('../models/Consulta')
+
 module.exports = class Prontuario_controller {
 
     static prontuario(req, res, next) {

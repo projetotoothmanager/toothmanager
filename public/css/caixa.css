@@ -1,0 +1,107 @@
+
+section{
+  display: flex;
+  background-color: #278CBA;
+  width: 85%;
+  justify-content: center;
+}
+.input-busca{
+  width: 150px;
+  height: 20px;
+  background-color: #203B49;
+  border: 2px solid #278CBA;
+}
+
+.container-caixa{
+  width: 70%;
+  margin-top: 80px;
+}
+.busca{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  
+}
+
+.busca input{
+  width: 100%;
+  height: 34px;
+  padding-left: 6px;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 40px;
+  background-color: #D3DDE2;
+}
+
+.busca img{
+  width: 34px;
+  height: 34px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-botoes{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.datas{
+  display: flex;
+  gap: 20px;
+}
+.datas div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.datas input{
+  height: 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: #D3DDE2;
+}
+
+.datas input:hover{
+  cursor: pointer;
+}
+.botao{
+  justify-content: center;
+  align-items: center;
+}
+.botao button{
+  font-weight: 700;
+  color: #002915;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00C767;
+}
+.botao button:hover{
+  cursor: pointer;
+  background-color: #60e7a6;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #dfdfdf;
+}
+th{
+  background-color: #D3DDE2;
+}
+
+td, th {
+  border: 1px solid #444444;
+  text-align: left;
+  padding: 8px;
+}
