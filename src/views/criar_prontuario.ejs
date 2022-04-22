@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
         <!-- button-menu-hamburguer -->
         <input type="checkbox" id="check">
         <label for="check" class="menu-hamburgue">
@@ -32,8 +33,8 @@
             <div>
                 <img src="/img/logo.png" alt="logo Toothmanager">
             </div>
-    
-    
+
+
           <form action="#" method="get">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -42,6 +43,10 @@
         <!-- REFERENCIA -->
 
 <!-- CRIAR PRONTUARIO -->
+     <% if ( messages.message ) { %>
+    <div class="flash"><%= messages.message %>
+    </div>
+   <% } %>
 
 <div class="container-criarPront">
 
@@ -61,7 +66,7 @@
             <br>
             <label for="consulta">Consulta</label>
             <input type="radio" name="atendimento" id="consulta">
-            
+
             <label for="retorno"> Retorno</label>
             <input type="radio" name="atendimento" id="retorno">
         </div>

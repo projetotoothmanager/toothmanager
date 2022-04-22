@@ -46,3 +46,15 @@
         margin-left: 5rem;
     }
 }
+
+/* flash */
+.flash {
+  padding: 1em;
+  color: #f6f3f3;
+  background-color: #f60505a8;
+  border: 1px solid #ff0b0b;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2em;
+  max-width: 60%;
+}

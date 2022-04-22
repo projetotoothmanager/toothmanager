@@ -1,5 +1,16 @@
 /* agenda */
 
+
+.flash {
+  padding: 1em;
+  color: #f6f3f3;
+  background-color: #f60505a8;
+  border: 1px solid #ff0b0b;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 2em;
+  max-width: 60%;
+}
 .container-agenda{
     padding: 4px;
 }
@@ -76,7 +87,7 @@
     border: 1px solid var(--bg-color-ciano);
     padding: 4px;
     height: 30px;
-    
+
 }
 .container-agenda{
     padding: 4px;
@@ -86,7 +97,9 @@
     border: 1px solid var(--bg-color-ciano);
     padding: 4px;
 }
+
 }
+
 @media (max-width: 860px) {
     .container-agenda{
         margin-left: 5rem;

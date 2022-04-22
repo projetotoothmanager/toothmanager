@@ -1,4 +1,4 @@
-const User = require('../models/User')
+const cadastro_cliente = require('../models/cadastro_cliente')
 
 //*Controller
 module.exports = class cadastro_cliente_controller {
@@ -125,7 +125,7 @@ module.exports = class cadastro_cliente_controller {
 
         // criação de dados no banco de dados
         try {
-            const createdUser = await User.create(user)
+            const createdUser = await User.create(cadastro_cliente)
             req.flash('message', "Cadastro realizado com sucesso!")
             res.render('./cadastro')
 
