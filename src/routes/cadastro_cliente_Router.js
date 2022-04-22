@@ -4,7 +4,7 @@ const cadastro_cliente_Controller = require('../controller/cadastro_cliente_cont
 
 //*routes
 router.get('/cadastro', cadastro_cliente_Controller.cadastro_cliente)
-//router.post('/cadastro_cliente', cadastro_cliente_Controller.cadastro_cliente);
+router.post('/cadastro_cliente', cadastro_cliente_Controller.cadastro_cliente_post);
 
 
 
