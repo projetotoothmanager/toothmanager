@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="/css/agenda.css">
     <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
     <title>Toothmanager</title>
+
 </head>
+
+         <% if ( messages.message ) { %>
+    <div class="flash"><%= messages.message %>
+    </div>
+   <% } %>
 <body>
     <!-- button-menu-hamburguer -->
     <input type="checkbox" id="check">
@@ -31,15 +37,17 @@
                 <img src="/img/logo.png" alt="logo Toothmanager">
             </div>
 
-    
-    
+
+
           <form action="#" method="get">
             <input type="text" placeholder="Buscar.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
         <!-- AGENDA -->
-        
+
+
+
         <div class="container-agenda">
             <form action="#" method="post">
                 <label for="hora" name="hora">Hora:</label>

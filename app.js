@@ -20,6 +20,7 @@ const prontuario_router = require('./src/routes/prontuario_routes');
 
 //* models - config
 const toothmanager = require('./src/models/toothmanager')
+const cadastro_cliente = require('./src/models/cadastro_cliente')
 const User = require('./src/models/User')
 
 //* view engine setup
