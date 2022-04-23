@@ -7,7 +7,6 @@ module.exports = class cadastro_cliente_controller {
         res.render('cadastro')
     };
 
-
     static async cadastro_cliente_post(req, res, next) {
         const {
             nome,
@@ -22,9 +21,8 @@ module.exports = class cadastro_cliente_controller {
             numero,
             Cidade,
             Estado,
-            Cep
+            cep
         } = req.body
-
 
         // conferimos se o usuario digito o nome e sobrenome
         if (nome.split(" ").length <= 1) {
@@ -33,7 +31,6 @@ module.exports = class cadastro_cliente_controller {
             res.render('./cadastro')
             return
         };
-
 
         // Retiramos todos os caracteres especial
         let cpf_analise = cpf.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "");
@@ -48,7 +45,7 @@ module.exports = class cadastro_cliente_controller {
             return
         };
 
-        const validador_banco_usuario = await User.findOne({
+        const validador_banco_usuario = await cadastro_cliente.findOne({
             where: {
                 cpf: cpf_analise
             }
@@ -92,8 +89,10 @@ module.exports = class cadastro_cliente_controller {
             return
         };
 
-        let cep_database = Cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "")
-        let regx_cep = Cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('').length
+
+        let cep_database = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "")
+
+        let regx_cep = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('').length
 
         if (regx_cep > 8) {
             req.flash('message', 'Ola o CEP esta com numero a mais!')
@@ -107,7 +106,7 @@ module.exports = class cadastro_cliente_controller {
 
         //montamos os dados que sera enviado para o banco de dados
 
-        const user = {
+        const dados = {
             nome,
             cpf: cpf_analise,
             sexo,
@@ -120,12 +119,12 @@ module.exports = class cadastro_cliente_controller {
             numero,
             Cidade,
             Estado,
-            Cep: cep_database
+            cep: cep_database
         };
 
         // criação de dados no banco de dados
         try {
-            const createdUser = await User.create(cadastro_cliente)
+            const createdUser = await cadastro_cliente.create(dados)
             req.flash('message', "Cadastro realizado com sucesso!")
             res.render('./cadastro')
 

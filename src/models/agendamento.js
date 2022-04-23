@@ -4,12 +4,16 @@ const {
 
 const db = require('../db/conn') // conexao com o banco de dados
 
-const user = db.define('user', {
-    email: {
+const agendamento = db.define('agendamento', {
+    hora: {
         type: DataTypes.STRING,
         require: true
     },
-    senha: {
+    data: {
+        type: DataTypes.STRING,
+        require: true
+    },
+    nome: {
         type: DataTypes.STRING,
         require: true
     }
@@ -18,4 +22,4 @@ const user = db.define('user', {
 
 
 
-module.exports = user;
+module.exports = agendamento;

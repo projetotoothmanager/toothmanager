@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const flash = require('express-flash')
 const session = require('express-session'); // uma pasta dinamica
+const cors = require('cors')
 const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
 const app = express();
 const conn = require('./src/db/conn') // puxamos os dados da configuração do banco de dados
@@ -21,7 +22,8 @@ const prontuario_router = require('./src/routes/prontuario_routes');
 //* models - config
 const toothmanager = require('./src/models/toothmanager')
 const cadastro_cliente = require('./src/models/cadastro_cliente')
-const User = require('./src/models/User')
+const user = require('./src/models/user')
+const agendamento = require('./src/models/agendamento')
 
 //* view engine setup
 app.set('views', path.join(__dirname, 'src', 'views'));
@@ -29,6 +31,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 
 //*leito de json
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
@@ -101,7 +104,7 @@ app.use(function (err, req, res, next) {
 
 
 
-// // reset das tabelas no banco de dados
+//reset das tabelas no banco de dados
 // conn
 //   .sync({
 //     force: true

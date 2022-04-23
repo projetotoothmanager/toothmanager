@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt') // puxamos os dados da biblioteca que encripita e desencript a senha do usuario
-const User = require('../models/User') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
+const user = require('../models/user') // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
 //*Controller
 module.exports = class auth_controller {
@@ -15,7 +15,7 @@ module.exports = class auth_controller {
 
         console.log(email)
 
-        const validador_banco = await User.findOne({
+        const validador_banco = await user.findOne({
             where: {
                 email: email
             }

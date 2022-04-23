@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,23 +14,24 @@
 
     <title>Toothmanager</title>
 </head>
+
 <body>
 
 
 
 
-        <!-- button-menu-hamburguer -->
-        <input type="checkbox" id="check">
-        <label for="check" class="menu-hamburgue">
-            <i class="fas fa-bars" id="btn"></i>
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
+    <!-- button-menu-hamburguer -->
+    <input type="checkbox" id="check">
+    <label for="check" class="menu-hamburgue">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
 
-        <!-- sidebar -->
-        <%- include('./partials/sidebar')%>
+    <!-- sidebar -->
+    <%- include('./partials/sidebar')%>
 
-        <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
-        <main>
+    <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
+    <main>
         <!-- Busca -->
 
 
@@ -43,17 +45,17 @@
             </div>
 
 
-          <form action="#" method="get">
-            <input type="text" placeholder="Buscar.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+            <form action="#" method="get">
+                <input type="text" placeholder="Buscar.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
         <!-- REFERENCIA -->
 
         <% if ( messages.message ) { %>
-    <div class="flash"><%= messages.message %>
-    </div>
-   <% } %>
+        <div class="flash"><%= messages.message %>
+        </div>
+        <% } %>
 
         <div class="container-cadastro">
             <form action="/cadastro_cliente" method="post">
@@ -61,111 +63,112 @@
                 <div class="dados-pessoais">
                     <h2>Dados Pessoais</h2>
 
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required>
 
 
-                        <label for="CPF">CPF</label>
-                        <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required>
+                    <label for="CPF">CPF</label>
+                    <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required>
 
 
-                        <label for="">Sexo</label>
-                        <label for="mas">Masculino</label>
-                        <input type="radio" name="sexo" VALUE="Masculino" id="mas">
+                    <label for="">Sexo</label>
+                    <label for="mas">Masculino</label>
+                    <input type="radio" name="sexo" VALUE="Masculino" id="mas">
 
-                        <label for="fem">Feminino</label>
-                        <input type="radio" name="sexo" VALUE="Feminino"  id="fem">
-
-
-                        <label for="celular">Celular</label>
-                        <input type="text" name="celular" id="celular-cadastro">
+                    <label for="fem">Feminino</label>
+                    <input type="radio" name="sexo" VALUE="Feminino" id="fem">
 
 
-                        <label for="">E-mail</label>
-                        <input type="email" name="e_mail" id="email-cadastro">
+                    <label for="celular">Celular</label>
+                    <input type="text" name="celular" id="celular-cadastro">
 
 
-                        <label for="">Data de Nascimento</label>
-                        <input name="Data_Nacimento" type="date">
+                    <label for="">E-mail</label>
+                    <input type="email" name="e_mail" id="email-cadastro">
+
+
+                    <label for="">Data de Nascimento</label>
+                    <input name="Data_Nacimento" type="date">
 
 
                 </div>
                 <!-- ============== -->
+
                 <div class="endereco">
                     <h2>Endereço</h2>
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" placeholder="12345-000" id="CEP">
 
-                        <label for="endereço">Rua</label>
-                        <input type="text" name="rua"  placeholder="Rua ou Logradouro" id="endereco">
-
-
-                        <label for="bairro">Bairro</label>
-                        <input type="text" name="bairro"  placeholder="Bairro" id="bairro">
-
-                        <label for="Numero">Numero</label>
-                        <input type="text"  name="numero" placeholder="256" id="bairro">
-
-                        <label for="Complemento">Complemento</label>
-                        <input type="text" name="completo"  placeholder="" id="bairro">
+                    <label for="endereço">Rua</label>
+                    <input type="text" name="rua" placeholder="Rua ou Logradouro" id="endereco">
 
 
-                        <label for="cidade">Cidade</label>
-                        <input type="text"  name="Cidade" placeholder="Cidade" id="cidade">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" name="bairro" placeholder="Bairro" id="bairro">
 
-                        <label for="estado"  id="uf">Estado</label>
+                    <label for="Numero">Numero</label>
+                    <input type="text" name="numero" placeholder="256" id="bairro">
 
-                        <select name="Estado" id="estado">
-
-                            <option value="0">Selecione</option>
-                            <optgroup label="Norte"></optgroup>
-                            <option value="AC">AC</option>
-                            <option value="AM">AM</option>
-                            <option value="AP">AP</option>
-                            <option value="PA">PA</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="TO">TO</option>
-                            <optgroup label="Nordeste"></optgroup>
-                            <option value="MA">MA</option>
-                            <option value="PI">PI</option>
-                            <option value="CE">CE</option>
-                            <option value="RN">RN</option>
-                            <option value="PB">PB</option>
-                            <option value="PE">PE</option>
-                            <option value="AL">AL</option>
-                            <option value="SE">SE</option>
-                            <option value="BA">BA</option>
-                            <optgroup label="Centro-Oeste"></optgroup>
-                            <option value="MT">MT</option>
-                            <option value="DF">DF</option>
-                            <option value="GO">GO</option>
-                            <option value="MS">MS</option>
-                            <optgroup label="Sul"></optgroup>
-                            <option value="PR">PR</option>
-                            <option value="SC">SC</option>
-                            <option value="RS">RS</option>
-                            <optgroup label="Suldeste"></optgroup>
-                            <option value="MG">MG</option>
-                            <option value="SP">SP</option>
-                            <option value="RJ">RJ</option>
-                            <option value="ES">ES</option>
-                        </select>
+                    <label for="Complemento">Complemento</label>
+                    <input type="text" name="completo" placeholder="" id="bairro">
 
 
-                        <label for="cep">CEP</label>
-                        <input type="text" name="Cep"  placeholder="12345-000" id="CEP">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" name="Cidade" placeholder="Cidade" id="cidade">
 
-                    </div>
+                    <label for="estado" id="uf">Estado</label>
+
+                    <select name="Estado" id="estado">
+
+                        <option value="0">Selecione</option>
+                        <optgroup label="Norte"></optgroup>
+                        <option value="AC">AC</option>
+                        <option value="AM">AM</option>
+                        <option value="AP">AP</option>
+                        <option value="PA">PA</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="TO">TO</option>
+                        <optgroup label="Nordeste"></optgroup>
+                        <option value="MA">MA</option>
+                        <option value="PI">PI</option>
+                        <option value="CE">CE</option>
+                        <option value="RN">RN</option>
+                        <option value="PB">PB</option>
+                        <option value="PE">PE</option>
+                        <option value="AL">AL</option>
+                        <option value="SE">SE</option>
+                        <option value="BA">BA</option>
+                        <optgroup label="Centro-Oeste"></optgroup>
+                        <option value="MT">MT</option>
+                        <option value="DF">DF</option>
+                        <option value="GO">GO</option>
+                        <option value="MS">MS</option>
+                        <optgroup label="Sul"></optgroup>
+                        <option value="PR">PR</option>
+                        <option value="SC">SC</option>
+                        <option value="RS">RS</option>
+                        <optgroup label="Suldeste"></optgroup>
+                        <option value="MG">MG</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="ES">ES</option>
+                    </select>
+
 
                 </div>
-                <div class="button-cadastrar">
-                    <button type="submit" id="cadastro">Cadastrar</button>
-                </div>
 
-                </form>
+        </div>
+        <div class="button-cadastrar">
+            <button type="submit" id="cadastro">Cadastrar</button>
+        </div>
+
+        </form>
 
         </div>
 
-        </main>
+    </main>
 
 </body>
+
 </html>
