@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,10 +12,11 @@
 
 </head>
 
-         <% if ( messages.message ) { %>
-    <div class="flash"><%= messages.message %>
-    </div>
-   <% } %>
+<% if ( messages.message ) { %>
+<div class="flash"><%= messages.message %>
+</div>
+<% } %>
+
 <body>
     <!-- button-menu-hamburguer -->
     <input type="checkbox" id="check">
@@ -39,24 +41,46 @@
 
 
 
-          <form action="#" method="get">
-            <input type="text" placeholder="Buscar.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
+            <form action="#" method="get">
+                <input type="text" placeholder="Buscar.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
         <!-- AGENDA -->
 
 
 
         <div class="container-agenda">
-            <form action="#" method="post">
-                <label for="hora" name="hora">Hora:</label>
-                <input type="text" id="hora">
+            <form action="./form_agendamento" method="post">
+
+                <!-- <label for="hora" name="hora">Hora:</label>
+                <input type="time" id="hora"required>
+
                 <label for="data" name="data">Data:</label>
-                <input type="text" id="data">
+                <input type="date" id="data"required>
+
                 <label for="nome" name="nome">Nome:</label>
-                <input type="text" id="nome">
-                <button type="submit" id="btn-agenda-submit">Adicionar</button>
+                <input type="text" id="nome" required>
+
+                <button type="submit" id="btn-agenda-submit">Adicionar</button> -->
+
+
+
+                <div class="container-agenda">
+                    <span>Hora:</span>
+                    <input type="time" name='hora' required>
+                </div>
+
+                <div class="container-agenda">
+                    <span>Data:</span>
+                    <input type="date" name='data' required>
+                </div>
+                <div class="container-agenda">
+                    <span>Nome:</span>
+                    <input type="text" name='nome' required>
+                </div>
+                <button type="submit" id="Salvar" class="container-agenda"> Adicionar </button>
+
             </form>
             <br>
 
@@ -76,4 +100,5 @@
     </main>
 
 </body>
+
 </html>

@@ -7,11 +7,13 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
@@ -22,6 +24,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
+    "run": "^1.4.0",
     "sequelize": "^6.18.0",
     "session-file-store": "^1.5.0"
   }

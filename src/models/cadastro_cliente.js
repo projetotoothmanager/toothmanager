@@ -53,7 +53,7 @@ const cadastro_cliente = db.define('cadastro_cliente', {
         type: DataTypes.STRING,
         require: true
     },
-    Cep: {
+    cep: {
         type: DataTypes.STRING,
         require: true
     }
