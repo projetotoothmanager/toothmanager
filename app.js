@@ -105,13 +105,12 @@ app.use(function (err, req, res, next) {
 
 
 //reset das tabelas no banco de dados
-// conn
-//   .sync({
-//     force: true
-//   })
-//   .then(() => {
-//     app.listen(3000);
-//   })
-//   .catch((err) => console.log(err));
+ conn
+  //  .sync({force: true})
+   .sync()  
+  //  .then(() => {
+  //    app.listen(3000);
+  //  })
+  //  .catch((err) => console.log(err));
 
 module.exports = app;
