@@ -43,10 +43,10 @@ module.exports = class agendamento_controller {
         let difference = (day2 - day1);
         let days = parseInt(difference / -(3600 * 1000 * 24));
 
-        //! tenho que validar a hora tambem
+
 
         if (days < 0) {
-            req.flash('message', 'Data agendada ja passou!')
+            req.flash('message', 'Data desejada ja passou!')
             res.render('./agendamento')
             return
         }

@@ -40,11 +40,15 @@ module.exports = class auth_controller {
         };
 
         //* inicializar session login
-        req.session.userid = validador_banco.id
-        req.flash('message', "login realizado com sucesso!")
-        req.session.save(() => { //salvamos os dados da session antes de redirect
-            res.redirect('/agendamento')
-        })
+        try {
+            req.session.userid = validador_banco.id
+            req.flash('message', "login realizado com sucesso!")
+            req.session.save(() => { //salvamos os dados da session antes de redirect
+                res.redirect('/agendamento')
+            })
+        } catch (err) {
+            console.error('Erro de salva session ', err)
+        }
     };
 
 
@@ -54,5 +58,6 @@ module.exports = class auth_controller {
         req.session.destroy() // apagamos a ssesion dele dentro do navegador.
         res.redirect('/login')
     };
+
 
 };
