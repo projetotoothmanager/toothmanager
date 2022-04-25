@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToothManager</title>
+</head>
+<body>
+    <section>
+        <div class="auth-container">
+            <h2>Registrar</h2>
+            <form action="/registrar" method="post">
+            <div class="form-control">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-control">
+                <label for="name">E-mail:</label>
+                <input type="email" name="email" placeholder="email@email.com" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="***********" required>
+            </div>
+            <div class="form-control">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" name="confirmpassword" placeholder="***********" required>
+            </div>
+            <input type="submit" value="Cadastrar">
+            <br>
+            <p>Já tem conta? <a href="/login">Clique aqui!</a></p>
+            
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

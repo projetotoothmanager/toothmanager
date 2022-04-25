@@ -165,7 +165,10 @@ main{
     background-color: var(--bg-color-ciano);
     color: var(--text-color-white);
 }
-
+/* FLASH MESSAGE */
+.flash{
+    position: float;
+}
 /*--RESPONSIVIDADE inicio--*/
 @media(max-width: 860px){
 
