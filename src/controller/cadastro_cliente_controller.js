@@ -1,4 +1,4 @@
-const cadastroCliente = require('../models/cadastro_cliente')
+const cadastro_cliente = require('../models/cadastro_cliente')
 
 //*Controller
 module.exports = class cadastro_cliente_controller {

@@ -43,6 +43,10 @@
         </div>
 
         <!-- Prontuario -->
+          <% if ( messages.message ) { %>
+        <div class="flash"><%= messages.message %>
+        </div>
+        <% } %>
 
    <div class="btn-voltar">
     <a href="/cadastro">Voltar</a>
