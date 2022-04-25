@@ -11,7 +11,7 @@
 <body>
         <% if ( messages.message ) { %>
     <div class="flash"><%= messages.message %>
-    </div>
+</div>
    <% } %>
 
     <section>
@@ -22,7 +22,7 @@
         <div class="contentBx">
             <div class="formBx">
                 <h2>Login</h2>
-                <form action = "\login" method = "POST">
+                <form action = "/login" method = "POST">
 
 
                     <div class="inputBx">
@@ -31,10 +31,13 @@
                     </div>
                     <div class="inputBx">
                         <span>Senha</span>
-                        <input type="password" name='senha'placeholder="Digite a sua senha">
+                        <input type="password" name='password'placeholder="Digite a sua senha">
                     </div>
                     <div class="remember">
                         <label><input type="checkbox" name=''> Lembrar-me?</label>
+                    </div>
+                    <div>
+                        <p>Não tem uma conta? <a href="/registrar">Clique aqui</a></p>
                     </div>
                     <div class="inputBx">
                         <input type="submit" value='Login'>

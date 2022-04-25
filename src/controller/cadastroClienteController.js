@@ -1,13 +1,13 @@
-const cadastro_cliente = require('../models/cadastro_cliente')
+const cadastroCliente = require('../models/cadastroCliente')
 
 //*Controller
-module.exports = class cadastro_cliente_controller {
+module.exports = class cadastroClienteController {
 
-    static cadastro_cliente(req, res, next) {
+    static cadastroCliente(req, res, next) {
         res.render('cadastro')
     };
 
-    static async cadastro_cliente_post(req, res, next) {
+    static async cadastroClientePost(req, res, next) {
         const {
             nome,
             cpf,

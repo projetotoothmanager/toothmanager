@@ -1,10 +1,8 @@
-const {
-    DataTypes
-} = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
+const { DataTypes } = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
 
 const db = require('../db/conn') // conexao com o banco de dados
 
-const cadastro_cliente = db.define('cadastro_cliente', {
+const cadastroCliente = db.define('cadastroCliente', {
     nome: {
         type: DataTypes.STRING,
         require: true
@@ -62,4 +60,4 @@ const cadastro_cliente = db.define('cadastro_cliente', {
 
 
 
-module.exports = cadastro_cliente;
+module.exports = cadastroCliente;

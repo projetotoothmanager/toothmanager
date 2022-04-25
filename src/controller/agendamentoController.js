@@ -1,7 +1,7 @@
 const agendamento = require("../models/agendamento");
 
 //*Controller
-module.exports = class agendamento_controller {
+module.exports = class agendamentoController {
 
     static agendamento(req, res, next) {
         res.render('./agendamento')

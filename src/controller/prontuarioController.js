@@ -1,7 +1,7 @@
 const prontuario = require('../models/prontuario')
 
 
-module.exports = class prontuario_controller {
+module.exports = class prontuarioController {
 
     static prontuario(req, res, next) {
         res.render('lista_prontuario')

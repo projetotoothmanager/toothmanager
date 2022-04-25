@@ -56,6 +56,9 @@
         <div class="flash"><%= messages.message %>
         </div>
         <% } %>
+        <div class="btn-voltar">
+            <a href="/agendamento">Voltar</a>
+        </div>
 
         <div class="container-cadastro">
             <form action="/cadastro_cliente" method="post">
@@ -65,32 +68,19 @@
 
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required>
-
-
                     <label for="CPF">CPF</label>
                     <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required>
-
-
                     <label for="">Sexo</label>
                     <label for="mas">Masculino</label>
                     <input type="radio" name="sexo" VALUE="Masculino" id="mas">
-
                     <label for="fem">Feminino</label>
                     <input type="radio" name="sexo" VALUE="Feminino" id="fem">
-
-
                     <label for="celular">Celular</label>
                     <input type="text" name="celular" id="celular-cadastro">
-
-
                     <label for="">E-mail</label>
                     <input type="email" name="e_mail" id="email-cadastro">
-
-
                     <label for="">Data de Nascimento</label>
                     <input name="Data_Nacimento" type="date">
-
-
                 </div>
                 <!-- ============== -->
 
@@ -98,28 +88,18 @@
                     <h2>Endereço</h2>
                     <label for="cep">CEP</label>
                     <input type="text" name="cep" placeholder="12345-000" id="CEP">
-
                     <label for="endereço">Rua</label>
                     <input type="text" name="rua" placeholder="Rua ou Logradouro" id="endereco">
-
-
                     <label for="bairro">Bairro</label>
                     <input type="text" name="bairro" placeholder="Bairro" id="bairro">
-
                     <label for="Numero">Numero</label>
                     <input type="text" name="numero" placeholder="256" id="bairro">
-
                     <label for="Complemento">Complemento</label>
                     <input type="text" name="completo" placeholder="" id="bairro">
-
-
                     <label for="cidade">Cidade</label>
                     <input type="text" name="Cidade" placeholder="Cidade" id="cidade">
-
                     <label for="estado" id="uf">Estado</label>
-
                     <select name="Estado" id="estado">
-
                         <option value="0">Selecione</option>
                         <optgroup label="Norte"></optgroup>
                         <option value="AC">AC</option>
