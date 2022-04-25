@@ -12,15 +12,15 @@ const conn = require('./src/db/conn') // puxamos os dados da configuração do b
 
 
 //*import routes
-const indexRoutes = require('./src/routes/IndexRoutes');
-const authRoutes = require('./src/routes/authRoutes');
-const cadastroClienteRouter = require('./src/routes/cadastroClienteRouter');
-const agendamentoRouter = require('./src/routes/agendamentoRouter');
-const prontuarioRouter = require('./src/routes/prontuarioRoutes');
+const index_routes = require('./src/routes/index_routes');
+const auth_routes = require('./src/routes/auth_routes');
+const cadastro_cliente_router = require('./src/routes/cadastro_cliente_router');
+const agendamento_router = require('./src/routes/agendamento_router');
+const prontuario_router = require('./src/routes/prontuario_routes');
 
 //* models - Banco de dados
 const toothmanager = require('./src/models/toothmanager')
-const cadastroCliente = require('./src/models/cadastroCliente')
+const cadastro_cliente = require('./src/models/cadastro_cliente')
 const user = require('./src/models/user')
 const agendamento = require('./src/models/agendamento')
 
@@ -75,11 +75,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //* routes
-app.use('/', authRoutes)
-app.use('/', indexRoutes);
-app.use('/', cadastroClienteRouter);
-app.use('/', agendamentoRouter);
-app.use('/', prontuarioRouter);
+app.use('/', auth_routes)
+app.use('/', index_routes);
+app.use('/', cadastro_cliente_router);
+app.use('/', agendamento_router);
+app.use('/', prontuario_router);
 
 
 //* catch 404 and forward to error handler
@@ -102,14 +102,15 @@ app.use(function (err, req, res, next) {
 
 
 
+// conn
+//   .sync({
+//     force: true
+//   })
 
-//reset das tabelas no banco de dados
- conn
-    //.sync({force: true})
-    .sync()  
-    // .then(() => {
-    //   app.listen(3000);
-    // })
-    // .catch((err) => console.log(err));
+//   .then(() => {
+//     app.listen(3000);
+//   })
+//   .catch((err) => console.log(err));
+
 
 module.exports = app;
