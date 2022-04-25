@@ -1,13 +1,13 @@
-const cadastroCliente = require('../models/cadastroCliente')
+const cadastroCliente = require('../models/cadastro_cliente')
 
 //*Controller
-module.exports = class cadastroClienteController {
+module.exports = class cadastro_cliente_controller {
 
-    static cadastroCliente(req, res, next) {
+    static cadastro_cliente(req, res, next) {
         res.render('cadastro')
     };
 
-    static async cadastroClientePost(req, res, next) {
+    static async cadastro_cliente_post(req, res, next) {
         const {
             nome,
             cpf,
@@ -124,7 +124,7 @@ module.exports = class cadastroClienteController {
 
         // criação de dados no banco de dados
         try {
-            const createdUser = await cadastro_cliente.create(dados)
+            const created_user = await cadastro_cliente.create(dados)
             req.flash('message', "Cadastro realizado com sucesso!")
             res.render('./cadastro')
 

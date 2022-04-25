@@ -1,7 +1,7 @@
 const agendamento = require("../models/agendamento");
 
 //*Controller
-module.exports = class agendamentoController {
+module.exports = class agendamento_controller {
 
     static agendamento(req, res, next) {
         res.render('./agendamento')
@@ -59,7 +59,7 @@ module.exports = class agendamentoController {
 
         // criação de dados no banco de dados
         try {
-            const createdUser = await agendamento.create(dados)
+            const created_user = await agendamento.create(dados)
             req.flash('message', "Agendamento realizado com sucesso!")
             res.render('./agendamento')
 

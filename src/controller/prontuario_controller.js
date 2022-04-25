@@ -1,7 +1,7 @@
 const prontuario = require('../models/prontuario')
 
 
-module.exports = class prontuarioController {
+module.exports = class prontuario_Controller {
 
     static prontuario(req, res, next) {
         res.render('lista_prontuario')
@@ -58,7 +58,7 @@ module.exports = class prontuarioController {
         };
         // criação de dados no banco de dados
         try {
-            const createdUser = await prontuario.create(dados)
+            const created_user = await prontuario.create(dados)
             req.flash('message', "Prontuario cadastrado com sucesso!")
             res.render('./lista_prontuario')
 
