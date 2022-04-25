@@ -89,7 +89,7 @@ module.exports = class auth_controller {
             email,
             password: hashedPassword
         }
-        console.log(dados)
+
         try {
             const created_user = await User.create(dados)
             //inicializar sessao
