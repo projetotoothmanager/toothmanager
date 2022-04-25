@@ -70,12 +70,11 @@ a{
 }
 
 .flash {
-  padding: 1em;
-  color: #f6f3f3;
-  background-color: #f60505a8;
-  border: 1px solid #ff0b0b;
-  border-radius: 5px;
-  text-align: center;
-  margin: 0 auto 2em;
-  max-width: 60%;
+    margin-bottom: 10px;
+    display: flex;
+    color: #000000;
+    background-color: #41ee3ea8;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 }

@@ -20,14 +20,14 @@ section .imgBx {
     height: 100%;
 }
 
-section .imgBx::before{
+section .imgBx::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(255deg,#203B49, #7cbddd);
+    background: linear-gradient(255deg, #203B49, #7cbddd);
     z-index: 1;
     mix-blend-mode: screen;
 }
@@ -41,7 +41,7 @@ section .imgBx img {
     object-fit: cover;
 }
 
-section .contentBx{
+section .contentBx {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +49,7 @@ section .contentBx{
     height: 100%;
 }
 
-section .contentBx .formBx{
+section .contentBx .formBx {
     width: 50%;
 }
 
@@ -63,11 +63,11 @@ section .contentBx .formBx h2 {
     letter-spacing: 1px;
 }
 
-section .contentBx .formBx .inputBx{
+section .contentBx .formBx .inputBx {
     margin-bottom: 20px;
 }
 
-section .contentBx .formBx .inputBx span{
+section .contentBx .formBx .inputBx span {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -77,7 +77,7 @@ section .contentBx .formBx .inputBx span{
     letter-spacing: 1px;
 }
 
-section .contentBx .formBx .inputBx input{
+section .contentBx .formBx .inputBx input {
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -90,7 +90,7 @@ section .contentBx .formBx .inputBx input{
     border-radius: 20px;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]{
+section .contentBx .formBx .inputBx input[type="submit"] {
     background: #203B49;
     color: white;
     outline: none;
@@ -99,27 +99,27 @@ section .contentBx .formBx .inputBx input[type="submit"]{
     cursor: pointer;
 }
 
-section .contentBx .formBx .inputBx input[type="submit"]:hover{
+section .contentBx .formBx .inputBx input[type="submit"]:hover {
     background-color: #29495a;
 }
 
-section .contentBx .formBx .remember{
+section .contentBx .formBx .remember {
     margin-bottom: 10px;
     color: #203B49;
     font-weight: 400;
     font-size: 14px;
 }
 
-section .contentBx .formBx .inputBx p{
+section .contentBx .formBx .inputBx p {
     color: #203B49;
 }
 
-section .contentBx .formBx .inputBx p a{
+section .contentBx .formBx .inputBx p a {
     color: #203B49;
 }
 
-@media (max-width: 768px){
-    section .imgBx{
+@media (max-width: 768px) {
+    section .imgBx {
         position: absolute;
         top: 0;
         left: 0;
@@ -127,7 +127,7 @@ section .contentBx .formBx .inputBx p a{
         height: 100%;
     }
 
-    section .contentBx{
+    section .contentBx {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -136,20 +136,20 @@ section .contentBx .formBx .inputBx p a{
         z-index: 1;
     }
 
-    section .contentBx .formBx{
+    section .contentBx .formBx {
         width: 100%;
         padding: 40px;
         background: rgb(255 255 255 / 0.9);
         margin: 50px;
     }
 }
+
 .flash {
-  padding: 1em;
-  color: #f6f3f3;
-  background-color: #f60505a8;
-  border: 1px solid #ff0b0b;
-  border-radius: 5px;
-  text-align: center;
-  margin: 0 auto 2em;
-  max-width: 60%;
+    margin-bottom: 10px;
+    display: flex;
+    color: #000000;
+    background-color: #ee3e3ea8;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 }

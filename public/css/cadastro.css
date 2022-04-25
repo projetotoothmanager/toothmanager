@@ -76,13 +76,12 @@
 }
 
 
- .flash {
-  padding: 1em;
-  color: #f6f3f3;
-  background-color: #220d6840;
-  border: 1px solid #330aab9a;
-  border-radius: 5px;
-  text-align: center;
-  margin: 0 auto 2em;
-  max-width: 60%;
+.flash {
+    margin-bottom: 10px;
+    display: flex;
+    color: #000000;
+    background-color: #3eee58a8;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
 }
