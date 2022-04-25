@@ -12,74 +12,40 @@
   max-width: 60%;
 }
 .container-agenda{
-    padding: 4px;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
-.container-agenda form{
+.form {
+    padding: 8px;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
     border: 1px solid var(--bg-color-ciano);
-    padding: 4px;
 }
-.container-agenda form label,input{
+.form-content label,input{
     height: 30px;
-    border: none;
+    width: 200px;
 }
-.container-agenda form #nome{
-    width: 300px;
+.lista-agenda{
+    padding: 8px;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    border: 1px solid var(--bg-color-ciano);
 }
-/* button adicionar */
-.container-agenda form button{
+.btn{
     height: 30px;
+    border: 1px solid var(--bg-color-ciano);
     width: 80px;
-    float: right;
-    border: none;
+    transition: 0.5s;
+}
+.btn:hover{
+    background-color: var(--bg-color-green);
     cursor: pointer;
-    background-color: var(--bg-color-ciano);
-    color: var(--text-color-white);
-}
-.container-agenda form button:hover{
-    background-color: var(--bg-color-light-green);
-    border: 1px solid var(--bg-color-ciano);
-}
-/* tabela clientes */
-.cliente{
-    border: 1px solid var(--bg-color-ciano);
-    padding: 4px;
-    height: 30px;
-}
-.cliente label,span {
-    margin-right: 4px;
-}
-.cliente label{
-    font-weight: 600;
-}
-.cliente button{
-    width: 80px;
-    height: 30px;
-    float: right;
-}
-/* button edit */
-.cliente #btn-edit-cliente{
-    background-color: var(--bg-color-ciano);
-    color: var(--text-color-white);
-    border: none;
-    cursor: pointer;
-    margin-right: 4px;
-}
-.cliente #btn-edit-cliente:hover{
-    border: 1px solid var(--bg-color-ciano);
-    background-color: var(--bg-color-yellow);
 }
 
-/* button deletar */
-.cliente #btn-deletar-cliente{
-    background-color: var(--bg-color-ciano);
-    color: var(--text-color-white);
-    border: none;
-    cursor: pointer;
-}
-.cliente #btn-deletar-cliente:hover{
-    border: 1px solid var(--bg-color-ciano);
-    background-color: var(--bg-color-red);
-}
 
 @media (max-width: 900px) {
 

@@ -105,8 +105,8 @@ app.use(function (err, req, res, next) {
 
 //reset das tabelas no banco de dados
  conn
-    .sync({force: true})
-    //.sync()  
+    //.sync({force: true})
+    .sync()  
     // .then(() => {
     //   app.listen(3000);
     // })

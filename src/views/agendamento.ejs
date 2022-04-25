@@ -13,93 +13,74 @@
 </head>
 
 <% if ( messages.message ) { %>
-<div class="flash"><%= messages.message %>
-</div>
-<% } %>
+    <div class="flash">
+        <%= messages.message %>
+    </div>
+    <% } %>
 
-<body>
-    <!-- button-menu-hamburguer -->
-    <input type="checkbox" id="check">
-    <label for="check" class="menu-hamburgue">
-        <i class="fas fa-bars" id="btn"></i>
-        <i class="fas fa-times" id="cancel"></i>
-    </label>
+        <body>
+            <!-- button-menu-hamburguer -->
+            <input type="checkbox" id="check">
+            <label for="check" class="menu-hamburgue">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
 
-    <!-- sidebar -->
-    <%- include('./partials/sidebar')%>
+            <!-- sidebar -->
+            <%- include('./partials/sidebar')%>
 
-    <!-- <main> coloque seu codigo dentro desta tag -->
-    <main>
-        <!-- BUSCA -->
-        <div class="search-container">
-            <div class="title-pagina">
-                <h1>Agenda</h1>
-            </div>
-            <div>
-                <img src="/img/logo.png" alt="logo Toothmanager">
-            </div>
-
-
-
-            <form action="#" method="get">
-                <input type="text" placeholder="Buscar.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <!-- AGENDA -->
+                <!-- <main> coloque seu codigo dentro desta tag -->
+                <main>
+                    <!-- BUSCA -->
+                    <div class="search-container">
+                        <div class="title-pagina">
+                            <h1>Agenda</h1>
+                        </div>
+                        <div>
+                            <img src="/img/logo.png" alt="logo Toothmanager">
+                        </div>
 
 
 
-        <div class="container-agenda">
-            <form action="./form_agendamento" method="post">
-
-                <!-- <label for="hora" name="hora">Hora:</label>
-                <input type="time" id="hora"required>
-
-                <label for="data" name="data">Data:</label>
-                <input type="date" id="data"required>
-
-                <label for="nome" name="nome">Nome:</label>
-                <input type="text" id="nome" required>
-
-                <button type="submit" id="btn-agenda-submit">Adicionar</button> -->
+                        <form action="#" method="get">
+                            <input type="text" placeholder="Buscar.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <!-- AGENDA -->
 
 
 
-                <div class="container-agenda">
-                    <span>Hora:</span>
-                    <input type="time" name='hora'
-                    min="09:00" max="18:00" required required>
-                </div>
+                    <div class="container-agenda">
+                        <form action="/form_agendamento" method="post" class="form">
+                            <div class="form-content">
+                                <label for="">Hora:</label>
+                                <input type="time" name='hora' min="09:00" max="18:00" required required>
+                                <label for="">Data:</label>
+                                <input type="date" name='data' required>
+                                <label for="">Nome:</label>
+                                <input type="text" name='nome' required>
+                            </div>
+                            <button type="submit" id="Salvar" class="btn"> Adicionar </button>
+                        </form>
 
-                <div class="container-agenda">
-                    <span>Data:</span>
-                    <input type="date" name='data' required>
-                </div>
-                <div class="container-agenda">
-                    <span>Nome:</span>
-                    <input type="text" name='nome' required>
-                </div>
-                <button type="submit" id="Salvar" class="container-agenda"> Adicionar </button>
+                        <br>
 
-            </form>
-            <br>
+                        <div class="lista-agenda">
+                            <label for="">Hora:</label>
+                            <span>08:00</span>
+                            <label for="">Data:</label>
+                            <span>01/02/2022</span>
+                            <label for="cliente" name="cliente" id="cliente">Nome:</label>
+                            <span>Wictor Hiago Joaozinho Silva</span>
+                            <button type="button" class="btn">Deletar</button>
+                            <button type="button" class="btn">Editar</button>
+                        </div>
+                        <br>
+                    </div>
 
-            <div class="cliente">
-                <label for="">Hora:</label>
-                <span>08:00</span>
-                <label for="">Data:</label>
-                <span>01/02/2022</span>
-                <label for="cliente" name="cliente" id="cliente">Nome:</label>
-                <span>Wictor Hiago Joaozinho Silva</span>
-                <button type="button" id="btn-deletar-cliente">Deletar</button>
-                <button type="button" id="btn-edit-cliente">Editar</button>
-            </div>
-            <br>
-        </div>
+                </main>
 
-    </main>
-
-</body>
+        </body>
 
 </html>

@@ -20,13 +20,13 @@ module.exports = class AuthController {
         };
 
         //check password
-        const hashpassword = bcrypt.compareSync(password, user.password)
+        // const hashpassword = bcrypt.compareSync(password, user.password)
 
-        if (!hashpassword) {
-            req.flash('message', 'A senha esta incorreta');
-            res.render('auth/login')
-            return
-        };
+        // if (!hashpassword) {
+        //     req.flash('message', 'A senha esta incorreta');
+        //     res.render('auth/login')
+        //     return
+        // };
         //se validou Email e senha, inicia session!
         req.session.userid = user.id
 

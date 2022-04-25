@@ -12,7 +12,7 @@ try {
     console.log("Authenticated  sucess")
 
 } catch (err) {
-    console.log("nao foi possivel Authenticated" + err.message)
+    console.log("nao foi possivel Autenticar" + err.message)
 };
 
 module.exports = sequelize
