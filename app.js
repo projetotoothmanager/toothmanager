@@ -102,15 +102,16 @@ app.use(function (err, req, res, next) {
 
 
 
-// conn
-//   .sync({
-//     force: true
-//   })
+conn
+  .sync()
+  // .sync({
+  //   force: true
+  // })
 
-//   .then(() => {
-//     app.listen(3000);
-//   })
-//   .catch((err) => console.log(err));
+  .then(() => {
+    app.listen(3000);
+  })
+  .catch((err) => console.log(err));
 
 
 module.exports = app;
