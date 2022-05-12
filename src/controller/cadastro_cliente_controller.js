@@ -7,7 +7,7 @@ module.exports = class cadastro_cliente_controller {
         res.render('cadastro')
     };
 
-    static async cadastro_cliente_post(req, res, next) {
+    static async cadastro_save(req, res, next) {
         const {
             nome,
             cpf,

@@ -4,18 +4,18 @@ const prontuario = require('../models/prontuario')
 module.exports = class prontuario_Controller {
 
     static prontuario(req, res, next) {
-        res.render('lista_prontuario')
+        res.render('./prontuario')
     };
 
     static detalhes_prontuario(req, res, next) {
         res.render('detalhes_prontuario')
     };
 
-    static criar_prontuario(req, res, next) {
+    static addprontuario(req, res, next) {
         res.render('./criar_prontuario')
     };
 
-    static async form_prontuario(req, res, next) {
+    static async prontuario_save (req, res, next) {
 
         const {
             // id
@@ -42,7 +42,7 @@ module.exports = class prontuario_Controller {
         const regex_dentista = /^[\D\s]+$/
         if (!regex_dentista.test(dentista)) {
             req.flash('message', 'No campo Dentista so pode utiliza letras!')
-            res.render('./criar_prontuario')
+            res.render('./prontuario')
             return
         };
 
@@ -60,7 +60,7 @@ module.exports = class prontuario_Controller {
         try {
             const created_user = await prontuario.create(dados)
             req.flash('message', "Prontuario cadastrado com sucesso!")
-            res.render('./lista_prontuario')
+            res.render('./criar_prontuario')
 
         } catch (err) {
             console.error("prontuario banco de dados:", err)

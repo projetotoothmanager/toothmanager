@@ -5,13 +5,13 @@ const validador_login_auth = require('../../funcoes_div/valid_auht').validador_l
 
 
 //*routes
-router.get('/lista_Prontuario', validador_login_auth, prontuario_controller.prontuario);
+router.get('/Prontuario', validador_login_auth, prontuario_controller.prontuario);
 
 router.get('/detalhes_Prontuario', validador_login_auth, prontuario_controller.detalhes_prontuario);
 
 
-router.get('/criar_prontuario', validador_login_auth, prontuario_controller.criar_prontuario);
-router.post('/form_prontuario', validador_login_auth, prontuario_controller.form_prontuario);
+router.get('/addprontuario', validador_login_auth, prontuario_controller.addprontuario);
+router.post('/prontuario', validador_login_auth, prontuario_controller.prontuario_save);
 
 
 

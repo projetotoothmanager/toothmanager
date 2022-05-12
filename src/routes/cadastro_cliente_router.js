@@ -5,7 +5,7 @@ const validador_login_auth = require('../../funcoes_div/valid_auht').validador_l
 
 //*routes
 router.get('/cadastro', validador_login_auth, cadastro_cliente_controller.cadastro_cliente)
-router.post('/cadastro_cliente', validador_login_auth, cadastro_cliente_controller.cadastro_cliente_post);
+router.post('/cadastro', validador_login_auth, cadastro_cliente_controller.cadastro_save);
 
 
 

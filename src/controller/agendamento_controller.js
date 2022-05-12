@@ -7,7 +7,7 @@ module.exports = class agendamento_controller {
         res.render('./agendamento')
     };
 
-    static async form_agendamento(req, res, next) {
+    static async agendamento_save(req, res, next) {
         const {
             // id
             nome,
