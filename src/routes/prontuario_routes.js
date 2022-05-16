@@ -11,7 +11,7 @@ router.get('/detalhes_Prontuario', validador_login_auth, prontuario_controller.d
 
 
 router.get('/addprontuario', validador_login_auth, prontuario_controller.addprontuario);
-router.post('/prontuario', validador_login_auth, prontuario_controller.prontuario_save);
+router.post('/addprontuario', validador_login_auth, prontuario_controller.prontuario_save);
 
 
 

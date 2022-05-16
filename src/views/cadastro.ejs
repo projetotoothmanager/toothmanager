@@ -40,10 +40,6 @@
             <div class="title-pagina">
                 <h1>Cadastro</h1>
             </div>
-            <div>
-                <img src="/img/logo.png" alt="logo Toothmanager">
-            </div>
-
 
             <form action="#" method="get">
                 <input type="text" placeholder="Buscar.." name="search">
@@ -56,9 +52,6 @@
         <div class="flash"><%= messages.message %>
         </div>
         <% } %>
-        <div class="btn-voltar">
-            <a href="/agendamento">Voltar</a>
-        </div>
 
         <div class="container-cadastro">
             <form action="/cadastro_cliente" method="post">
@@ -80,7 +73,7 @@
                     <label for="">E-mail</label>
                     <input type="email" name="e_mail" id="email-cadastro">
                     <label for="">Data de Nascimento</label>
-                    <input name="Data_Nacimento" type="date">
+                    <input name="data_Nacimento" type="date">
                 </div>
                 <!-- ============== -->
 
@@ -95,11 +88,11 @@
                     <label for="Numero">Numero</label>
                     <input type="text" name="numero" placeholder="256" id="bairro">
                     <label for="Complemento">Complemento</label>
-                    <input type="text" name="completo" placeholder="" id="bairro">
+                    <input type="text" name="complemento" placeholder="" id="bairro">
                     <label for="cidade">Cidade</label>
-                    <input type="text" name="Cidade" placeholder="Cidade" id="cidade">
+                    <input type="text" name="cidade" placeholder="Cidade" id="cidade">
                     <label for="estado" id="uf">Estado</label>
-                    <select name="Estado" id="estado">
+                    <select name="estado" id="estado">
                         <option value="0">Selecione</option>
                         <optgroup label="Norte"></optgroup>
                         <option value="AC">AC</option>

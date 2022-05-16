@@ -15,8 +15,10 @@ const agendamento = db.define('agendamento', {
     nome: {
         type: DataTypes.STRING,
         require: true
-    }
+    },
 })
+
+
 
 agendamento.belongsTo(Cliente, {
     constraints: true,

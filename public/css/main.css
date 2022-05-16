@@ -141,6 +141,7 @@ main{
     align-items: center;
     margin-bottom: 2rem;
     background-color: var(--bg-color-marine);
+    height: 100px;
 }
 .title-pagina{
     margin-left: 5rem;
