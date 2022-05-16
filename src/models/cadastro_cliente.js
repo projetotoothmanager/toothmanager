@@ -23,7 +23,7 @@ const cadastroCliente = db.define('cadastro_cliente', {
         type: DataTypes.STRING,
         require: true
     },
-    Data_Nacimento: {
+    data_Nacimento: {
         type: DataTypes.DATE,
         require: true
     },
@@ -35,7 +35,7 @@ const cadastroCliente = db.define('cadastro_cliente', {
         type: DataTypes.STRING,
         require: true
     },
-    completo: {
+    complemento: {
         type: DataTypes.STRING,
         require: true
     },
@@ -43,11 +43,11 @@ const cadastroCliente = db.define('cadastro_cliente', {
         type: DataTypes.STRING,
         require: true
     },
-    Cidade: {
+    cidade: {
         type: DataTypes.STRING,
         require: true
     },
-    Estado: {
+    estado: {
         type: DataTypes.STRING,
         require: true
     },

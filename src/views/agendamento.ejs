@@ -36,12 +36,6 @@
                         <div class="title-pagina">
                             <h1>Agenda</h1>
                         </div>
-                        <div>
-                            <img src="/img/logo.png" alt="logo Toothmanager">
-                        </div>
-
-
-
                         <form action="#" method="get">
                             <input type="text" placeholder="Buscar.." name="search">
                             <button type="submit"><i class="fa fa-search"></i></button>
@@ -55,7 +49,7 @@
                         <form action="/agendamento" method="post" class="form">
                             <div class="form-content">
                                 <label for="">Hora:</label>
-                                <input type="time" name='hora' min="09:00" max="18:00" required required>
+                                <input type="time" name='hora' min="09:00" max="18:00" required>
                                 <label for="">Data:</label>
                                 <input type="date" name='data' required>
                                 <label for="">Nome:</label>
@@ -65,17 +59,20 @@
                         </form>
 
                         <br>
+                        <% agendamentos.forEach((agendamentos) => { %>
+                            <div class="lista-agenda">
+                                <label for="">Hora:</label>
+                                <span><%= agendamentos.hora %></span>
+                                <label for="">Data:</label>
+                                <span><%= agendamentos.data %></span>
+                                <label for="cliente" name="cliente" id="cliente">Nome:</label>
+                                <span><%= agendamentos.nome %></span>
+                                <button type="button" class="btn">Deletar</button>
+                                <button type="button" class="btn">Editar</button>
+                            </div>
 
-                        <div class="lista-agenda">
-                            <label for="">Hora:</label>
-                            <span>08:00</span>
-                            <label for="">Data:</label>
-                            <span>01/02/2022</span>
-                            <label for="cliente" name="cliente" id="cliente">Nome:</label>
-                            <span>Wictor Hiago Joaozinho Silva</span>
-                            <button type="button" class="btn">Deletar</button>
-                            <button type="button" class="btn">Editar</button>
-                        </div>
+                       <% }) %>
+                        
                         <br>
                     </div>
 

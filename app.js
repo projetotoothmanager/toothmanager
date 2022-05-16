@@ -19,7 +19,6 @@ const agendamento_router = require('./src/routes/agendamento_router');
 const prontuario_router = require('./src/routes/prontuario_routes');
 
 //* models - Banco de dados
-const toothmanager = require('./src/models/toothmanager')
 const cadastro_cliente = require('./src/models/cadastro_cliente')
 const user = require('./src/models/user')
 const agendamento = require('./src/models/agendamento')
@@ -50,7 +49,7 @@ app.use(session({ // onde o express vai salva session, para deixar o usuario log
   }),
   cookie: { // vamos salvar tempo para conexao
     secure: false, //
-    maxAge: 360000, // tempo de session
+    maxAge: 990000, // tempo de session
     expires: new Date(Date.now() + 360000), // aqui descrimina o tempo
     httpOnly: true // como estamos em localhost fica em http
   }

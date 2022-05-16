@@ -3,16 +3,22 @@ const agendamento = require("../models/agendamento");
 //*Controller
 module.exports = class agendamento_controller {
 
-    static agendamento(req, res, next) {
-        res.render('./agendamento')
+    static async agendamento(req, res, next) {
+        
+        const agendamentos = await agendamento.findAll({
+            raw: true
+        })
+        
+        res.render('./agendamento', { agendamentos })
+
     };
 
     static async agendamento_save(req, res, next) {
         const {
             // id
-            nome,
-            data,
             hora,
+            data,
+            nome
 
         } = req.body
 

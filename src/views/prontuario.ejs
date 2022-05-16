@@ -31,10 +31,6 @@
             <div class="title-pagina">
                 <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
             </div>
-            <div>
-                <img src="/img/logo.png" alt="logo Toothmanager">
-            </div>
-
 
           <form action="#" method="get">
             <input type="text" placeholder="Buscar paciente.." name="search">
@@ -48,10 +44,6 @@
         </div>
         <% } %>
 
-   <div class="btn-voltar">
-    <a href="/cadastro">Voltar</a>
-</div>
-
         <div class="container-cards">
 
             <div class="subtitulo">
@@ -63,38 +55,16 @@
                 <div><a href="/addprontuario"> + Novo Prontuario</a></div>
             </div>
             <br>
-
-            <div class="cards-pront">
-                <label for="">ID:</label>
-                <span>0123</span>
-                <a href="/detalhes_prontuario">
-                    <label for="">Nome:</label>
-                    <span> Wictor</span>
-
-                </a>
-                <label for="">Data de agendamento:</label>
-                <span>01/02/2022</span>
-                <label for="">Hora:</label>
-                <span>08:00</span>
-            </div>
-            <div class="cards-pront">
-                <label for="">ID:</label>
-                <span>0123</span>
-                <a href="/detalhes_prontuario">
-                    <label for="">Nome:</label>
-                    <span> Hiago</span>
-
-                </a>
-                <label for="">Data de agendamento:</label>
-                <span>01/02/2022</span>
-                <label for="">Hora:</label>
-                <span>08:00</span>
-            </div>
-
+            <% prontuarios.forEach((prontuarios) => { %>
+                <div class="cards-pront">
+                    <label for="">ID:</label>
+                    <span><%= prontuarios.id %></span>
+                    <a href="/detalhes_prontuario">
+                        <label for="">Nome:</label>
+                        <span><%= prontuarios.nome %></span>
+                </div>
+            <% }) %>
         </div>
-
-
     </main>
-
 </body>
 </html>
