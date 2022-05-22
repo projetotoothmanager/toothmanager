@@ -4,12 +4,17 @@ const agendamento = require("../models/agendamento");
 module.exports = class agendamento_controller {
 
     static async agendamento(req, res, next) {
-        
+
         const agendamentos = await agendamento.findAll({
             raw: true
         })
-        
-        res.render('./agendamento', { agendamentos })
+
+
+
+        res.render('./agendamento', {
+            agendamentos
+
+        })
 
     };
 
@@ -49,8 +54,6 @@ module.exports = class agendamento_controller {
         let difference = (day2 - day1);
         let days = parseInt(difference / -(3600 * 1000 * 24));
 
-
-
         if (days < 0) {
             req.flash('message', 'Data desejada ja passou!')
             res.render('./agendamento')
@@ -59,9 +62,10 @@ module.exports = class agendamento_controller {
 
         const dados = {
             nome,
-            data: data_br,
+            data,
             hora
         };
+
 
         // criação de dados no banco de dados
         try {

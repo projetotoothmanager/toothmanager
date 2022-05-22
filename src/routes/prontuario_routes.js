@@ -15,8 +15,6 @@ router.post('/addprontuario', validador_login_auth, prontuario_controller.prontu
 
 
 
-//router.post('/cadastro_cliente', cadastro_cliente_Controller.cadastro_cliente);
-
 
 
 
