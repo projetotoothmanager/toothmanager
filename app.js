@@ -103,8 +103,9 @@ app.use(function (err, req, res, next) {
 
 conn
   .sync()
-  // .sync({force: true})
-
+  // .sync({
+  //   force: true
+  // })
   .then(() => {
     app.listen(3000);
   })

@@ -10,5 +10,4 @@ router.post('/cadastro', validador_login_auth, cadastro_cliente_controller.cadas
 
 
 
-
 module.exports = router;

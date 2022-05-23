@@ -1,4 +1,6 @@
-const { DataTypes } = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
+const {
+    DataTypes
+} = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
 
 const db = require('../db/conn') // conexao com o banco de dados
 

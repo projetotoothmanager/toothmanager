@@ -4,7 +4,7 @@ const cadastro_cliente = require('../models/cadastro_cliente')
 module.exports = class cadastro_cliente_controller {
 
     static cadastro_cliente(req, res, next) {
-        res.render('cadastro')
+        res.render('./cadastro')
     };
 
     static async cadastro_save(req, res, next) {
@@ -14,16 +14,17 @@ module.exports = class cadastro_cliente_controller {
             sexo,
             celular,
             e_mail,
-            Data_Nacimento,
+            data_Nacimento,
             rua,
             bairro,
-            completo,
+            complemento,
             numero,
-            Cidade,
-            Estado,
+            cidade,
+            estado,
             cep
         } = req.body
 
+        console.log(data_Nacimento)
         // conferimos se o usuario digito o nome e sobrenome
         if (nome.split(" ").length <= 1) {
 
@@ -58,14 +59,14 @@ module.exports = class cadastro_cliente_controller {
             return
         };
 
-        let data_us = Data_Nacimento.split("-")
-        let data_br = `${data_us[2]}/${data_us[1]}/${data_us[0]}`
-        let validador_nac = /(0[1-9]|[12][0-9]|3[01])\/?(0[1-9]|1[012])\/?(19|20)\d{2}/g
-        if (!validador_nac.test(data_br)) {
-            req.flash('message', 'Data nacimento fora do padrão')
-            res.render('./cadastro')
-            return
-        };
+        // let data_us = data_Nacimento.split("-")
+        // let data_br = `${data_us[2]}/${data_us[1]}/${data_us[0]}`
+        // let validador_nac = /(0[1-9]|[12][0-9]|3[01])\/?(0[1-9]|1[012])\/?(19|20)\d{2}/g
+        // if (!validador_nac.test(data_br)) {
+        //     req.flash('message', 'Data nacimento fora do padrão')
+        //     res.render('./cadastro')
+        //     return
+        // };
 
         //Verificando o celular
         let celular_verificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('')
@@ -112,13 +113,13 @@ module.exports = class cadastro_cliente_controller {
             sexo,
             celular,
             e_mail,
-            Data_Nacimento: data_br,
+            data_Nacimento,
             rua,
             bairro,
-            completo,
+            complemento,
             numero,
-            Cidade,
-            Estado,
+            cidade,
+            estado,
             cep: cep_database
         };
 
@@ -129,7 +130,7 @@ module.exports = class cadastro_cliente_controller {
             res.render('./cadastro')
 
         } catch (err) {
-            console.error("Cadastro:", err)
+            console.error("cadastro:", err)
         };
 
     };

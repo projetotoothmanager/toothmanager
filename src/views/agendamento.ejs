@@ -13,71 +13,71 @@
 </head>
 
 <% if ( messages.message ) { %>
-    <div class="flash">
-        <%= messages.message %>
-    </div>
-    <% } %>
+<div class="flash">
+    <%= messages.message %>
+</div>
+<% } %>
 
-        <body>
-            <!-- button-menu-hamburguer -->
-            <input type="checkbox" id="check">
-            <label for="check" class="menu-hamburgue">
-                <i class="fas fa-bars" id="btn"></i>
-                <i class="fas fa-times" id="cancel"></i>
-            </label>
+<body>
+    <!-- button-menu-hamburguer -->
+    <input type="checkbox" id="check">
+    <label for="check" class="menu-hamburgue">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
 
-            <!-- sidebar -->
-            <%- include('./partials/sidebar')%>
+    <!-- sidebar -->
+    <%- include('./partials/sidebar')%>
 
-                <!-- <main> coloque seu codigo dentro desta tag -->
-                <main>
-                    <!-- BUSCA -->
-                    <div class="search-container">
-                        <div class="title-pagina">
-                            <h1>Agenda</h1>
-                        </div>
-                        <form action="#" method="get">
-                            <input type="text" placeholder="Buscar.." name="search">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                    <!-- AGENDA -->
+    <!-- <main> coloque seu codigo dentro desta tag -->
+    <main>
+        <!-- BUSCA -->
+        <div class="search-container">
+            <div class="title-pagina">
+                <h1>Agenda</h1>
+            </div>
+            <form action="#" method="get">
+                <input type="text" placeholder="Buscar.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- AGENDA -->
 
 
 
-                    <div class="container-agenda">
-                        <form action="/agendamento" method="post" class="form">
-                            <div class="form-content">
-                                <label for="">Hora:</label>
-                                <input type="time" name='hora' min="09:00" max="18:00" required>
-                                <label for="">Data:</label>
-                                <input type="date" name='data' required>
-                                <label for="">Nome:</label>
-                                <input type="text" name='nome' required>
-                            </div>
-                            <button type="submit" id="Salvar" class="btn"> Adicionar </button>
-                        </form>
+        <div class="container-agenda">
+            <form action="/agendamento" method="post" class="form">
+                <div class="form-content">
+                    <label for="">Hora:</label>
+                    <input type="time" name='hora' min="09:00" max="18:00" required>
+                    <label for="">Data:</label>
+                    <input type="date" name='data' required>
+                    <label for="">Paciente:</label>
+                    <input type="text" name='nome' required>
+                </div>
+                <button type="submit" id="Salvar" class="btn"> Adicionar </button>
+            </form>
 
-                        <br>
-                        <% agendamentos.forEach((agendamentos) => { %>
-                            <div class="lista-agenda">
-                                <label for="">Hora:</label>
-                                <span><%= agendamentos.hora %></span>
-                                <label for="">Data:</label>
-                                <span><%= agendamentos.data %></span>
-                                <label for="cliente" name="cliente" id="cliente">Nome:</label>
-                                <span><%= agendamentos.nome %></span>
-                                <button type="button" class="btn">Deletar</button>
-                                <button type="button" class="btn">Editar</button>
-                            </div>
+            <br>
+            <% agendamentos.forEach((agendamentos) => { %>
+            <div class="lista-agenda">
+                <label for="hora">Hora:</label>
+                <span><%= agendamentos.hora %></span>
+                <label for="data">Data:</label>
+                <span><%= agendamentos.data %></span>
+                <label for="Paciente" name="cliente" id="cliente">Nome:</label>
+                <span><%= agendamentos.nome %></span>
+                <button type="button" class="btn">Deletar</button>
+                <button type="button" class="btn">Editar</button>
+            </div>
 
-                       <% }) %>
-                        
-                        <br>
-                    </div>
+            <% }) %>
 
-                </main>
+            <br>
+        </div>
 
-        </body>
+    </main>
+
+</body>
 
 </html>
