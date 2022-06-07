@@ -5,22 +5,14 @@ module.exports = class agendamento_controller {
 
     static async agendamento(req, res, next) {
 
-        const agendamentos = await agendamento.findAll({
-            raw: true
-        })
-
-
-
-        res.render('./agendamento', {
-            agendamentos
-
-        })
+        const agendamentos = await agendamento.findAll({raw: true})
+        console.log(agendamentos)
+        res.render('./agendamento', {agendamentos})
 
     };
 
     static async agendamento_save(req, res, next) {
         const {
-            // id
             hora,
             data,
             nome

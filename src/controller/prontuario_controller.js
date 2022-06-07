@@ -5,11 +5,9 @@ module.exports = class prontuario_Controller {
 
     static async prontuario(req, res, next) {
 
-        const prontuarios = await prontuario.findAll({
-            raw: true
-        })
-
-        res.render('./prontuario', { prontuarios })
+        const prontuarios = await prontuario.findAll({raw: true})
+        console.log(prontuarios)
+        res.render('./prontuario', {prontuarios})
     };
 
     static detalhes_prontuario(req, res, next) {
