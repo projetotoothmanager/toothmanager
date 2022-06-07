@@ -1,46 +1,53 @@
-const { DataTypes } = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
+const {
+    Model,
+    Sequelize,
+    DataTypes
+} = require("sequelize")
 const Cliente = require('../models/cadastro_cliente')
 
 
-const db = require('../db/conn') // conexao com o banco de dados
+class prontuario extends Model {
+    static init(sequelize) {
+        super.init({
+            nome: {
+                type: DataTypes.STRING,
+                require: true
+            },
+            time: {
+                type: DataTypes.STRING,
+                require: true
+            },
+            atendimento: {
+                type: DataTypes.STRING,
+                require: true
+            },
+            dentista: {
+                type: DataTypes.STRING,
+                require: true
+            },
+            tratamento: {
+                type: DataTypes.STRING,
+                require: false
+            },
+            extração: {
+                type: DataTypes.STRING,
+                require: false
+            },
+            limpeza: {
+                type: DataTypes.STRING,
+                require: false
+            }
 
-const prontuario = db.define('prontuario', {
-    nome: {
-        type: DataTypes.STRING,
-        require: true
-    },
-    time: {
-        type: DataTypes.STRING,
-        require: true
-    },
-    atendimento: {
-        type: DataTypes.STRING,
-        require: true
-    },
-    dentista: {
-        type: DataTypes.STRING,
-        require: true
-    },
-    tratamento: {
-        type: DataTypes.STRING,
-        require: false
-    },
-    extração: {
-        type: DataTypes.STRING,
-        require: false
-    },
-    limpeza: {
-        type: DataTypes.STRING,
-        require: false
+        }, {
+
+            sequelize
+        })
     }
-})
 
-prontuario.belongsTo(Cliente, {
-    constraints: true,
-    foreignKey: 'idCliente'
-})
+}
+module.exports = prontuario
 
-
-
-
-module.exports = prontuario;
+// prontuario.belongsTo(Cliente, {
+//     constraints: true,
+//     foreignKey: 'idCliente'
+// })

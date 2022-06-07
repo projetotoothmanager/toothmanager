@@ -9,7 +9,7 @@ const cors = require('cors')
 const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
 const app = express();
 const conn = require('./src/db/conn') // puxamos os dados da configuração do banco de dados
-
+require('dotenv').config()
 
 //*import routes
 const index_routes = require('./src/routes/index_routes');
@@ -107,7 +107,7 @@ conn
   //   force: true
   // })
   .then(() => {
-    app.listen(3000);
+    app.listen(process.env.PORT);
   })
   .catch((err) => console.log(err));
 

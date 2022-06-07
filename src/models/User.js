@@ -1,25 +1,30 @@
 const {
+    Model,
+    Sequelize,
     DataTypes
-} = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
+} = require("sequelize")
 
-const db = require('../db/conn') // conexao com o banco de dados
+class User extends Model {
+    static init(sequelize) {
+        super.init({
+            name: {
+                type: DataTypes.STRING,
+                require: true,
+            },
+            email: {
+                type: DataTypes.STRING,
+                require: true
+            },
+            password: {
+                type: DataTypes.STRING,
+                require: true
+            }
 
-const User = db.define('User', {
-    name: {
-        type: DataTypes.STRING,
-        require: true,
-    },
-    email: {
-        type: DataTypes.STRING,
-        require: true
-    },
-    password: {
-        type: DataTypes.STRING,
-        require: true
+        }, {
+
+            sequelize
+        })
     }
-})
 
-
-
-
-module.exports = User;
+}
+module.exports = User
