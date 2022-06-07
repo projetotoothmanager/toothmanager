@@ -1,39 +1,40 @@
 const {
+    Model,
+    Sequelize,
     DataTypes
-} = require('sequelize') // conexão modelo de configuração com o banco de dados e planilhas
-const Cliente = require('../models/cadastro_cliente')
-
-const db = require('../db/conn') // conexao com o banco de dados
-
-const agendamento = db.define('agendamento', {
-    hora: {
-        type: DataTypes.TIME,
-        require: true
-    },
-    data: {
-        type: DataTypes.DATEONLY,
-        require: true
-    },
-    nome: {
-        type: DataTypes.STRING,
-        require: true
-    },
-})
+} = require("sequelize")
 
 
+class agendamento extends Model {
+    static init(sequelize) {
+        super.init({
+            hora: {
+                type: DataTypes.TIME,
+                require: true
+            },
+            data: {
+                type: DataTypes.DATEONLY,
+                require: true
+            },
+            nome: {
+                type: DataTypes.STRING,
+                require: true
+            },
+        }, {
 
-agendamento.belongsTo(Cliente, {
-    constraints: true,
-    foreignKey: 'idCliente'
-})
+            sequelize
 
-Cliente.hasMany(agendamento, {
-    foreignKey: 'idCliente'
-})
+        })
+    }
+}
+module.exports = agendamento
 
 
+// agendamento.belongsTo(Cliente, {
+//     constraints: true,
+//     foreignKey: 'idCliente'
+// })
 
-
-
-
-module.exports = agendamento;
+// Cliente.hasMany(agendamento, {
+//     foreignKey: 'idCliente'
+// })

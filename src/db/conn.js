@@ -1,11 +1,22 @@
 const {
     Sequelize
 } = require('sequelize'); // puxamos a importação  do banco de dados
+const dbConfig = require('../config/database');
+require('dotenv').config()
 
-const sequelize = new Sequelize("toothmanager", "root", '1234', { // criação  do banco de dados
-    host: "localhost",
-    dialect: "mysql"
-});
+const agendamento = require('../models/agendamento')
+const cadastro_cliente = require('../models/cadastro_cliente')
+const user = require('../models/user')
+const prontuario = require('../models/prontuario')
+
+
+const sequelize = new Sequelize(dbConfig);
+
+agendamento.init(sequelize);
+cadastro_cliente.init(sequelize);
+user.init(sequelize);
+prontuario.init(sequelize);
+
 
 try {
     sequelize.authenticate()
