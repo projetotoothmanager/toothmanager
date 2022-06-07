@@ -5,9 +5,13 @@ module.exports = class agendamento_controller {
 
     static async agendamento(req, res, next) {
 
-        const agendamentos = await agendamento.findAll({raw: true})
+        const agendamentos = await agendamento.findAll({
+            raw: true
+        })
         console.log(agendamentos)
-        res.render('./agendamento', {agendamentos})
+        res.render('./agendamento', {
+            agendamentos
+        })
 
     };
 
@@ -63,7 +67,7 @@ module.exports = class agendamento_controller {
         try {
             const created_user = await agendamento.create(dados)
             req.flash('message', "Agendamento realizado com sucesso!")
-            res.render('./agendamento')
+            res.redirect('./agendamento')
 
         } catch (err) {
             console.error("Cadastro:", err)
