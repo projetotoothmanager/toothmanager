@@ -26,11 +26,11 @@ module.exports = class agendamento_controller {
         const regex_nome = /^[\D\s]+$/
         if (nome.split(" ").length <= 1) {
             req.flash('message', 'Favor digitar o nome completo')
-            res.render('./agendamento')
+            res.redirect('./agendamento')
             return
         } else if (!regex_nome.test(nome)) {
             req.flash('message', 'So pode utiliza letras!')
-            res.render('./agendamento')
+            res.redirect('./agendamento')
             return
         };
 
@@ -39,7 +39,7 @@ module.exports = class agendamento_controller {
         let validador_data = /(0[1-9]|[12][0-9]|3[01])\/?(0[1-9]|1[012])\/?(19|20)\d{2}/g
         if (!validador_data.test(data_br)) {
             req.flash('message', 'Data fora do padrão')
-            res.render('./agendamento')
+            res.redirect('./agendamento')
             return
         };
 
@@ -52,7 +52,7 @@ module.exports = class agendamento_controller {
 
         if (days < 0) {
             req.flash('message', 'Data desejada ja passou!')
-            res.render('./agendamento')
+            res.redirect('./agendamento')
             return
         }
 
@@ -74,4 +74,48 @@ module.exports = class agendamento_controller {
         };
 
     };
+
+    static async agendamento_remove(req, res){
+
+        const id = req.body.id
+
+        await agendamento.destroy({ where: { id:id }})
+
+        res.redirect('./agendamento')
+    }
+
+    static async agendamento_update(req, res){
+
+        const id = req.params.id
+
+        const agenda = await agendamento.findOne({ where: { id:id }, raw: true})
+
+        res.render('./agendamento/edit', { agenda })
+
+    }
+
+    static async agendamento_update_save(req, res){
+
+        const id = req.body.id
+
+        const agenda = {
+            hora: req.body.hora,
+            data: req.body.data,
+            nome: req.nome.nome
+        }
+
+        try {
+            
+            await agendamento.update(agenda, { where: { id:id }})
+
+            req.flash('message', 'Agendamento atualizado com sucesso!')
+
+            res.redirect('./agendamento')
+
+        } catch (error) {
+
+            console.log(error)
+
+        }
+    }
 };
