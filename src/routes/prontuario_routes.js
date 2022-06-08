@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const prontuario_controller = require('../controller/prontuario_controller');
-const validador_login_auth = require('../../funcoes_div/valid_auht').validador_login_auth
+const validador_login_auth = require('../../helpers/valid_auht').validador_login_auth
 
 
 //*routes
