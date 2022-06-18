@@ -1,20 +1,20 @@
-const cadastro_cliente = require('../models/cadastro_cliente')
+const cadastroCliente = require('../models/cadastroCliente')
 
 //*Controller
-module.exports = class cadastro_cliente_controller {
+module.exports = class cadastroClienteController {
 
-    static cadastro_cliente(req, res, next) {
+    static cadastroCliente(req, res, next) {
         res.render('./cadastro')
     };
 
-    static async cadastro_save(req, res, next) {
+    static async cadastroSave(req, res, next) {
         const {
             nome,
             cpf,
             sexo,
             celular,
-            e_mail,
-            data_Nacimento,
+            eMail,
+            dataNacimento,
             rua,
             bairro,
             complemento,
@@ -24,7 +24,7 @@ module.exports = class cadastro_cliente_controller {
             cep
         } = req.body
 
-        console.log(data_Nacimento)
+        console.log(dataNacimento)
         // conferimos se o usuario digito o nome e sobrenome
         if (nome.split(" ").length <= 1) {
 
@@ -34,72 +34,65 @@ module.exports = class cadastro_cliente_controller {
         };
 
         // Retiramos todos os caracteres especial
-        let cpf_analise = cpf.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "");
+        let cpfAnalise = cpf.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "");
 
-        if (cpf_analise.split("").length < 11) {
+        if (cpfAnalise.split("").length < 11) {
             req.flash('message', 'Cpf esta com numero de caracteres menor')
             res.render('./cadastro')
             return
-        } else if (cpf_analise.split("").length > 11) {
+        } else if (cpfAnalise.split("").length > 11) {
             req.flash('message', 'Cpf esta com numero de caracteres maior')
             res.render('./cadastro')
             return
         };
 
-        const validador_banco_usuario = await cadastro_cliente.findOne({
+        const validadorBancoUsuario = await cadastroCliente.findOne({
             where: {
-                cpf: cpf_analise
+                cpf: cpfAnalise
             }
         });
 
         // conferindo se o usuario nao esta cadastrado
-        if (validador_banco_usuario) {
+        if (validadorBancoUsuario) {
             req.flash('message', 'O usuario ja esta cadastro')
             res.render('./cadastro')
             return
         };
 
-        // let data_us = data_Nacimento.split("-")
-        // let data_br = `${data_us[2]}/${data_us[1]}/${data_us[0]}`
-        // let validador_nac = /(0[1-9]|[12][0-9]|3[01])\/?(0[1-9]|1[012])\/?(19|20)\d{2}/g
-        // if (!validador_nac.test(data_br)) {
-        //     req.flash('message', 'Data nacimento fora do padrão')
-        //     res.render('./cadastro')
-        //     return
-        // };
+
 
         //Verificando o celular
-        let celular_verificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('')
+        let celularVerificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('')
 
-        if (celular_verificador.length > 12) {
+        if (celularVerificador.length > 12) {
             console.log('erro')
             req.flash('message', 'O numero do telefone digitado esta incorreto, maior que 12 digitos')
             res.render('./cadastro')
             return
-        } else if (celular_verificador.length < 12) {
+        } else if (celularVerificador.length < 12) {
             req.flash('message', 'O numero telefone digitado esta incorreto, menor que 12 digitos')
             res.render('./cadastro')
             return
 
         };
 
-        let regex_numero = /^(\d)+$/
-        if (!regex_numero.test(numero)) {
+        let regexNumero = /^(\d)+$/
+        if (!regexNumero.test(numero)) {
             req.flash('message', 'Ola no campo numero nao pode ter letras, qualquer outro dado no complemento!')
             res.render('./cadastro')
             return
         };
 
 
-        let cep_database = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "")
+        let cepDatabase = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "")
 
-        let regx_cep = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('').length
+        let regxCep = cep.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('').length
 
-        if (regx_cep > 8) {
+        if (regxCep > 8) {
             req.flash('message', 'Ola o CEP esta com numero a mais!')
             res.render('./cadastro')
             return
-        } else if (regx_cep < 8) {
+        } else if (regxCep < 8) {
             req.flash('message', 'Ola o CEP esta faltando numero!')
             res.render('./cadastro')
             return
@@ -109,23 +102,23 @@ module.exports = class cadastro_cliente_controller {
 
         const dados = {
             nome,
-            cpf: cpf_analise,
+            cpf: cpfAnalise,
             sexo,
             celular,
-            e_mail,
-            data_Nacimento,
+            eMail,
+            dataNacimento,
             rua,
             bairro,
             complemento,
             numero,
             cidade,
             estado,
-            cep: cep_database
+            cep: cepDatabase
         };
 
         // criação de dados no banco de dados
         try {
-            const created_user = await cadastro_cliente.create(dados)
+            const createdUser = await cadastroCliente.create(dados)
             req.flash('message', "Cadastro realizado com sucesso!")
             res.render('./cadastro')
 

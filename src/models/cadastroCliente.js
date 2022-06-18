@@ -24,11 +24,11 @@ class cadastroCliente extends Model {
                 type: DataTypes.STRING,
                 require: true
             },
-            e_mail: {
+            eMail: {
                 type: DataTypes.STRING,
                 require: true
             },
-            data_Nacimento: {
+            dataNacimento: {
                 type: DataTypes.DATEONLY,
                 require: true
             },

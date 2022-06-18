@@ -1,4 +1,4 @@
- module.exports.validador_login_auth = function (req, res, next) {
+ module.exports.validadorLoginAuth = function (req, res, next) {
 
      let userId = req.session.userid
 

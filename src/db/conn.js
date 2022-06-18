@@ -5,7 +5,7 @@ const dbConfig = require('../config/database');
 require('dotenv').config()
 
 const agendamento = require('../models/agendamento')
-const cadastro_cliente = require('../models/cadastro_cliente')
+const cadastroCliente = require('../models/cadastroCliente')
 const user = require('../models/user')
 const prontuario = require('../models/prontuario')
 
@@ -13,7 +13,7 @@ const prontuario = require('../models/prontuario')
 const sequelize = new Sequelize(dbConfig);
 
 agendamento.init(sequelize);
-cadastro_cliente.init(sequelize);
+cadastroCliente.init(sequelize);
 user.init(sequelize);
 prontuario.init(sequelize);
 

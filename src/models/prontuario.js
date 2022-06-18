@@ -3,7 +3,7 @@ const {
     Sequelize,
     DataTypes
 } = require("sequelize")
-const Cliente = require('../models/cadastro_cliente')
+const Cliente = require('./cadastroCliente')
 
 
 class prontuario extends Model {

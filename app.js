@@ -12,14 +12,14 @@ const conn = require('./src/db/conn') // puxamos os dados da configuração do b
 require('dotenv').config()
 
 //*import routes
-const index_routes = require('./src/routes/index_routes');
-const auth_routes = require('./src/routes/auth_routes');
-const cadastro_cliente_router = require('./src/routes/cadastro_cliente_router');
-const agendamento_router = require('./src/routes/agendamento_router');
-const prontuario_router = require('./src/routes/prontuario_routes');
+const indexRoutes = require('./src/routes/indexRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const cadastroClienteRouter = require('./src/routes/cadastroClienteRouter');
+const agendamentoRouter = require('./src/routes/agendamentoRouter');
+const prontuarioRouter = require('./src/routes/prontuarioRoutes');
 
 //* models - Banco de dados
-const cadastro_cliente = require('./src/models/cadastro_cliente')
+const cadastroCliente = require('./src/models/cadastroCliente')
 const user = require('./src/models/user')
 const agendamento = require('./src/models/agendamento')
 
@@ -49,7 +49,7 @@ app.use(session({ // onde o express vai salva session, para deixar o usuario log
   }),
   cookie: { // vamos salvar tempo para conexao
     secure: false, //
-    maxAge: 990000, // tempo de session
+    maxAge: 9900000, // tempo de session coloquei mais um zero
     expires: new Date(Date.now() + 360000), // aqui descrimina o tempo
     httpOnly: true // como estamos em localhost fica em http
   }
@@ -74,11 +74,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //* routes
-app.use('/', auth_routes)
-app.use('/', index_routes);
-app.use('/', cadastro_cliente_router);
-app.use('/', agendamento_router);
-app.use('/', prontuario_router);
+app.use('/', authRoutes)
+app.use('/', indexRoutes);
+app.use('/', cadastroClienteRouter);
+app.use('/', agendamentoRouter);
+app.use('/', prontuarioRouter);
 
 
 //* catch 404 and forward to error handler
