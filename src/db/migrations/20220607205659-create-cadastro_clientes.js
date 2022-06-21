@@ -29,12 +29,12 @@ module.exports = {
         require: true,
         allowNull: false
       },
-      e_mail: {
+      eMail: {
         type: Sequelize.STRING,
         require: true,
         allowNull: false
       },
-      data_Nacimento: {
+      dataNacimento: {
         type: Sequelize.DATEONLY,
         require: true,
         allowNull: false

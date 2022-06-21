@@ -2,12 +2,12 @@ const bcrypt = require('bcryptjs'); // puxamos os dados da biblioteca que encrip
 const User = require('../models/user'); // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
 
 //*Controller
-module.exports = class auth_controller {
+module.exports = class authController {
     static login(req, res, next) {
         res.render('auth/login')
     };
 
-    static async login_post(req, res, next) {
+    static async loginPost(req, res, next) {
         const {
             email,
             password
@@ -54,7 +54,7 @@ module.exports = class auth_controller {
         res.render('auth/registrar')
     }
 
-    static async registrar_post(req, res) {
+    static async registrarPost(req, res) {
         const {
             name,
             email,
@@ -69,13 +69,13 @@ module.exports = class auth_controller {
         }
 
         //check se user existe
-        const checkIf_user_exists = await User.findOne({
+        const checkUserExists = await User.findOne({
             where: {
                 email: email
             }
         })
 
-        if (checkIf_user_exists) {
+        if (checkUserExists) {
             req.flash('message', 'O e-mail já está cadastrado')
             res.render('auth/registrar')
             return
@@ -91,9 +91,9 @@ module.exports = class auth_controller {
         }
 
         try {
-            const created_user = await User.create(dados)
+            const createdUser = await User.create(dados)
             //inicializar sessao
-            req.session.userid = created_user.id
+            req.session.userid = createdUser.id
 
             req.flash('message', 'Conta criada com Sucesso!! :)')
 
