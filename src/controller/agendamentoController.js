@@ -81,13 +81,13 @@ module.exports = class agendamentoController {
 
         console.log(id)
 
-        const agendamentos = await agendamento.destroy({
+        await agendamento.destroy({
             where: {
                 id: id
             }
         })
 
-        res.render('./agendamento', {agendamentos})
+        res.redirect('/agendamento')
     }
 
     static async agendamentoUpdate(req, res) {

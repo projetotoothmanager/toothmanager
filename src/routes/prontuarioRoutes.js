@@ -8,6 +8,6 @@ router.get('/Prontuario', validadorLoginAuth, prontuarioController.prontuario);
 router.get('/detalhesProntuario', validadorLoginAuth, prontuarioController.detalhesProntuario);
 router.get('/addprontuario', validadorLoginAuth, prontuarioController.addprontuario);
 router.post('/addprontuario', validadorLoginAuth, prontuarioController.prontuarioSave);
-router.post('/prontuario/remove', validadorLoginAuth, prontuarioController.prontuarioRemove)
+router.post('/prontuario/remove/:id', validadorLoginAuth, prontuarioController.prontuarioRemove)
 
 module.exports = router;

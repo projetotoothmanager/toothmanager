@@ -62,7 +62,7 @@
                     <a href="/detalhesProntuario">
                         <label for="">Nome:</label>
                         <span><%= prontuarios.nome %></span>
-                        <form action="/agendamento/remove" method="POST">
+                        <form action="/prontuario/remove/<%= prontuarios.id%>" method="POST">
                             <input type="hidden" name="id" value="<%= prontuarios.id%>">
                             <button type="submit" class="btn">Deletar</button>
                         </form>
