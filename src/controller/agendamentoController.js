@@ -77,7 +77,9 @@ module.exports = class agendamentoController {
 
     static async agendamentoRemove(req, res) {
 
-        const id = req.body.id
+        const id = req.params.id
+
+        console.log(id)
 
         await agendamento.destroy({
             where: {
@@ -85,7 +87,7 @@ module.exports = class agendamentoController {
             }
         })
 
-        res.redirect('./agendamento')
+        res.redirect('/agendamento')
     }
 
     static async agendamentoUpdate(req, res) {

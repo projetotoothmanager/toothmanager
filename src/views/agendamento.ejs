@@ -42,9 +42,6 @@
             </form>
         </div>
         <!-- AGENDA -->
-
-
-
         <div class="container-agenda">
             <form action="/agendamento" method="post" class="form">
                 <div class="form-content">
@@ -57,7 +54,6 @@
                 </div>
                 <button type="submit" id="Salvar" class="btn"> Adicionar </button>
             </form>
-
             <br>
             <% agendamentos.forEach((agendamentos) => { %>
             <div class="lista-agenda">
@@ -67,17 +63,17 @@
                 <span><%= agendamentos.data %></span>
                 <label for="Paciente" name="cliente" id="cliente">Nome:</label>
                 <span><%= agendamentos.nome %></span>
-                <button type="button" class="btn">Deletar</button>
-                <button type="button" class="btn">Editar</button>
+                <form action="/agendamento/remove/<%= agendamentos.id%>" method="POST">
+                    <input type="hidden" name="id" value="<%= agendamentos.id%>">
+                    <button type="submit" class="btn">Deletar</button>
+                </form>
+                <form action="">
+                    <button type="button" class="btn">Editar</button>
+                </form>
             </div>
             <% }) %>
-
-
             <br>
         </div>
-
     </main>
-
 </body>
-
 </html>
