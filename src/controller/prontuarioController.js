@@ -67,13 +67,23 @@ module.exports = class prontuarioController {
         try {
             await prontuario.create(dados)
             req.flash('message', "Prontuario cadastrado com sucesso!")
-            res.render('./criarProntuario')
+            res.redirect('./prontuario')
 
         } catch (err) {
             console.error("prontuario banco de dados:", err)
         };
-
-
     };
+
+    static async prontuarioRemove (req, res){
+        const id = req.body.id
+
+        const prontuarios = await prontuario.destroy({
+            where: {
+                id: id
+            }
+        })
+
+        res.redirect('./prontuario', {prontuarios})
+    }
 
 };
