@@ -1,13 +1,14 @@
 const button = document.getElementById('button')
 
 button.addEventListener('click', (event) => {
-  event.preventDefault()
+  // event.preventDefault()
 
   const email = document.getElementById('email')
   const password = document.getElementById('password')
 
   if(email.value =='') {
     email.classList.add('errorInput')
+    event.preventDefault()
   }else{
     email.classList.remove('errorInput')
   }
@@ -24,10 +25,10 @@ button.addEventListener('click', (event) => {
     email.classList.remove('errorInput')
   }
 
-  if(password.value.length <= 5) {
-    password.classList.add('errorInput')
+  if(password.value.length <= 4) {
+    console.log(password.classList.add('errorInput'))
   }else{
-    password.classList.add('errorInput')
+    password.classList.remove('errorInput')
   }
 
 })
