@@ -153,3 +153,7 @@ section .contentBx .formBx .inputBx p a {
     align-items: center;
     justify-content: center;
 }
+
+.errorInput {
+    border: 1px solid red !important;
+}
