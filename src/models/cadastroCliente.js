@@ -1,6 +1,9 @@
-const { Model, DataTypes } = require("sequelize");
+const {
+    Model,
+    DataTypes
+} = require("sequelize");
 
-class cadastroCliente extends Model {
+class CadastroCliente extends Model {
     static init(sequelize) {
         super.init({
             nome: {
@@ -55,12 +58,10 @@ class cadastroCliente extends Model {
                 type: DataTypes.STRING,
                 require: true
             }
-
         }, {
-
             sequelize
         })
     }
 }
 
-module.exports = cadastroCliente;
+module.exports = CadastroCliente;
