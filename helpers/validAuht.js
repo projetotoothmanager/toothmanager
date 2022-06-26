@@ -1,11 +1,9 @@
- module.exports.validadorLoginAuth = function (req, res, next) {
+module.exports.validadorLoginAuth = function (req, res, next) {
 
-     let userId = req.session.userid
+    let userId = req.session.userid
+    if (!userId) {
+        res.redirect('/login')
+    }
+    next()
 
-     if (!userId) {
-         res.redirect('/login')
-     }
-
-     next()
-
- }
+};

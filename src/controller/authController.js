@@ -1,7 +1,7 @@
-const bcrypt = require('bcryptjs'); 
-const User = require('../models/user'); 
+const bcrypt = require('bcryptjs');
+const User = require('../models/user');
 
-module.exports = class authController {
+module.exports = class AuthController {
     static login(req, res, next) {
         res.render('auth/login');
     };
@@ -13,10 +13,13 @@ module.exports = class authController {
         } = req.body
 
         const user = await User.findOne({
-            where: {email: email}});
+            where: {
+                email: email
+            }
+        });
 
         if (!user) {
-            req.flash('message', 'O Usuário não econtrado!!'); 
+            req.flash('message', 'O Usuário não econtrado!!');
             res.render('auth/login');
             return
         };
@@ -31,7 +34,7 @@ module.exports = class authController {
         try {
             req.session.userid = user.id
             req.flash('message', "login realizado com sucesso!")
-            req.session.save(() => { 
+            req.session.save(() => {
                 res.redirect('/agendamentos');
             })
         } catch (err) {
@@ -80,14 +83,10 @@ module.exports = class authController {
 
         try {
             const createdUser = await User.create(dados);
-
             req.session.userid = createdUser.id
-
             req.flash('message', 'Conta criada com Sucesso!! :)');
-
             req.session.save(() => {
                 res.redirect('/agendamentos')
-
             })
         } catch (err) {
             console.log(err);
