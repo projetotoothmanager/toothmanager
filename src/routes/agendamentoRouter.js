@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const validadorLoginAuth = require('../../helpers/validAuht').validadorLoginAuth
-const agendamentoController = require('../controller/agendamentoController');
+const AgendamentoController = require('../controller/agendamentoController');
 
-router.get('/agendamentos', validadorLoginAuth, agendamentoController.agendamento);
-router.post('/agendamentos', validadorLoginAuth, agendamentoController.save);
-router.post('/agendamentos/remove/:id', validadorLoginAuth, agendamentoController.remove);
-router.get('/agendamentos/editAgendamento/:id', validadorLoginAuth, agendamentoController.update);
-router.post('/agendamentos/editAgendamento', validadorLoginAuth, agendamentoController.updateSave);
+router.get('/agendamentos', validadorLoginAuth, AgendamentoController.agendamento);
+router.post('/agendamentos', validadorLoginAuth, AgendamentoController.save);
+router.post('/agendamentos/remove/:id', validadorLoginAuth, AgendamentoController.remove);
+router.get('/agendamentos/editAgendamento/:id', validadorLoginAuth, AgendamentoController.update);
+router.post('/agendamentos/editAgendamento', validadorLoginAuth, AgendamentoController.updateSave);
 
 module.exports = router;

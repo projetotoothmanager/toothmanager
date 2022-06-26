@@ -40,11 +40,11 @@
                 <form action="/agendamentos" method="POST" class="form">
                     <div class="form-content">
                         <label for="">Hora:</label>
-                        <input type="time" name='hora' min="09:00" max="18:00" required>
+                        <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
                         <label for="">Data:</label>
-                        <input type="date" name='data' required>
+                        <input type="date" name='data' id="data" required>
                         <label for="">Paciente:</label>
-                        <input type="text" name='nome' required>
+                        <input type="text" name='nome' id="paciente" required>
                     </div>
                     <button type="submit" id="Salvar" class="btn"> Adicionar </button>
                 </form>

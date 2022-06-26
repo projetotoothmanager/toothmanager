@@ -1,9 +1,9 @@
 const agendamento = require("../models/agendamento");
 
-module.exports = class agendamentoController {
+module.exports = class AgendamentoController {
 
     static async agendamento(req, res, next) {
-       
+
         const agendamentos = await agendamento.findAll({
             raw: true
         })
@@ -12,7 +12,7 @@ module.exports = class agendamentoController {
     }
 
     static async save(req, res, next) {
-        
+
         const {
             hora,
             data,
@@ -62,36 +62,27 @@ module.exports = class agendamentoController {
             const createdUser = await agendamento.create(dados);
             req.flash('message', "Agendamento realizado com sucesso!");
             res.redirect('./agendamentos');
-
         } catch (err) {
             console.error("Cadastro:", err);
         }
     }
 
     static async remove(req, res) {
-        
         const id = req.params.id
-
         await agendamento.destroy({
             where: {id: id}});
-
         res.redirect('/agendamentos');
     }
 
     static async update(req, res) {
-        
-        const id = req.params.id
 
+        const id = req.params.id
         const agenda = await agendamento.findOne({
             where: {id: id}, raw: true});
-
         res.render('editAgendamento', {agenda});
-    }
-
+   }
     static async updateSave(req, res) {
-        
         const id = req.body.id
-
         const agenda = {
             hora,
             data,
@@ -100,15 +91,11 @@ module.exports = class agendamentoController {
 
         try {
             await agendamento.update(agenda, {where: {id: id}});
-
             req.flash('message', 'Agendamento atualizado com sucesso!');
-
             req.session.save(() => {
                 res.redirect('/agendamentos');
             })
-
-        } catch (error) {
-
+         } catch (error) {
             console.log(error);
         }
     }

@@ -1,7 +1,9 @@
-const { Model, DataTypes } = require("sequelize");
-const Cliente = require('./cadastroCliente');
+const {
+    Model,
+    DataTypes
+} = require("sequelize");
 
-class prontuario extends Model {
+class Prontuario extends Model {
     static init(sequelize) {
         super.init({
             nome: {
@@ -32,16 +34,9 @@ class prontuario extends Model {
                 type: DataTypes.STRING,
                 require: false
             }
-
         }, {
-
             sequelize
         })
     }
 }
-module.exports = prontuario;
-
-// prontuario.belongsTo(Cliente, {
-//     constraints: true,
-//     foreignKey: 'idCliente'
-// })
+module.exports = Prontuario;

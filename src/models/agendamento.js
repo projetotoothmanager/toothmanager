@@ -1,6 +1,9 @@
-const { Model, DataTypes } = require("sequelize");
+const {
+    Model,
+    DataTypes
+} = require("sequelize");
 
-class agendamento extends Model {
+class Agendamento extends Model {
     static init(sequelize) {
         super.init({
             hora: {
@@ -16,19 +19,8 @@ class agendamento extends Model {
                 require: true
             },
         }, {
-
             sequelize
-
         });
     }
 }
-module.exports = agendamento;
-
-// agendamento.belongsTo(Cliente, {
-//     constraints: true,
-//     foreignKey: 'idCliente'
-// })
-
-// Cliente.hasMany(agendamento, {
-//     foreignKey: 'idCliente'
-// })
+module.exports = Agendamento;

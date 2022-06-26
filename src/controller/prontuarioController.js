@@ -1,12 +1,15 @@
 const prontuario = require('../models/prontuario')
 
-module.exports = class prontuarioController {
+module.exports = class ProntuarioController {
 
     static async prontuario(req, res, next) {
+        const prontuarios = await prontuario.findAll({
+            raw: true
+        });
 
-        const prontuarios = await prontuario.findAll({raw: true});
-
-        res.render('./prontuarios', {prontuarios});
+        res.render('./prontuarios', {
+            prontuarios
+        });
     };
 
     static detalhesProntuario(req, res, next) {
@@ -69,30 +72,37 @@ module.exports = class prontuarioController {
         }
     }
 
-    static async remove (req, res){
-        
+    static async remove(req, res) {
         const id = req.params.id
-
         await prontuario.destroy({
-            where: {id: id}});
-
+            where: {
+                id: id
+            }
+        });
         res.redirect('/prontuarios');
     }
-
-    static async update (req, res){
-
+    static async update(req, res) {
         const id = req.params.id
 
         const prontuarios = await prontuario.findOne({ 
             where: {id:id}, raw: true});
         
         res.render('editProntuarios', {prontuarios});
+        const prontuarios = await prontuario.findOne({
+            where: {
+                id: id
+            },
+            raw: true
+        });
+
+        res.render('./prontuarios/editProntuario', {
+            prontuarios
+        });
     }
 
-    static async updateSave(req, res){
+    static async updateSave(req, res) {
 
         const id = req.body.id
-
         const prontuarios = {
             nome,
             time,
@@ -105,14 +115,15 @@ module.exports = class prontuarioController {
 
         try {
             await prontuario.update(prontuarios, {
-                where: {id: id}});
+                where: {
+                    id: id
+                }
+            });
 
             req.flash('message', 'Prontuário atualizado com sucesso!')
-
             res.redirect('/prontuarios')
-        
         } catch (error) {
-            
+
         }
     }
 }
