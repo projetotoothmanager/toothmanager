@@ -7,10 +7,8 @@ module.exports = class AgendamentoController {
         const agendamentos = await agendamento.findAll({
             raw: true
         })
-        console.log(agendamentos)
-        res.render('./agendamentos', {
-            agendamentos
-        })
+
+        res.render('./agendamentos', {agendamentos})
     }
 
     static async save(req, res, next) {
@@ -28,7 +26,7 @@ module.exports = class AgendamentoController {
             res.redirect('./agendamentos');
             return
         } else if (!regexNome.test(nome)) {
-            req.flash('message', 'So pode utiliza letras!');
+            req.flash('message', 'Só pode utilizar letras!');
             res.redirect('./agendamentos');
             return
         }
@@ -64,21 +62,15 @@ module.exports = class AgendamentoController {
             const createdUser = await agendamento.create(dados);
             req.flash('message', "Agendamento realizado com sucesso!");
             res.redirect('./agendamentos');
-
         } catch (err) {
             console.error("Cadastro:", err);
         }
     }
 
     static async remove(req, res) {
-
         const id = req.params.id
         await agendamento.destroy({
-            where: {
-                id: id
-            }
-        });
-
+            where: {id: id}});
         res.redirect('/agendamentos');
     }
 
@@ -86,20 +78,11 @@ module.exports = class AgendamentoController {
 
         const id = req.params.id
         const agenda = await agendamento.findOne({
-            where: {
-                id: id
-            },
-            raw: true
-        });
-        res.render('./agendamentos/editAgendamento', {
-            agenda
-        });
-    }
-
+            where: {id: id}, raw: true});
+        res.render('editAgendamento', {agenda});
+   }
     static async updateSave(req, res) {
-
         const id = req.body.id
-
         const agenda = {
             hora,
             data,
@@ -107,15 +90,12 @@ module.exports = class AgendamentoController {
         } = req.body
 
         try {
-            await agendamento.update(agenda, {
-                where: {
-                    id: id
-                }
-            });
+            await agendamento.update(agenda, {where: {id: id}});
             req.flash('message', 'Agendamento atualizado com sucesso!');
-            res.redirect('/agendamentos');
-
-        } catch (error) {
+            req.session.save(() => {
+                res.redirect('/agendamentos');
+            })
+         } catch (error) {
             console.log(error);
         }
     }

@@ -13,7 +13,10 @@ module.exports = class ProntuarioController {
     };
 
     static detalhesProntuario(req, res, next) {
-        res.render('detalhesProntuario');
+
+        const id = req.params.id; 
+
+        res.render('detalhesProntuario', {id});
     };
 
     static addProntuario(req, res, next) {
@@ -78,9 +81,13 @@ module.exports = class ProntuarioController {
         });
         res.redirect('/prontuarios');
     }
-
     static async update(req, res) {
         const id = req.params.id
+
+        const prontuarios = await prontuario.findOne({ 
+            where: {id:id}, raw: true});
+        
+        res.render('editProntuarios', {prontuarios});
         const prontuarios = await prontuario.findOne({
             where: {
                 id: id
