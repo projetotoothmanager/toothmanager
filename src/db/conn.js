@@ -1,6 +1,4 @@
-const {
-    Sequelize
-} = require('sequelize'); // puxamos a importação  do banco de dados
+const { Sequelize } = require('sequelize'); 
 const dbConfig = require('../config/database');
 require('dotenv').config()
 
@@ -9,7 +7,6 @@ const cadastroCliente = require('../models/cadastroCliente')
 const user = require('../models/user')
 const prontuario = require('../models/prontuario')
 
-
 const sequelize = new Sequelize(dbConfig);
 
 agendamento.init(sequelize);
@@ -17,13 +14,12 @@ cadastroCliente.init(sequelize);
 user.init(sequelize);
 prontuario.init(sequelize);
 
-
 try {
-    sequelize.authenticate()
-    console.log("Authenticated  sucess")
+    sequelize.authenticate();
+    console.log("Autenticação feita com sucesso!");
 
 } catch (err) {
-    console.log("nao foi possivel Autenticar" + err.message)
+    console.log("Não foi possível realizar conexão!" + err.message);
 };
 
 module.exports = sequelize

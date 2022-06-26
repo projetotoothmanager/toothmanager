@@ -1,10 +1,5 @@
-const {
-    Model,
-    Sequelize,
-    DataTypes
-} = require("sequelize")
-const Cliente = require('./cadastroCliente')
-
+const { Model, DataTypes } = require("sequelize");
+const Cliente = require('./cadastroCliente');
 
 class prontuario extends Model {
     static init(sequelize) {
@@ -43,9 +38,8 @@ class prontuario extends Model {
             sequelize
         })
     }
-
 }
-module.exports = prontuario
+module.exports = prontuario;
 
 // prontuario.belongsTo(Cliente, {
 //     constraints: true,

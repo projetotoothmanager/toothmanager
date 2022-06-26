@@ -1,48 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | ToothManager</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
-
-<body>
-    <% if ( messages.message ) { %>
-        <div class="flash">
-            <%= messages.message %>
-        </div>
-        <% } %>
-
-            <section>
-                <div class="imgBx">
-                    <img src="img/img-dentista-login.jpg" alt="">
-                </div>
-
-                <div class="contentBx">
-                    <div class="formBx">
-                        <h2>Login</h2>
-                            <form class="form-auth" action="/login" method="POST">
-
-                                <div class="inputBx">
-                                    <span>E-mail</span>
-                                    <input type="email" name='email' placeholder="Digite seu e-mail ">
-                                </div>
-                                <div class="inputBx">
-                                    <span>Senha</span>
-                                    <input type="password" name='password' placeholder="Digite a sua senha">
-                                </div>
-
-                                <div class="inputBx">
-                                <input type="submit" value='Login' class="login-submit">
-                                </div>
+    <body>
+        <% if ( messages.message ) { %>
+            <div class="flash">
+                <%= messages.message %>
+            </div>
+            <% } %>
+                <section>
+                    <div class="imgBx">
+                        <img src="img/img-dentista-login.jpg" alt="">
                     </div>
-                            </form>
-                </div>
-                </div>
-            </section>
-            <script src="/validation/validForms.js"></script>
-</body>
-
+                    <div class="contentBx">
+                        <div class="formBx">
+                            <h2>Login</h2>
+                                <form class="form-auth" action="/login" method="POST">
+                                    <div class="inputBx">
+                                        <span>E-mail</span>
+                                        <input type="email" name='email' placeholder="Digite seu e-mail ">
+                                    </div>
+                                    <div class="inputBx">
+                                        <span>Senha</span>
+                                        <input type="password" name='password' placeholder="Digite a sua senha">
+                                    </div>
+                                    <div class="inputBx">
+                                    <input type="submit" value='Login' class="login-submit">
+                                    </div>
+                                </form>
+                        </div>         
+                </section>
+                <script src="/validation/validForms.js"></script>
+    </body>
 </html>
