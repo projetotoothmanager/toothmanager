@@ -1,106 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/detalhesProntuario.css">
-    <!-- script -->
-    <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
-    <title>Toothmanager</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/detalhesProntuario.css">
+        <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+        <title>Toothmanager</title>
+    </head>
+    <body>
+            <!-- button-menu-hamburguer -->
+            <input type="checkbox" id="check">
+            <label for="check" class="menu-hamburgue">
+                <i class="fas fa-bars" id="btn"></i>
+                <i class="fas fa-times" id="cancel"></i>
+            </label>
+            <!-- sidebar -->
+            <%- include('./partials/sidebar')%>
 
-
-        <!-- button-menu-hamburguer -->
-        <input type="checkbox" id="check">
-        <label for="check" class="menu-hamburgue">
-            <i class="fas fa-bars" id="btn"></i>
-            <i class="fas fa-times" id="cancel"></i>
-        </label>
-        <!-- sidebar -->
-        <%- include('./partials/sidebar')%>
-
-        <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
-            <main>
-        <!-- Busca -->
-        <div class="search-container">
-            <div class="title-pagina">
-                <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
+            <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
+        <main>
+                <!-- Busca -->
+            <div class="search-container">
+                <div class="title-pagina">
+                    <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
+                </div>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
-
-          <form action="#" method="get">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-        <!-- REFERENCIA -->
-
-        <!-- Prontuario -->
-
-       <% if ( messages.message ) { %>
-    <div class="flash"><%= messages.message %>
-    </div>
-   <% } %>
-
-
-
-        <div class="container-detalhes-prontuario">
-
-            <div class="card-prontuario">
-                <div>
-                    <h2>Prontuario do Paciente</h2>
+                <!-- Prontuario -->
+            <% if ( messages.message ) { %>
+            <div class="flash"><%= messages.message %></div>
+        <% } %>
+            <div class="container-detalhes-prontuario">
+                <div class="card-prontuario">
+                    <div>
+                        <h2>Prontuario do Paciente</h2>
+                    </div>
+                    <div>
+                        <label for="">ID:</label>
+                        <span>0123</span>
+                    </div>
+                    <div>
+                        <label for="">Nome do Paciente</label>
+                        <span>Wictor Hiago joaozinho silva</span>
+                    </div>
+                    <div>
+                        <label for="">Realizado as:</label>
+                        <span> 08:00</span>
+                    </div>
+                    <div>
+                        <label for="">Atendimento:</label>
+                        <label for="consulta">Consulta</label>
+                        <input type="radio" name="atendimento" id="consulta">
+                        <label for="retorno"> Retorno</label>
+                        <input type="radio" name="atendimento" id="retorno">
+                    </div>
+                    <div>
+                        <label for="">Dentista:</label>
+                        <span>Doutor Thiago Augusto Silva Fulano</span>
+                    </div>
+                    <div>
+                        <label for="">Tratamento:</label>
+                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid nulla in sequi voluptates, doloribus et velit delectus, nesciunt facere enim laboriosam sed? Nostrum, magni accusamus. Voluptates id tempore aut!</span>
+                    </div>
+                    <div>
+                        <label for="">Extração:</label>
+                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolorem inventore, repellat fuga debitis labore temporibus, a quibusdam iste voluptatem quas non reiciendis veritatis dolorum consectetur nobis consequatur illum? Magnam.</span>
+                    </div>
+                    <div>
+                        <label for="">Limpeza:</label>
+                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ea, a voluptatem at alias error amet reiciendis velit? Ad repudiandae fuga iste voluptas nostrum deserunt quidem illum officiis voluptate dolor?</span>
+                    </div>
+                    </div>
                 </div>
-
-                <div>
-                    <label for="">ID:</label>
-                    <span>0123</span>
-                </div>
-
-                <div>
-                    <label for="">Nome do Paciente</label>
-                    <span>Wictor Hiago joaozinho silva</span>
-                </div>
-
-                <div>
-                    <label for="">Realizado as:</label>
-                    <span> 08:00</span>
-                </div>
-
-                <div>
-                    <label for="">Atendimento:</label>
-                    <label for="consulta">Consulta</label>
-                    <input type="radio" name="atendimento" id="consulta">
-
-                    <label for="retorno"> Retorno</label>
-                    <input type="radio" name="atendimento" id="retorno">
-                </div>
-                <div>
-                    <label for="">Dentista:</label>
-                    <span>Doutor Thiago Augusto Silva Fulano</span>
-                </div>
-                <div>
-                    <label for="">Tratamento:</label>
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid nulla in sequi voluptates, doloribus et velit delectus, nesciunt facere enim laboriosam sed? Nostrum, magni accusamus. Voluptates id tempore aut!</span>
-                </div>
-                <div>
-                    <label for="">Extração:</label>
-                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolorem inventore, repellat fuga debitis labore temporibus, a quibusdam iste voluptatem quas non reiciendis veritatis dolorum consectetur nobis consequatur illum? Magnam.</span>
-                </div>
-                <div>
-                    <label for="">Limpeza:</label>
-                    <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ea, a voluptatem at alias error amet reiciendis velit? Ad repudiandae fuga iste voluptas nostrum deserunt quidem illum officiis voluptate dolor?</span>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
-
-            </main>
-</body>
+        </main>
+    </body>
 </html>

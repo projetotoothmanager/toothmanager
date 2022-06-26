@@ -1,10 +1,9 @@
-const bcrypt = require('bcryptjs'); // puxamos os dados da biblioteca que encripita e desencript a senha do usuario
-const User = require('../models/user'); // puxamos os dados do banco do User, onde quardamos os dados dos usuario de login
+const bcrypt = require('bcryptjs'); 
+const User = require('../models/user'); 
 
-//*Controller
 module.exports = class authController {
     static login(req, res, next) {
-        res.render('auth/login')
+        res.render('auth/login');
     };
 
     static async loginPost(req, res, next) {
@@ -13,45 +12,35 @@ module.exports = class authController {
             password
         } = req.body
 
-        //procura o user
         const user = await User.findOne({
-            where: {
-                email: email
-            }
-        });
+            where: {email: email}});
 
-        //validando email do user
         if (!user) {
-            req.flash('message', 'O Usuário não econtrado!!'); //! alterar
-            res.render('auth/login')
+            req.flash('message', 'O Usuário não econtrado!!'); 
+            res.render('auth/login');
             return
         };
 
-        //check password
-        const hashpassword = bcrypt.compareSync(password, user.password)
-
+        const hashpassword = bcrypt.compareSync(password, user.password);
         if (!hashpassword) {
             req.flash('message', 'A senha esta incorreta');
-            res.render('auth/login')
+            res.render('auth/login');
             return
         };
-        //* inicializar session login
+
         try {
             req.session.userid = user.id
             req.flash('message', "login realizado com sucesso!")
-            req.session.save(() => { //salvamos os dados da session antes de redirect
-                res.redirect('/agendamento')
+            req.session.save(() => { 
+                res.redirect('/agendamentos');
             })
         } catch (err) {
-            console.error('Erro de salva session ', err)
+            console.error('Erro de salva session ', err);
         }
     }
 
-
-
-    //registrar
     static registrar(req, res) {
-        res.render('auth/registrar')
+        res.render('auth/registrar');
     }
 
     static async registrarPost(req, res) {
@@ -63,12 +52,11 @@ module.exports = class authController {
         } = req.body
 
         if (password != confirmpassword) {
-            req.flash('message', 'as senhas não conferem!')
-            res.render('auth/registrar')
+            req.flash('message', 'as senhas não conferem!');
+            res.render('auth/registrar');
             return
         }
 
-        //check se user existe
         const checkUserExists = await User.findOne({
             where: {
                 email: email
@@ -76,13 +64,13 @@ module.exports = class authController {
         })
 
         if (checkUserExists) {
-            req.flash('message', 'O e-mail já está cadastrado')
-            res.render('auth/registrar')
+            req.flash('message', 'O e-mail já está cadastrado');
+            res.render('auth/registrar');
             return
         }
-        //criar senha com bcrypt
-        const salt = bcrypt.genSaltSync(10)
-        const hashedPassword = bcrypt.hashSync(password, salt)
+
+        const salt = bcrypt.genSaltSync(10);
+        const hashedPassword = bcrypt.hashSync(password, salt);
 
         const dados = {
             name,
@@ -91,29 +79,24 @@ module.exports = class authController {
         }
 
         try {
-            const createdUser = await User.create(dados)
-            //inicializar sessao
+            const createdUser = await User.create(dados);
+
             req.session.userid = createdUser.id
 
-            req.flash('message', 'Conta criada com Sucesso!! :)')
+            req.flash('message', 'Conta criada com Sucesso!! :)');
 
-            //salvar sessao
             req.session.save(() => {
-                res.redirect('/agendamento')
+                res.redirect('/agendamentos')
 
             })
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-
     }
 
-    //* Função de logout
     static logout(req, res, next) {
 
-        req.session.destroy() // apagamos a ssesion dele dentro do navegador.
-        res.redirect('/login')
+        req.session.destroy();
+        res.redirect('/login');
     };
-
-
 };

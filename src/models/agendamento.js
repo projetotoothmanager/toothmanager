@@ -1,9 +1,4 @@
-const {
-    Model,
-    Sequelize,
-    DataTypes
-} = require("sequelize")
-
+const { Model, DataTypes } = require("sequelize");
 
 class agendamento extends Model {
     static init(sequelize) {
@@ -24,11 +19,10 @@ class agendamento extends Model {
 
             sequelize
 
-        })
+        });
     }
 }
-module.exports = agendamento
-
+module.exports = agendamento;
 
 // agendamento.belongsTo(Cliente, {
 //     constraints: true,

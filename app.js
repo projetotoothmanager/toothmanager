@@ -4,102 +4,83 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const flash = require('express-flash')
-const session = require('express-session'); // uma pasta dinamica
+const session = require('express-session');
 const cors = require('cors')
-const FileStore = require('session-file-store')(session); // este modulo salva dentro da pasta session
+const FileStore = require('session-file-store')(session);
 const app = express();
-const conn = require('./src/db/conn') // puxamos os dados da configuração do banco de dados
+const conn = require('./src/db/conn')
+const methodOverride = require('method-override');
 require('dotenv').config()
 
-//*import routes
-const indexRoutes = require('./src/routes/indexRoutes');
+//*Routes
 const authRoutes = require('./src/routes/authRoutes');
 const cadastroClienteRouter = require('./src/routes/cadastroClienteRouter');
 const agendamentoRouter = require('./src/routes/agendamentoRouter');
 const prontuarioRouter = require('./src/routes/prontuarioRoutes');
 
-//* models - Banco de dados
-const cadastroCliente = require('./src/models/cadastroCliente')
-const user = require('./src/models/user')
-const agendamento = require('./src/models/agendamento')
-
-//* view engine setup
+//* View Engine
 app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 app.use(logger('dev'));
 
-//*leito de json
+//*Leitor JSON
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
 }));
+app.use(methodOverride('_method'))
 
-
-//*sesion middleware
-app.use(session({ // onde o express vai salva session, para deixar o usuario logado
+//*Session Middleware
+app.use(session({ 
   name: 'session',
-  secret: 'nosso_secret', // segredo de criptografia
-  resave: false, // caso a conexao caia ele tera que logar novamente
-  saveUninitialized: false, //
-  store: new FileStore({ //esta FileStore me permite grava arquivos da session
+  secret: 'nosso_secret',
+  resave: false, 
+  saveUninitialized: false, 
+  store: new FileStore({ 
     logFn: function () {},
-    path: require('path').join(require('os').tmpdir(), //caminho para chegar na pasta ssesion
+    path: require('path').join(require('os').tmpdir(), 
       'sessions'),
   }),
-  cookie: { // vamos salvar tempo para conexao
-    secure: false, //
-    maxAge: 9900000, // tempo de session coloquei mais um zero
-    expires: new Date(Date.now() + 360000), // aqui descrimina o tempo
-    httpOnly: true // como estamos em localhost fica em http
+  cookie: { 
+    secure: false, 
+    maxAge: 9900000, 
+    expires: new Date(Date.now() + 360000), 
+    httpOnly: true 
   }
 }))
 
-
-//* set session to res
-app.use((req, res, next) => { // criamos a session
+app.use((req, res, next) => { 
   if (req.session.userid) {
     res.locals.session = req.session
   }
   next()
 })
 
-
-//* flash messages
-app.use(flash()) // msg do status de alteração de banco de dados
-
+//* Flash Messages
+app.use(flash()) 
 
 //*Pagina de Style
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//* routes
+//* Routes
 app.use('/', authRoutes)
-app.use('/', indexRoutes);
 app.use('/', cadastroClienteRouter);
 app.use('/', agendamentoRouter);
 app.use('/', prontuarioRouter);
 
-
-//* catch 404 and forward to error handler
+//* Catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
-
-//* error handler
+//* Error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
 
 conn
   .sync()
@@ -110,6 +91,5 @@ conn
     app.listen(process.env.PORT);
   })
   .catch((err) => console.log(err));
-
 
 module.exports = app;

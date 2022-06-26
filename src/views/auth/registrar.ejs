@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/register.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
-    <title>ToothManager</title>
-</head>
-
-<body>
-
-    <!-- button-menu-hamburguer -->
-    <input type="checkbox" id="check">
-    <label for="check" class="menu-hamburgue">
-        <i class="fas fa-bars" id="btn"></i>
-        <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <%- include('../partials/sidebar')%>
-    <main>
-        <div class="container">
-            <div>
-                <h2>Registrar</h2>
-
-            </div>
-            <form action="/registrar" method="post">
-                <div class="form-content">
-                    <label for="name">Nome:</label>
-                    <input type="text" name="name" placeholder="Seu nome" required>
-                    <label for="name">E-mail:</label>
-                    <input type="email" name="email" placeholder="email@email.com" required>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Digite sua senha" required>
-                    <label for="confirmpassword">Confirm Password:</label>
-                    <input type="password" name="confirmpassword" placeholder="Confirme a senha" required>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/register.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+        <title>ToothManager</title>
+    </head>
+    <body>
+        <!-- button-menu-hamburguer -->
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-hamburgue">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <%- include('../partials/sidebar')%>
+        <main>
+            <div class="container">
+                <div>
+                    <h2>Registrar</h2>
                 </div>
-
-                <input type="submit" value="Cadastrar" class="registerbtn">
-                <br>
-
-
-            </form>
-        </div>
-    </main>
-
-</body>
-
+                <form action="/registrar" method="post">
+                    <div class="form-content">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" placeholder="Seu nome" required>
+                        <label for="name">E-mail:</label>
+                        <input type="email" name="email" placeholder="email@email.com" required>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" placeholder="Digite sua senha" required>
+                        <label for="confirmpassword">Confirm Password:</label>
+                        <input type="password" name="confirmpassword" placeholder="Confirme a senha" required>
+                    </div>
+                    <input type="submit" value="Cadastrar" class="registerbtn">
+                    <br>
+                </form>
+            </div>
+        </main>
+    </body>
 </html>

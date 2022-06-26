@@ -20,6 +20,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.2",
     "http-errors": "~1.6.3",
+    "method-override": "^3.0.0",
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",

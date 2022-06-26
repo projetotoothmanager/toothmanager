@@ -1,31 +1,25 @@
 const prontuario = require('../models/prontuario')
 
-
 module.exports = class prontuarioController {
 
     static async prontuario(req, res, next) {
 
-        const prontuarios = await prontuario.findAll({
-            raw: true
-        })
-        console.log(prontuarios)
-        res.render('./prontuario', {
-            prontuarios
-        })
+        const prontuarios = await prontuario.findAll({raw: true});
+
+        res.render('./prontuarios', {prontuarios});
     };
 
     static detalhesProntuario(req, res, next) {
-        res.render('detalhesProntuario')
+        res.render('detalhesProntuario');
     };
 
-    static addprontuario(req, res, next) {
-        res.render('./criarProntuario')
+    static addProntuario(req, res, next) {
+        res.render('./criarProntuario');
     };
 
-    static async prontuarioSave(req, res, next) {
+    static async save(req, res, next) {
 
         const {
-            // id
             nome,
             time,
             atendimento,
@@ -33,7 +27,6 @@ module.exports = class prontuarioController {
             tratamento,
             extração,
             limpeza,
-
         } = req.body
 
         const regexNome = /^[\D\s]+$/
@@ -45,16 +38,15 @@ module.exports = class prontuarioController {
             req.flash('message', 'So pode utiliza letras!')
             res.render('./criarProntuario')
             return
-        };
+        }
         const regexDentista = /^[\D\s]+$/
         if (!regexDentista.test(dentista)) {
             req.flash('message', 'No campo Dentista so pode utiliza letras!')
-            res.render('./prontuario')
+            res.render('./prontuarios')
             return
-        };
+        }
 
         const dados = {
-            // id,
             nome,
             time,
             atendimento,
@@ -62,29 +54,62 @@ module.exports = class prontuarioController {
             tratamento,
             extração,
             limpeza,
-        };
-        // criação de dados no banco de dados
+        }
+
         try {
-            await prontuario.create(dados)
-            req.flash('message', "Prontuario cadastrado com sucesso!")
-            res.redirect('/prontuario')
+            await prontuario.create(dados);
+            req.flash('message', "Prontuario cadastrado com sucesso!");
+            res.redirect('/prontuarios');
 
         } catch (err) {
-            console.error("prontuario banco de dados:", err)
-        };
-    };
+            console.error("prontuario banco de dados:", err);
+        }
+    }
 
-    static async prontuarioRemove (req, res){
+    static async remove (req, res){
         
         const id = req.params.id
 
         await prontuario.destroy({
-            where: {
-                id: id
-            }
-        })
+            where: {id: id}});
 
-        res.redirect('/prontuario')
+        res.redirect('/prontuarios');
     }
 
-};
+    static async update (req, res){
+
+        const id = req.params.id
+
+        const prontuarios = await prontuario.findOne({ 
+            where: {id:id}, raw: true});
+        
+        res.render('./prontuarios/editProntuario', {prontuarios});
+    }
+
+    static async updateSave(req, res){
+
+        const id = req.body.id
+
+        const prontuarios = {
+            nome,
+            time,
+            atendimento,
+            dentista,
+            tratamento,
+            extração,
+            limpeza,
+        } = req.body
+
+        try {
+            await prontuario.update(prontuarios, {
+                where: {id: id}});
+
+            req.flash('message', 'Prontuário atualizado com sucesso!')
+
+            res.redirect('/prontuarios')
+        
+        } catch (error) {
+            
+        }
+    }
+}
