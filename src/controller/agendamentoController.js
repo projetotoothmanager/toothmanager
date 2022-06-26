@@ -7,10 +7,8 @@ module.exports = class agendamentoController {
         const agendamentos = await agendamento.findAll({
             raw: true
         })
-        console.log(agendamentos)
-        res.render('./agendamentos', {
-            agendamentos
-        })
+
+        res.render('./agendamentos', {agendamentos})
     }
 
     static async save(req, res, next) {
@@ -28,7 +26,7 @@ module.exports = class agendamentoController {
             res.redirect('./agendamentos');
             return
         } else if (!regexNome.test(nome)) {
-            req.flash('message', 'So pode utiliza letras!');
+            req.flash('message', 'Só pode utilizar letras!');
             res.redirect('./agendamentos');
             return
         }
@@ -87,7 +85,7 @@ module.exports = class agendamentoController {
         const agenda = await agendamento.findOne({
             where: {id: id}, raw: true});
 
-        res.render('./agendamentos/editAgendamento', {agenda});
+        res.render('editAgendamento', {agenda});
     }
 
     static async updateSave(req, res) {
@@ -101,12 +99,13 @@ module.exports = class agendamentoController {
         } = req.body
 
         try {
-            await agendamento.update(agenda, {
-                where: {id: id}});
+            await agendamento.update(agenda, {where: {id: id}});
 
             req.flash('message', 'Agendamento atualizado com sucesso!');
 
-            res.redirect('/agendamentos');
+            req.session.save(() => {
+                res.redirect('/agendamentos');
+            })
 
         } catch (error) {
 
