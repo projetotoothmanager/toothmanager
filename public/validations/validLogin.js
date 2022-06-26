@@ -8,7 +8,7 @@ button.addEventListener('click', (event) => {
 
   if(email.value =='') {
     email.classList.add('errorInput')
-    event.preventDefault()
+    //event.preventDefault()
   }else{
     email.classList.remove('errorInput')
   }
@@ -25,7 +25,7 @@ button.addEventListener('click', (event) => {
     email.classList.remove('errorInput')
   }
 
-  if(password.value.length <= 4) {
+  if(password.value.length <= 7) {
     console.log(password.classList.add('errorInput'))
   }else{
     password.classList.remove('errorInput')
