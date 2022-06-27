@@ -88,16 +88,6 @@ module.exports = class ProntuarioController {
             where: {id:id}, raw: true});
         
         res.render('editProntuarios', {prontuarios});
-        const prontuarios = await prontuario.findOne({
-            where: {
-                id: id
-            },
-            raw: true
-        });
-
-        res.render('./prontuarios/editProntuario', {
-            prontuarios
-        });
     }
 
     static async updateSave(req, res) {

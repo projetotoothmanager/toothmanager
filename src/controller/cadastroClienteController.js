@@ -6,6 +6,13 @@ module.exports = class CadastroClienteController {
         res.render('./cadastro');
     };
 
+    static async show(req, res){
+
+        const pacientes = await cadastroCliente.findAll({raw: true});
+
+        res.render('listaPacientes', {pacientes});
+    }
+
     static async cadastroSave(req, res, next) {
         const {
             nome,
@@ -55,7 +62,7 @@ module.exports = class CadastroClienteController {
         let celularVerificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('');
         if (celularVerificador.length > 12) {
             console.log('erro');
-            req.flash('message', 'O número de telefone inválido! Deve conter 12 dígitos!');
+            req.flash('message', 'Número de telefone inválido! Deve conter 12 dígitos!');
             res.render('./cadastro');
             return
 
