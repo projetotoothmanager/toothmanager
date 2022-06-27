@@ -1,10 +1,18 @@
 const button = document.getElementById('button')
 
 button.addEventListener('click', (event) => {
-  //event.preventDefault()
 
+  const name = document.getElementById('name')
   const email = document.getElementById('email')
   const password = document.getElementById('password')
+  const confirmPassword = document.getElementById('confirm-password')
+
+  if(name.value =='') {
+    name.classList.add('errorInput')
+    event.preventDefault()
+  }else{
+    name.classList.remove('errorInput')
+  }
 
   if(email.value =='') {
     email.classList.add('errorInput')
@@ -32,6 +40,13 @@ button.addEventListener('click', (event) => {
     event.preventDefault()
   }else{
     password.classList.remove('errorInput')
+  }
+
+  if(password.value != confirmPassword.value) {
+    confirmPassword.classList.add('errorInput')
+    event.preventDefault()
+  }else{
+    confirmPassword.classList.remove('errorInput')
   }
 
 })
