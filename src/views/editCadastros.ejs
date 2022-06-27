@@ -25,7 +25,7 @@
             <!-- Busca -->
             <div class="search-container">
                 <div class="title-pagina">
-                    <h1>Cadastro</h1>
+                    <h1>Editar Cadastro</h1>
                 </div>
                 <form action="#" method="get">
                     <input type="text" placeholder="Buscar.." name="search">
@@ -38,22 +38,22 @@
             </div>
             <% } %>
             <div class="container-cadastro">
-                <form action="/cadastro" method="post">
+                <form action="/cadastro/editCadastros" method="POST">
                     <div class="dados-pessoais">
-                        <h2>Dados Pessoais</h2>
+                        <h2>Editar Cadastro</h2>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required>
+                        <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required value="<%= cadastros.nome%>">
                         <label for="CPF">CPF</label>
-                        <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required>
+                        <input type="text" name="cpf" id="CPF" placeholder="000 000 000 00" required value="<%= cadastros.cpf%>">
                         <label for="">Sexo</label>
                         <label for="mas">Masculino</label>
-                        <input type="radio" name="sexo" VALUE="Masculino" id="mas">
+                        <input type="radio" name="sexo" VALUE="Masculino" id="mas" value="<%= cadastros.sexo%>">
                         <label for="fem">Feminino</label>
-                        <input type="radio" name="sexo" VALUE="Feminino" id="fem">
+                        <input type="radio" name="sexo" VALUE="Feminino" id="fem" value="<%= cadastros.sexo%>">
                         <label for="celular">Celular</label>
-                        <input type="text" name="celular" id="celular-cadastro">
+                        <input type="text" name="celular" id="celular-cadastro" value="<%= cadastros.celular%>">
                         <label for="">E-mail</label>
-                        <input type="email" name="email" id="email-cadastro">
+                        <input type="email" name="email" id="email-cadastro" value="<%= cadastros.email%>">
                         <label for="">Data de Nascimento</label>
                         <input name="dataNacimento" type="date">
                     </div>
@@ -61,17 +61,17 @@
                     <div class="endereco">
                         <h2>Endereço</h2>
                         <label for="cep">CEP</label>
-                        <input type="text" name="cep" placeholder="12345-000" id="CEP">
+                        <input type="text" name="cep" placeholder="12345-000" id="CEP" value="<%= cadastros.cep%>">
                         <label for="endereço">Rua</label>
-                        <input type="text" name="rua" placeholder="Rua ou Logradouro" id="endereco">
+                        <input type="text" name="rua" placeholder="Rua ou Logradouro" id="endereco" value="<%= cadastros.rua%>">
                         <label for="bairro">Bairro</label>
-                        <input type="text" name="bairro" placeholder="Bairro" id="bairro">
+                        <input type="text" name="bairro" placeholder="Bairro" id="bairro" value="<%= cadastros.bairro%>">
                         <label for="Numero">Numero</label>
-                        <input type="text" name="numero" placeholder="256" id="bairro">
+                        <input type="text" name="numero" placeholder="256" id="bairro" value="<%= cadastros.numero%>">
                         <label for="Complemento">Complemento</label>
-                        <input type="text" name="complemento" placeholder="" id="bairro">
+                        <input type="text" name="complemento" placeholder="" id="bairro" value="<%= cadastros.complemento%>">
                         <label for="cidade">Cidade</label>
-                        <input type="text" name="cidade" placeholder="Cidade" id="cidade">
+                        <input type="text" name="cidade" placeholder="Cidade" id="cidade" value="<%= cadastros.cidade%>">
                         <label for="estado" id="uf">Estado</label>
                         <select name="estado" id="estado">
                             <option value="0">Selecione</option>
@@ -111,8 +111,7 @@
                     </div>
             </div>
             <div class="button-cadastrar">
-                <button type="submit" id="cadastro">Cadastrar</button>
-                <a href="/listaPacientes">Lista Pacientes</a>
+                <button type="submit" id="cadastro">Salvar</button>
             </div>
             </form>
             </div>

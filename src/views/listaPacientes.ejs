@@ -40,6 +40,7 @@
                 <div class="subtitulo">
                     <h2>Pacientes</h2>
                 </div>
+                <a href="/cadastro">Cadastrar Pacientes</a>
                 <br>
                 <% pacientes.forEach((pacientes) => { %>
                     <div class="cards-pront">
@@ -51,6 +52,11 @@
                         <span><%= pacientes.sexo %></span>
                         <label for=""><strong>Celular:</strong></label>
                         <span><%= pacientes.celular %></span>
+                        <form action="/listaPacientes/remove/<%= pacientes.id%>" method="POST">
+                            <input type="hidden" name="id" value="<%= pacientes.id%>">
+                            <button type="submit" class="btn">Deletar</button>
+                        </form>
+                        <a href="/cadastro/editCadastros/<%= pacientes.id%>">Editar</a>
                     </div>
                 <% }) %>
             </div>

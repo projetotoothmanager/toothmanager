@@ -113,7 +113,7 @@ module.exports = class ProntuarioController {
             req.flash('message', 'Prontuário atualizado com sucesso!')
             res.redirect('/prontuarios')
         } catch (error) {
-
+            console.log(error);
         }
     }
 }

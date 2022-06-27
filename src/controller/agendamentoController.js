@@ -84,9 +84,9 @@ module.exports = class AgendamentoController {
     static async updateSave(req, res) {
         const id = req.body.id
         const agenda = {
-            hora,
+            nome,
             data,
-            nome
+            hora
         } = req.body
 
         try {
