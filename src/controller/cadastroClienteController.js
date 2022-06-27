@@ -6,13 +6,20 @@ module.exports = class CadastroClienteController {
         res.render('./cadastro');
     };
 
+    static async show(req, res){
+
+        const pacientes = await cadastroCliente.findAll({raw: true});
+
+        res.render('listaPacientes', {pacientes});
+    }
+
     static async cadastroSave(req, res, next) {
         const {
             nome,
             cpf,
             sexo,
             celular,
-            eMail,
+            email,
             dataNacimento,
             rua,
             bairro,
@@ -55,7 +62,7 @@ module.exports = class CadastroClienteController {
         let celularVerificador = celular.replace(/[\\{}[\],.^?~=+\-_\/*\-+\s.\|]/g, "").split('');
         if (celularVerificador.length > 12) {
             console.log('erro');
-            req.flash('message', 'O número de telefone inválido! Deve conter 12 dígitos!');
+            req.flash('message', 'Número de telefone inválido! Deve conter 12 dígitos!');
             res.render('./cadastro');
             return
 
@@ -82,7 +89,7 @@ module.exports = class CadastroClienteController {
             cpf: cpfAnalise,
             sexo,
             celular,
-            eMail,
+            email,
             dataNacimento,
             rua,
             bairro,
@@ -100,6 +107,53 @@ module.exports = class CadastroClienteController {
         } catch (err) {
 
             console.error("cadastro:", err);
+        }
+    }
+
+    static async remove(req, res){
+        
+        const id = req.params.id
+
+        await cadastroCliente.destroy({where: {id:id}});
+
+        res.redirect('/listaPacientes');
+    }
+
+    static async update (req, res){
+        const id = req.params.id
+
+        const cadastros = await cadastroCliente.findOne({where: {id:id}, raw: true});
+
+        res.render('editCadastros', {cadastros});
+    }
+
+    static async updateSave (req, res){
+        const id = req.body.id
+
+        const cadastros = {
+            nome,
+            cpf,
+            sexo,
+            celular,
+            email,
+            dataNacimento,
+            rua,
+            bairro,
+            complemento,
+            numero,
+            cidade,
+            estado,
+            cep
+        } = req.body
+
+        try {
+            await cadastroCliente.update(cadastros, {where: {id:id}});
+
+            req.flash('message', 'Cadastro atualizado com sucesso!')
+            res.redirect('/cadastro');
+
+        } catch (error) {
+            console.log(error);
         }
     }
 }

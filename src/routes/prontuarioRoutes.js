@@ -9,6 +9,6 @@ router.get('/addprontuario', validadorLoginAuth, ProntuarioController.addProntua
 router.post('/addprontuario', validadorLoginAuth, ProntuarioController.save);
 router.post('/prontuarios/remove/:id', validadorLoginAuth, ProntuarioController.remove);
 router.get('/prontuarios/editProntuarios/:id', validadorLoginAuth, ProntuarioController.update);
-router.post('prontuarios/editProntuarios', validadorLoginAuth, ProntuarioController.updateSave)
+router.post('/prontuarios/editProntuarios', validadorLoginAuth, ProntuarioController.updateSave)
 
 module.exports = router;
