@@ -35,45 +35,23 @@
             <% if ( messages.message ) { %>
             <div class="flash"><%= messages.message %></div>
         <% } %>
-            <div class="container-detalhes-prontuario">
-                <div class="card-prontuario">
-                    <div>
-                        <h2>Prontuario do Paciente</h2>
-                    </div>
-                    <div>
-                        <label for="">ID:</label>
-                        <span><%= prontuarios.id%></span>
-                    </div>
-                    <div>
-                        <label for="">Nome do Paciente</label>
-                        <span><%= prontuarios.nome%></span>
-                    </div>
-                    <div>
-                        <label for="">Realizado as:</label>
-                        <span><%= prontuarios.time%></span>
-                    </div>
-                    <div>
+
+                        <label for="">Nome:</label>
+                        <span type="text" name="hora" value=""><%= prontuarios.nome%></span>
+                        <label for="">Horário:</label>
+                        <span type="text" name="hora" value=""><%= prontuarios.time%></span>
                         <label for="">Atendimento:</label>
-                        <span><%= prontuarios.atendimento%></span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.atendimento%></span>
                         <label for="">Dentista:</label>
-                        <span><%= prontuarios.dentista%</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.dentista%></span>
                         <label for="">Tratamento:</label>
-                        <span><%= prontuarios.tratamento%</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.tratamento%></span>
                         <label for="">Extração:</label>
-                        <span><%= prontuarios.extração%</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.extração%></span>
                         <label for="">Limpeza:</label>
-                        <span><%= prontuarios.limpeza%</span>
-                    </div>
-                    </div>
-                </div>
+                        <span type="text" name="hora" value=""><%= prontuarios.limpeza%></span>
+
+
         </main>
     </body>
 </html>
