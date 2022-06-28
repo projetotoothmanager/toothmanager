@@ -25,18 +25,19 @@
                 <form action="/registrar" method="post">
                     <div class="form-content">
                         <label for="name">Nome:</label>
-                        <input type="text" name="name" placeholder="Seu nome" required>
+                        <input type="text" name="name" placeholder="Seu nome" id="name" required>
                         <label for="name">E-mail:</label>
-                        <input type="email" name="email" placeholder="email@email.com" required>
+                        <input type="email" name="email" placeholder="email@email.com" id="email" required>
                         <label for="password">Password:</label>
-                        <input type="password" name="password" placeholder="Digite sua senha" required>
-                        <label for="confirmpassword">Confirm Password:</label>
-                        <input type="password" name="confirmpassword" placeholder="Confirme a senha" required>
+                        <input type="password" name="password" placeholder="Digite sua senha" id="password" required>
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" name="confirmpassword" placeholder="Confirme a senha" id="confirm-password" required>
                     </div>
-                    <input type="submit" value="Cadastrar" class="registerbtn">
+                    <input type="submit" value="Cadastrar" class="registerbtn" id="button">
                     <br>
                 </form>
             </div>
         </main>
+        <script src="validations/validRegistrar.js"></script>
     </body>
 </html>
