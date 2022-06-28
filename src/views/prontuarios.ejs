@@ -20,7 +20,7 @@
         </label>
         <!-- sidebar -->
         <%- include('./partials/sidebar')%>
-        
+
         <main>
             <!-- barra de busca -->
             <div class="search-container">
@@ -59,7 +59,7 @@
                             <input type="hidden" name="id" value="<%= prontuarios.id%>">
                             <button type="submit" class="btn">Deletar</button>
                         </form>
-                        <button><a href="/detalhesProntuario">Detalhes</a></button>
+                        <button><a href="/detalhesProntuario/<%= prontuarios.id%>">Detalhes</a></button>
                         <a href="/prontuarios/editProntuarios/<%= prontuarios.id%>" class="btn">Editar</a>
                     </div>
                 <% }) %>
