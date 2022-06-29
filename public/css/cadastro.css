@@ -51,6 +51,9 @@
     justify-content: center;
     margin: 20px;
 }
+.button-cadastrar button a{
+    color: var(--text-color-white);
+}
 
 @media (max-width: 860px){
     .container-cadastro{
