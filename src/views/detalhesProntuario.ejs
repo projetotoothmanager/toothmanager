@@ -24,7 +24,7 @@
                 <!-- Busca -->
             <div class="search-container">
                 <div class="title-pagina">
-                    <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
+                    <h1>Prontuario</h1>
                 </div>
                 <form action="#" method="get">
                     <input type="text" placeholder="Search.." name="search">
@@ -35,48 +35,23 @@
             <% if ( messages.message ) { %>
             <div class="flash"><%= messages.message %></div>
         <% } %>
-            <div class="container-detalhes-prontuario">
-                <div class="card-prontuario">
-                    <div>
-                        <h2>Prontuario do Paciente</h2>
-                    </div>
-                    <div>
-                        <label for="">ID:</label>
-                        <span>0123</span>
-                    </div>
-                    <div>
-                        <label for="">Nome do Paciente</label>
-                        <span>Wictor Hiago joaozinho silva</span>
-                    </div>
-                    <div>
-                        <label for="">Realizado as:</label>
-                        <span> 08:00</span>
-                    </div>
-                    <div>
+
+                        <label for="">Nome:</label>
+                        <span type="text" name="hora" value=""><%= prontuarios.nome%></span>
+                        <label for="">Horário:</label>
+                        <span type="text" name="hora" value=""><%= prontuarios.time%></span>
                         <label for="">Atendimento:</label>
-                        <label for="consulta">Consulta</label>
-                        <input type="radio" name="atendimento" id="consulta">
-                        <label for="retorno"> Retorno</label>
-                        <input type="radio" name="atendimento" id="retorno">
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.atendimento%></span>
                         <label for="">Dentista:</label>
-                        <span>Doutor Thiago Augusto Silva Fulano</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.dentista%></span>
                         <label for="">Tratamento:</label>
-                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aliquid nulla in sequi voluptates, doloribus et velit delectus, nesciunt facere enim laboriosam sed? Nostrum, magni accusamus. Voluptates id tempore aut!</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.tratamento%></span>
                         <label for="">Extração:</label>
-                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt dolorem inventore, repellat fuga debitis labore temporibus, a quibusdam iste voluptatem quas non reiciendis veritatis dolorum consectetur nobis consequatur illum? Magnam.</span>
-                    </div>
-                    <div>
+                        <span type="text" name="hora" value=""><%= prontuarios.extração%></span>
                         <label for="">Limpeza:</label>
-                        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ea, a voluptatem at alias error amet reiciendis velit? Ad repudiandae fuga iste voluptas nostrum deserunt quidem illum officiis voluptate dolor?</span>
-                    </div>
-                    </div>
-                </div>
+                        <span type="text" name="hora" value=""><%= prontuarios.limpeza%></span>
+
+
         </main>
     </body>
 </html>

@@ -1,7 +1,6 @@
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-//const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const flash = require('express-flash')
 const session = require('express-session');
@@ -76,7 +75,13 @@ app.use(function (err, req, res, next) {
 
 conn
   .sync()
+<<<<<<< HEAD
   //.sync({force: true})
+=======
+  // .sync({
+  //   force: true
+  // })
+>>>>>>> 95e3046cbc0436b2c352975a405f7d52a62a1307
   .then(() => {
     app.listen(process.env.PORT);
   })

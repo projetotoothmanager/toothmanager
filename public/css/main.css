@@ -57,7 +57,7 @@ label #btn,label #cancel{
 .sidebar header{
     font-size: 28px;
     color: var(--text-color-white);
-    line-height: 78px;
+    line-height: 77px;
     text-align: center;
     background-color: var(--bg-color-marine);
     font-family:'Poppins', sans-serif;

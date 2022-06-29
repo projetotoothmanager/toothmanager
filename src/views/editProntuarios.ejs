@@ -20,12 +20,12 @@
         </label>
         <!-- sidebar -->
         <%- include('./partials/sidebar')%>
-
+        <!-- <main> coloque seu codigo dentro desta tag -->
         <main>
             <!-- barra de busca -->
             <div class="search-container">
                 <div class="title-pagina">
-                    <h1>Prontuario</h1>
+                    <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
                 </div>
                 <form action="#" method="get">
                     <input type="text" placeholder="Buscar paciente.." name="search">
@@ -38,31 +38,28 @@
             <% } %>
             <div class="container-cards">
                 <div class="subtitulo">
-                    <h2>Lista de Prontuarios</h2>
+                    <h2>Editar Prontuários</h2>
                 </div>
-                <br>
-                <div class="novo-prontuario-button">
-                    <div><a href="/addprontuario"> + Novo Prontuario</a></div>
+                <div class="container-criarPront">
+                    <form action="/prontuarios/editProntuarios/" method="POST">
+                        <input type="hidden" name="id" value="<%= prontuarios.id%>">
+                        <label for="">Nome:</label>
+                        <input type="text" name="nome" value="<%= prontuarios.nome%>">
+                        <label for="">Horário:</label>
+                        <input type="text" name="time" value="<%= prontuarios.time%>">
+                        <label for="">Atendimento:</label>
+                        <input type="text" name="atendimento" value="<%= prontuarios.atendimento%>">
+                        <label for="">Dentista:</label>
+                        <input type="text" name="dentista" value="<%= prontuarios.dentista%>">
+                        <label for="">Tratamento:</label>
+                        <input type="text" name="tratamento" value="<%= prontuarios.tratamento%>">
+                        <label for="">Extração:</label>
+                        <input type="text" name="extracao" value="<%= prontuarios.extracao%>">
+                        <label for="">Limpeza:</label>
+                        <input type="text" name="limpeza" value="<%= prontuarios.limpeza%>">
+                        <input type="submit" value="Editar Prontuario">
+                    </form>
                 </div>
-                <br>
-                <% prontuarios.forEach((prontuarios) => { %>
-                    <div class="cards-pront">
-                        <label for=""><strong>ID:</strong></label>
-                        <span><%= prontuarios.id %></span>
-                        <label for=""><strong>Nome:</strong></label>
-                        <span><%= prontuarios.nome %></span>
-                        <label for=""><strong>Atendimento:</strong></label>
-                        <span><%= prontuarios.atendimento %></span>
-                        <label for=""><strong>Dentista:</strong></label>
-                        <span><%= prontuarios.dentista %></span>
-                        <form action="/prontuarios/remove/<%= prontuarios.id%>" method="POST">
-                            <input type="hidden" name="id" value="<%= prontuarios.id%>">
-                            <button type="submit" class="btn">Deletar</button>
-                        </form>
-                        <button><a href="/detalhesProntuario/<%= prontuarios.id%>">Detalhes</a></button>
-                        <a href="/prontuarios/editProntuarios/<%= prontuarios.id%>" class="btn">Editar</a>
-                    </div>
-                <% }) %>
             </div>
         </main>
     </body>

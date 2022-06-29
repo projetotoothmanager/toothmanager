@@ -7,7 +7,7 @@ module.exports = class AgendamentoController {
         const agendamentos = await agendamento.findAll({
             raw: true
         })
-        console.log(agendamentos)
+
         res.render('./agendamentos', {
             agendamentos
         })
@@ -28,7 +28,7 @@ module.exports = class AgendamentoController {
             res.redirect('./agendamentos');
             return
         } else if (!regexNome.test(nome)) {
-            req.flash('message', 'So pode utiliza letras!');
+            req.flash('message', 'Só pode utilizar letras!');
             res.redirect('./agendamentos');
             return
         }
@@ -64,21 +64,18 @@ module.exports = class AgendamentoController {
             const createdUser = await agendamento.create(dados);
             req.flash('message', "Agendamento realizado com sucesso!");
             res.redirect('./agendamentos');
-
         } catch (err) {
             console.error("Cadastro:", err);
         }
     }
 
     static async remove(req, res) {
-
         const id = req.params.id
         await agendamento.destroy({
             where: {
                 id: id
             }
         });
-
         res.redirect('/agendamentos');
     }
 
@@ -91,20 +88,17 @@ module.exports = class AgendamentoController {
             },
             raw: true
         });
-        res.render('./agendamentos/editAgendamento', {
+        res.render('editAgendamento', {
             agenda
         });
     }
-
     static async updateSave(req, res) {
-
         const id = req.body.id
-
         const agenda = {
-            hora,
-            data,
-            nome
-        } = req.body
+            nome: req.body.nome,
+            data: req.body.data,
+            hora: req.body.hora,
+        }
 
         try {
             await agendamento.update(agenda, {
@@ -113,8 +107,9 @@ module.exports = class AgendamentoController {
                 }
             });
             req.flash('message', 'Agendamento atualizado com sucesso!');
-            res.redirect('/agendamentos');
-
+            req.session.save(() => {
+                res.redirect('/agendamentos');
+            })
         } catch (error) {
             console.log(error);
         }

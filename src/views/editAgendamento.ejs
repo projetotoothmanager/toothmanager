@@ -1,1 +1,50 @@
-<h1>Editar</h1>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/agenda.css">
+        <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+        <title>Toothmanager</title>
+    </head>
+        <% if ( messages.message ) { %>
+        <div class="flash">
+            <%= messages.message %>
+        </div>
+        <% } %>
+    <body>
+        <!-- button-menu-hamburguer -->
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-hamburgue">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <!-- sidebar -->
+        <%- include('./partials/sidebar')%>
+        <!-- <main> coloque seu codigo dentro desta tag -->
+        <main>
+            <!-- BUSCA -->
+            <div class="search-container">
+                <div class="title-pagina">
+                    <h1>Editar Agendamento</h1>
+                </div>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Buscar.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <!-- AGENDA -->
+            <div class="container-agenda">
+                <form action="/agendamentos/editAgendamento" method="POST">
+                    <input type="hidden" name="id" value="<%= agenda.id%>">
+                    <input type="text" name="hora" value="<%= agenda.hora%>">
+                    <input type="text" name="data" value="<%= agenda.data%>">
+                    <input type="text" name="nome" value="<%= agenda.nome%>">
+                    <input type="submit" value="Editar Agendamento">
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

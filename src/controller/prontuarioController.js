@@ -12,8 +12,22 @@ module.exports = class ProntuarioController {
         });
     };
 
-    static detalhesProntuario(req, res, next) {
-        res.render('detalhesProntuario');
+    static async detalhesProntuario(req, res, next) {
+
+        const id = req.params.id;
+        console.log(id);
+
+        const prontuarios = await prontuario.findOne({
+            where: {
+                id: id
+            },
+            raw: true
+        });
+        console.log(prontuarios)
+
+        res.render('./detalhesProntuario', {
+            prontuarios
+        })
     };
 
     static addProntuario(req, res, next) {
@@ -78,7 +92,6 @@ module.exports = class ProntuarioController {
         });
         res.redirect('/prontuarios');
     }
-
     static async update(req, res) {
         const id = req.params.id
         const prontuarios = await prontuario.findOne({
@@ -88,7 +101,7 @@ module.exports = class ProntuarioController {
             raw: true
         });
 
-        res.render('./prontuarios/editProntuario', {
+        res.render('editProntuarios', {
             prontuarios
         });
     }
@@ -97,14 +110,14 @@ module.exports = class ProntuarioController {
 
         const id = req.body.id
         const prontuarios = {
-            nome,
-            time,
-            atendimento,
-            dentista,
-            tratamento,
-            extração,
-            limpeza,
-        } = req.body
+            nome: req.body.nome,
+            time: req.body.time,
+            atendimento: req.body.atendimento,
+            dentista: req.body.dentista,
+            tratamento: req.body.tratamento,
+            extracao: req.body.extracao,
+            limpeza: req.body.limpeza,
+        }
 
         try {
             await prontuario.update(prontuarios, {
@@ -116,7 +129,7 @@ module.exports = class ProntuarioController {
             req.flash('message', 'Prontuário atualizado com sucesso!')
             res.redirect('/prontuarios')
         } catch (error) {
-
+            console.log(error);
         }
     }
 }

@@ -83,3 +83,7 @@ a {
   margin: 0 auto 2em;
   max-width: 60%;
 }
+
+.errorInput {
+  border: 2px solid red !important;
+}

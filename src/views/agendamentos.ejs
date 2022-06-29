@@ -46,7 +46,7 @@
                         <label for="">Paciente:</label>
                         <input type="text" name='nome' id="paciente" required>
                     </div>
-                    <button type="submit" id="Salvar" class="btn"> Adicionar </button>
+                    <button type="submit" id="salvar" class="btn"> Adicionar </button>
                 </form>
                 <br>
                 <% agendamentos.forEach((agendamentos) => { %>
@@ -61,11 +61,12 @@
                         <input type="hidden" name="id" value="<%= agendamentos.id%>">
                         <button type="submit" class="btn">Deletar</button>
                     </form>
-                        <a href="agendamentos/editAgendamento/<%= agendamentos.id%>" class="btn">Editar</a>
+                        <a href="/agendamentos/editAgendamento/<%= agendamentos.id%>" class="btn">Editar</a>
                 </div>
                 <% }) %>
                 <br>
             </div>
         </main>
+        <script src="validations/validAgendamento.js"></script>
     </body>
 </html>
