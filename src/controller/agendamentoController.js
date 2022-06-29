@@ -1,4 +1,11 @@
 const agendamento = require("../models/agendamento");
+const {
+    Op
+} = require("sequelize");
+const {
+    search
+} = require("../../app");
+
 
 module.exports = class AgendamentoController {
 
@@ -10,6 +17,28 @@ module.exports = class AgendamentoController {
 
         res.render('./agendamentos', {
             agendamentos
+        })
+    }
+    static async filtro(req, res, next) {
+
+        let search = '';
+        if (req.query.search) {
+            search = req.query.search
+        };
+
+        const filtro = await agendamento.findAll({
+            raw: true,
+            where: {
+                nome: {
+                    [Op.like]: `%${search}%`
+                }
+            }
+        });
+
+        console.log(filtro)
+
+        res.render('./agendamentos', {
+            filtro
         })
     }
 
