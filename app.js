@@ -41,7 +41,7 @@ app.use(session({
   cookie: {
     secure: false,
     maxAge: 9900000,
-    expires: new Date(Date.now() + 360000),
+    expires: new Date(Date.now() + 3600000),
     httpOnly: true
   }
 }))
@@ -75,13 +75,7 @@ app.use(function (err, req, res, next) {
 
 conn
   .sync()
-<<<<<<< HEAD
   //.sync({force: true})
-=======
-  // .sync({
-  //   force: true
-  // })
->>>>>>> 95e3046cbc0436b2c352975a405f7d52a62a1307
   .then(() => {
     app.listen(process.env.PORT);
   })

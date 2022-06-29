@@ -11,6 +11,10 @@
         <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
         <title>Toothmanager</title>
     </head>
+    <% if ( messages.message ) { %>
+        <div class="flash"><%= messages.message %>
+        </div>
+        <% } %>
     <body>
         <!-- button-menu-hamburguer -->
         <input type="checkbox" id="check">
@@ -29,10 +33,6 @@
                 </div>
             </div>
             <!-- REFERENCIA -->
-            <% if ( messages.message ) { %>
-            <div class="flash"><%= messages.message %>
-            </div>
-            <% } %>
             <div class="container-cadastro">
                 <div class="button-cadastrar">
                     <button id="cadastro"><a href="/listaPacientes"></a> Ver Cadastrados</button>

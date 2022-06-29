@@ -28,34 +28,25 @@ body{
     justify-content: center;
 }
 .cards-pront{
-    width: 80%;
-    border: 1px solid var(--bg-color-ciano);
-    margin: 4px;
+    padding: 8px;
+    margin-bottom: 5px;
     display: flex;
-    justify-content: center;
-    gap: 16px;
+    width: 70%;
+    justify-content: space-between;
+    border: 1px solid var(--bg-color-ciano);
 }
-.cards-pront:hover{
-    background-color: var(--bg-color-ciano);
-}
-.cards-pront label,span{
-    height: 30px;
-    border: none;
-    padding: 4px;
-}
-/* botao */
 #ver-detalhes-btn{
     border: none;
     background-color: var(--bg-color-ciano);
 }
 a{
-    display: flex;
     color: var(--text-color-black);
 }
 
 .novo-prontuario-button a{
+    display: flex;
     align-items: center;
-    height: 30px;
+    height: 39px;
     width: 300px;
     background-color: var(--bg-color-ciano);
     border: none;
@@ -77,4 +68,39 @@ a{
     border-radius: 5px;
     align-items: center;
     justify-content: center;
+}
+/* Edit Prontuario */
+
+.edit-prontuario {
+    display: flex;
+    flex-direction: column;
+}
+.edit-prontuario div {
+    display: block;
+    border-bottom: 1px solid var(--bg-color-ciano);
+    padding: 2px;
+    margin: 2px;
+}
+.edit-prontuario div label {
+    padding-right: 3px;
+}
+.edit-prontuario div {
+    display: flex;
+}
+.container-criarPront {
+    width: 40rem;
+    border: 1px solid var(--bg-color-ciano);
+    padding: 5px;
+}
+
+.btn-editar{
+    border: 1px solid var(--bg-color-ciano);
+    height: 30px;
+    width: 5rem;
+    color: var(--text-color-black);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn-editar:hover{
+    background-color: var(--bg-color-light-green);
 }

@@ -43,20 +43,31 @@
                 <br>
                 <% prontuarios.forEach((prontuarios) => { %>
                     <div class="cards-pront">
-                        <label for=""><strong>ID:</strong></label>
-                        <span><%= prontuarios.id %></span>
-                        <label for=""><strong>Nome:</strong></label>
-                        <span><%= prontuarios.nome %></span>
-                        <label for=""><strong>Atendimento:</strong></label>
-                        <span><%= prontuarios.atendimento %></span>
-                        <label for=""><strong>Dentista:</strong></label>
-                        <span><%= prontuarios.dentista %></span>
+                        <div>
+                            <label for=""><strong>ID:</strong></label>
+                            <span><%= prontuarios.id %></span>
+                        </div>
+                        <div>
+                            <label for=""><strong>Paciente:</strong></label>
+                            <span><%= prontuarios.nome %></span>
+                        </div>
+                        <div>
+                            <label for=""><strong>Atendimento:</strong></label>
+                            <span><%= prontuarios.atendimento %></span>
+                        </div>
+                        <div>
+                            <label for=""><strong>Dentista:</strong></label>
+                            <span><%= prontuarios.dentista %></span>
+                        </div>
+                        <div>
+
+                        </div>
                         <form action="/prontuarios/remove/<%= prontuarios.id%>" method="POST">
                             <input type="hidden" name="id" value="<%= prontuarios.id%>">
-                            <button type="submit" class="btn">Deletar</button>
+                            <button class="btn-editar" type="submit" class="btn">Deletar</button>
                         </form>
-                        <button><a href="/detalhesProntuario/<%= prontuarios.id%>">Detalhes</a></button>
-                        <a href="/prontuarios/editProntuarios/<%= prontuarios.id%>" class="btn">Editar</a>
+                        <button class="btn-editar"><a href="/detalhesProntuario/<%= prontuarios.id%>">Detalhes</a></button>
+                        <button class="btn-editar"><a href="/prontuarios/editProntuarios/<%= prontuarios.id%>">Editar</a></button>
                     </div>
                 <% }) %>
             </div>

@@ -22,33 +22,52 @@
             <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
         <main>
                 <!-- Busca -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Prontuario</h1>
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
                 <!-- Prontuario -->
             <% if ( messages.message ) { %>
             <div class="flash"><%= messages.message %></div>
         <% } %>
+                <div class="container-detalhes">
+                    <h1>Prontuario do Paciente</h1>
+
+                    <div class="box-detalhes">
+                    
+                    <div>
                         <label for="">Nome:</label>
                         <span type="text" name="hora" value=""><%= prontuarios.nome%></span>
+                    </div>
+                    <div>
                         <label for="">Horário:</label>
                         <span type="text" name="hora" value=""><%= prontuarios.time%></span>
+                    </div>
+                    <div>
                         <label for="">Atendimento:</label>
-                        <span type="text" name="hora" value=""><%= prontuarios.atendimento%></span>
+                        <p type="text" name="hora" value=""><%= prontuarios.atendimento%></p>
+                    </div>
+                    <div>
                         <label for="">Dentista:</label>
                         <span type="text" name="hora" value=""><%= prontuarios.dentista%></span>
+                    </div>
+                    <div>
                         <label for="">Tratamento:</label>
-                        <span type="text" name="hora" value=""><%= prontuarios.tratamento%></span>
+                        <p type="text" name="hora" value=""><%= prontuarios.tratamento%></p>
+                    </div>
+                    <div>
                         <label for="">Extração:</label>
-                        <span type="text" name="hora" value=""><%= prontuarios.extração%></span>
+                        <p type="text" name="hora" value=""><%= prontuarios.extração%></p>
+                    </div>
+                    <div>
                         <label for="">Limpeza:</label>
-                        <span type="text" name="hora" value=""><%= prontuarios.limpeza%></span>
+                        <p type="text" name="hora" value=""><%= prontuarios.limpeza%></p>
+                    </div>
+
+                </div>
+
+                </div>
         </main>
     </body>
 </html>
