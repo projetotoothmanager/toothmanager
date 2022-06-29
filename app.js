@@ -75,10 +75,8 @@ app.use(function (err, req, res, next) {
 });
 
 conn
-  //.sync()
-  .sync({
-    force: true
-  })
+  .sync()
+  //.sync({force: true})
   .then(() => {
     app.listen(process.env.PORT);
   })
