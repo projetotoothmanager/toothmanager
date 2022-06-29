@@ -23,14 +23,10 @@
         <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
         <main>
             <!-- Busca -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Cadastro</h1>
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Buscar.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
             <!-- REFERENCIA -->
             <% if ( messages.message ) { %>
@@ -38,6 +34,9 @@
             </div>
             <% } %>
             <div class="container-cadastro">
+                <div class="button-cadastrar">
+                    <button id="cadastro"><a href="/listaPacientes"></a> Ver Cadastrados</button>
+                </div>
                 <form action="/cadastro" method="post">
                     <div class="dados-pessoais">
                         <h2>Dados Pessoais</h2>
@@ -112,10 +111,8 @@
             </div>
             <div class="button-cadastrar">
                 <button type="submit" id="cadastro">Cadastrar</button>
-                <a href="/listaPacientes">Lista Pacientes</a>
             </div>
             </form>
-            </div>
         </main>
     </body>
 </html>

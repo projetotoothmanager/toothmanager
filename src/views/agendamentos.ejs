@@ -26,42 +26,54 @@
         <!-- <main> coloque seu codigo dentro desta tag -->
         <main>
             <!-- BUSCA -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Agenda</h1>
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Buscar.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
             <!-- AGENDA -->
             <div class="container-agenda">
                 <form action="/agendamentos" method="POST" class="form">
                     <div class="form-content">
-                        <label for="">Hora:</label>
-                        <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
-                        <label for="">Data:</label>
-                        <input type="date" name='data' id="data" required>
-                        <label for="">Paciente:</label>
-                        <input type="text" name='nome' id="paciente" required>
+                        <div>
+                            <label for="">Hora:</label>
+                            <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
+                        </div>
+
+                        <div>
+                            <label for="">Data:</label>
+                            <input type="date" name='data' id="data" required>
+                        </div>
+
+                        <div>
+                            <label for="">Paciente:</label>
+                            <input type="text" name='nome' id="paciente" required>
+                        </div>
                     </div>
                     <button type="submit" id="salvar" class="btn"> Adicionar </button>
                 </form>
                 <br>
                 <% agendamentos.forEach((agendamentos) => { %>
                 <div class="lista-agenda">
-                    <label for="hora">Hora:</label>
-                    <span><%= agendamentos.hora %></span>
-                    <label for="data">Data:</label>
-                    <span><%= agendamentos.data %></span>
-                    <label for="Paciente" name="cliente" id="cliente">Nome:</label>
-                    <span><%= agendamentos.nome %></span>
+                    <div>
+                        <label for="hora">Hora:</label>
+                        <span><%= agendamentos.hora %></span>
+                    </div>
+
+                    <div>
+                        <label for="data">Data:</label>
+                        <span><%= agendamentos.data %></span>
+                    </div>
+
+                    <div>
+                        <label for="Paciente" name="cliente" id="cliente">Nome:</label>
+                        <span><%= agendamentos.nome %></span>
+                    </div>
                     <form action="/agendamentos/remove/<%= agendamentos.id%>" method="POST">
                         <input type="hidden" name="id" value="<%= agendamentos.id%>">
                         <button type="submit" class="btn">Deletar</button>
+                        <button class="btn"><a href="/agendamentos/editAgendamento/<%= agendamentos.id%>">Editar</a></button>
                     </form>
-                        <a href="/agendamentos/editAgendamento/<%= agendamentos.id%>" class="btn">Editar</a>
                 </div>
                 <% }) %>
                 <br>
