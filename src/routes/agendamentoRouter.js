@@ -7,10 +7,6 @@ router.get('/agendamentos', validadorLoginAuth, AgendamentoController.agendament
 router.post('/agendamentos', validadorLoginAuth, AgendamentoController.save);
 router.post('/agendamentos/remove/:id', validadorLoginAuth, AgendamentoController.remove);
 router.get('/agendamentos/editAgendamento/:id', validadorLoginAuth, AgendamentoController.update);
-
-router.get('/agendamentos/id', validadorLoginAuth, AgendamentoController.filtro);
-
-
 router.post('/agendamentos/editAgendamento', validadorLoginAuth, AgendamentoController.updateSave);
 
 module.exports = router;

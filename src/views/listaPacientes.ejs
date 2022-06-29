@@ -23,14 +23,10 @@
         <!-- <main> coloque seu codigo dentro desta tag -->
         <main>
             <!-- barra de busca -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Lista de Pacientes</h1><!-- trocar o titulo para o respectivo -->
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Buscar paciente.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
             <!-- Prontuario -->
             <% if ( messages.message ) { %>
@@ -55,8 +51,8 @@
                         <form action="/listaPacientes/remove/<%= pacientes.id%>" method="POST">
                             <input type="hidden" name="id" value="<%= pacientes.id%>">
                             <button type="submit" class="btn">Deletar</button>
+                            <button class="btn"><a href="/cadastro/editCadastros/<%= pacientes.id%>">Editar</a></button>
                         </form>
-                        <a href="/cadastro/editCadastros/<%= pacientes.id%>">Editar</a>
                     </div>
                 <% }) %>
             </div>

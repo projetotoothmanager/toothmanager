@@ -35,8 +35,11 @@
             <div class="container-agenda">
                 <form action="/agendamentos/editAgendamento" method="POST">
                     <input type="hidden" name="id" value="<%= agenda.id%>">
+                    <label for="Paciente" name="cliente" id="cliente"><strong>Hora:</strong></label>
                     <input type="text" name="hora" value="<%= agenda.hora%>">
+                    <label for="Paciente" name="cliente" id="cliente"><strong>Data:</strong></label>
                     <input type="text" name="data" value="<%= agenda.data%>">
+                    <label for="Paciente" name="cliente" id="cliente"><strong>Nome:</strong></label>
                     <input type="text" name="nome" value="<%= agenda.nome%>">
                     <input type="submit" value="Editar Agendamento">
                 </form>

@@ -37,17 +37,17 @@
                 <form action="/agendamentos" method="POST" class="form">
                     <div class="form-content">
                         <div>
-                            <label for="">Hora:</label>
+                            <label for=""><strong>Hora:</strong></label>
                             <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
                         </div>
 
                         <div>
-                            <label for="">Data:</label>
+                            <label for=""><strong>Data:</strong></label>
                             <input type="date" name='data' id="data" required>
                         </div>
 
                         <div>
-                            <label for="">Paciente:</label>
+                            <label for=""><strong>Paciente:</strong></label>
                             <input type="text" name='nome' id="paciente" required>
                         </div>
                     </div>
@@ -57,17 +57,17 @@
                 <% agendamentos.forEach((agendamentos) => { %>
                 <div class="lista-agenda">
                     <div>
-                        <label for="hora">Hora:</label>
+                        <label for="hora"><strong>Hora:</strong></label>
                         <span><%= agendamentos.hora %></span>
                     </div>
 
                     <div>
-                        <label for="data">Data:</label>
+                        <label for="data"><strong>Data:</strong></label>
                         <span><%= agendamentos.data %></span>
                     </div>
 
                     <div>
-                        <label for="Paciente" name="cliente" id="cliente">Nome:</label>
+                        <label for="Paciente" name="cliente" id="cliente"><strong>Nome:</strong></label>
                         <span><%= agendamentos.nome %></span>
                     </div>
                     <form action="/agendamentos/remove/<%= agendamentos.id%>" method="POST">
