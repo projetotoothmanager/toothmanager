@@ -21,12 +21,21 @@
     justify-content: space-between;
     border: 1px solid var(--bg-color-ciano);
 }
-.form-content label,input{
+
+.form-content {
+    display: flex;
+}
+
+.form-content div label {
+    padding: 3px;
+}
+.form-content div label,input{
     height: 30px;
     width: 200px;
 }
 .lista-agenda{
     padding: 8px;
+    margin-bottom: 5px;
     display: flex;
     width: 70%;
     justify-content: space-between;
@@ -37,6 +46,10 @@
     border: 1px solid var(--bg-color-ciano);
     width: 80px;
     transition: 0.5s;
+}
+
+.btn a {
+    color: #000000;
 }
 .btn:hover{
     background-color: var(--bg-color-green);
@@ -64,10 +77,21 @@
     padding: 4px;
 }
 
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
 }
 
 @media (max-width: 860px) {
     .container-agenda{
         margin-left: 5rem;
+    }
+
+    .form-content {
+        display: flex;
+        flex-direction: column;
     }
 }

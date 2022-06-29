@@ -134,8 +134,8 @@ main{
     height: 100vh;
 }
 
-/* busca */
-.search-container{
+/* cabeçalho */
+.cabecalho-container{
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -147,45 +147,10 @@ main{
     margin-left: 5rem;
     color: var(--text-color-white);
 }
-.search-container form{
-    display: flex;
-}
 
-.search-container form input{
-    width: 300px;
-    height: 30px;
-    border: none;
-    padding: 4px;
-}
-
-.search-container form button{
-    width: 30px;
-    height: auto;
-    border: none;
-    cursor: pointer;
-    background-color: var(--bg-color-ciano);
-    color: var(--text-color-white);
-}
 /* FLASH MESSAGE */
 .flash{
     position: float;
-}
-.btn-voltar{
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 30px;
-    margin-left: 40px;
-    background-color: var(--bg-color-ciano);
-    transition: 0.5s;
-}
-.btn-voltar:hover{
-    background-color: var(--bg-color-green);
-}
-.btn-voltar a{
-    color: var(--text-color-white);
 }
 
 /*--RESPONSIVIDADE inicio--*/

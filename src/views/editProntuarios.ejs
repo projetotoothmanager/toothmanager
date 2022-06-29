@@ -23,14 +23,10 @@
         <!-- <main> coloque seu codigo dentro desta tag -->
         <main>
             <!-- barra de busca -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Buscar paciente.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
             </div>
             <!-- Prontuario -->
             <% if ( messages.message ) { %>
@@ -38,26 +34,44 @@
             <% } %>
             <div class="container-cards">
                 <div class="subtitulo">
-                    <h2>Editar Prontuários</h2>
+                    
                 </div>
                 <div class="container-criarPront">
-                    <form action="/prontuarios/editProntuarios/" method="POST">
+                    <form action="/prontuarios/editProntuarios/" method="POST" class="edit-prontuario">
+
                         <input type="hidden" name="id" value="<%= prontuarios.id%>">
-                        <label for="">Nome:</label>
-                        <input type="text" name="nome" value="<%= prontuarios.nome%>">
-                        <label for="">Horário:</label>
-                        <input type="text" name="time" value="<%= prontuarios.time%>">
-                        <label for="">Atendimento:</label>
-                        <input type="text" name="atendimento" value="<%= prontuarios.atendimento%>">
-                        <label for="">Dentista:</label>
-                        <input type="text" name="dentista" value="<%= prontuarios.dentista%>">
-                        <label for="">Tratamento:</label>
-                        <input type="text" name="tratamento" value="<%= prontuarios.tratamento%>">
-                        <label for="">Extração:</label>
-                        <input type="text" name="extracao" value="<%= prontuarios.extracao%>">
-                        <label for="">Limpeza:</label>
-                        <input type="text" name="limpeza" value="<%= prontuarios.limpeza%>">
-                        <input type="submit" value="Editar Prontuario">
+
+                        <div>
+                            <label for="">Nome:</label>
+                            <input type="text" name="nome" value="<%= prontuarios.nome%>">
+                        </div>
+                        <div>
+                            <label for="">Horário:</label>
+                            <input type="text" name="time" value="<%= prontuarios.time%>">
+                        </div>
+                        <div>
+                            <label for="">Atendimento:</label>
+                            <input type="text" name="atendimento" value="<%= prontuarios.atendimento%>">
+                        </div>
+                        <div>
+                            <label for="">Dentista:</label>
+                            <input type="text" name="dentista" value="<%= prontuarios.dentista%>">
+                        </div>
+                        <div>
+                            <label for="">Tratamento:</label>
+                            <input name="tratamento" id="" cols="50" rows="5" value="<%= prontuarios.tratamento%>"></input>
+                        </div>
+                        <div>
+                            <label for="">Extração:</label>
+                            <input name="extracao" id="" cols="50" rows="5" value="<%= prontuarios.extracao%>" >
+                                <%= prontuarios.extracao%>
+                            </input>
+                        </div>
+                        <div>
+                            <label for="">Limpeza:</label>
+                            <input name="limpeza" id="" cols="50" rows="5" value="<%= prontuarios.limpeza%>" ></input>
+                        </div>
+                        <input type="submit" value="Salvar" class="btn-editar">
                     </form>
                 </div>
             </div>

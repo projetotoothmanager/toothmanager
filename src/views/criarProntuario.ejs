@@ -22,17 +22,13 @@
         <!-- <main> coloque seu codigo abaixo da REFERENCIA -->
         <main>
             <!-- Busca -->
-            <div class="search-container">
+            <div class="cabecalho-container">
                 <div class="title-pagina">
                     <h1>Prontuario</h1><!-- trocar o titulo para o respectivo -->
                 </div>
 
             </div>
             <!-- CRIAR PRONTUARIO -->
-            <% if ( messages.message ) { %>
-            <div class="flash"><%= messages.message %>
-            </div>
-            <% } %>
             <div class="container-criarPront">
                 <form action="/addprontuario" method="post">
                     <label for="">Nome completo: </label>

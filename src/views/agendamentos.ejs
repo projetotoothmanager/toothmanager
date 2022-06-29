@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/agenda.css">
-    <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
-    <title>Toothmanager</title>
-</head>
-<% if ( messages.message ) { %>
-<div class="flash">
-    <%= messages.message %>
-</div>
-<% } %>
-
-<body>
-    <!-- button-menu-hamburguer -->
-    <input type="checkbox" id="check">
-    <label for="check" class="menu-hamburgue">
-        <i class="fas fa-bars" id="btn"></i>
-        <i class="fas fa-times" id="cancel"></i>
-    </label>
-    <!-- sidebar -->
-    <%- include('./partials/sidebar')%>
-    <!-- <main> coloque seu codigo dentro desta tag -->
-    <main>
-
-        <div class="search-container">
-            <div class="title-pagina">
-                <h1>Agenda</h1>
-            </div>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/agenda.css">
+        <script src="https://kit.fontawesome.com/7491f3e6c6.js" crossorigin="anonymous"></script>
+        <title>Toothmanager</title>
+    </head>
+        <% if ( messages.message ) { %>
+        <div class="flash">
+            <%= messages.message %>
         </div>
-
+        <% } %>
+    <body>
+        <!-- button-menu-hamburguer -->
+        <input type="checkbox" id="check">
+        <label for="check" class="menu-hamburgue">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <!-- sidebar -->
+        <%- include('./partials/sidebar')%>
+        <!-- <main> coloque seu codigo dentro desta tag -->
+        <main>
+            <!-- BUSCA -->
+            <div class="cabecalho-container">
+                <div class="title-pagina">
+                    <h1>Agenda</h1>
+                </div>
+            </div>
+        </div>
             <!-- AGENDA -->
             <div class="container-agenda">
                 <form action="/agendamentos" method="POST" class="form">
                     <div class="form-content">
-                        <label for="">Hora:</label>
-                        <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
-                        <label for="">Data:</label>
-                        <input type="date" name='data' id="data" required>
-                        <label for="">Paciente:</label>
-                        <input type="text" name='nome' id="paciente" required>
+                        <div>
+                            <label for="">Hora:</label>
+                            <input type="time" name='hora' min="09:00" max="18:00" id="hora" required>
+                        </div>
+
+                        <div>
+                            <label for="">Data:</label>
+                            <input type="date" name='data' id="data" required>
+                        </div>
+
+                        <div>
+                            <label for="">Paciente:</label>
+                            <input type="text" name='nome' id="paciente" required>
+                        </div>
                     </div>
                     <button type="submit" id="salvar" class="btn"> Adicionar </button>
                 </form>
                 <br>
                 <% agendamentos.forEach((agendamentos) => { %>
                 <div class="lista-agenda">
-                    <label for="hora">Hora:</label>
-                    <span><%= agendamentos.hora %></span>
-                    <label for="data">Data:</label>
-                    <span><%= agendamentos.data %></span>
-                    <label for="Paciente" name="cliente" id="cliente">Nome:</label>
-                    <span><%= agendamentos.nome %></span>
+                    <div>
+                        <label for="hora">Hora:</label>
+                        <span><%= agendamentos.hora %></span>
+                    </div>
+
+                    <div>
+                        <label for="data">Data:</label>
+                        <span><%= agendamentos.data %></span>
+                    </div>
+
+                    <div>
+                        <label for="Paciente" name="cliente" id="cliente">Nome:</label>
+                        <span><%= agendamentos.nome %></span>
+                    </div>
                     <form action="/agendamentos/remove/<%= agendamentos.id%>" method="POST">
                         <input type="hidden" name="id" value="<%= agendamentos.id%>">
                         <button type="submit" class="btn">Deletar</button>
+                        <button class="btn"><a href="/agendamentos/editAgendamento/<%= agendamentos.id%>">Editar</a></button>
                     </form>
-                    <a href="/agendamentos/editAgendamento/<%= agendamentos.id%>" class="btn">Editar</a>
                 </div>
                 <% }) %>
                 <br>
