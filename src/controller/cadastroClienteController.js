@@ -6,11 +6,15 @@ module.exports = class CadastroClienteController {
         res.render('./cadastro');
     };
 
-    static async show(req, res){
+    static async show(req, res) {
 
-        const pacientes = await cadastroCliente.findAll({raw: true});
+        const pacientes = await cadastroCliente.findAll({
+            raw: true
+        });
 
-        res.render('listaPacientes', {pacientes});
+        res.render('listaPacientes', {
+            pacientes
+        });
     }
 
     static async cadastroSave(req, res, next) {
@@ -110,44 +114,60 @@ module.exports = class CadastroClienteController {
         }
     }
 
-    static async remove(req, res){
-        
+    static async remove(req, res) {
+
         const id = req.params.id
 
-        await cadastroCliente.destroy({where: {id:id}});
+        await cadastroCliente.destroy({
+            where: {
+                id: id
+            }
+        });
 
         res.redirect('/listaPacientes');
     }
 
-    static async update (req, res){
+    static async update(req, res) {
         const id = req.params.id
 
-        const cadastros = await cadastroCliente.findOne({where: {id:id}, raw: true});
+        const cadastros = await cadastroCliente.findOne({
+            where: {
+                id: id
+            },
+            raw: true
+        });
 
-        res.render('editCadastros', {cadastros});
+        res.render('editCadastros', {
+            cadastros
+        });
     }
 
-    static async updateSave (req, res){
-        const id = req.body.id
+    static async updateSave(req, res) {
+
+        const id = req.params.id
 
         const cadastros = {
-            nome,
-            cpf,
-            sexo,
-            celular,
-            email,
-            dataNacimento,
-            rua,
-            bairro,
-            complemento,
-            numero,
-            cidade,
-            estado,
-            cep
-        } = req.body
-
+            nome: req.body.nome,
+            cpf: req.body.cpf,
+            sexo: req.body.sexo,
+            celular: req.body.celular,
+            email: req.body.email,
+            dataNacimento: req.body.dataNacimento,
+            rua: req.body.rua,
+            bairro: req.body.bairro,
+            complemento: req.body.complemento,
+            numero: req.body.numero,
+            cidade: req.body.cidade,
+            estado: req.body.estado,
+            cep: req.body.cep,
+        }
+        console.log(cadastros)
         try {
-            await cadastroCliente.update(cadastros, {where: {id:id}});
+            await cadastroCliente.update(cadastros, {
+                where: {
+                    id: id
+                }
+            });
 
             req.flash('message', 'Cadastro atualizado com sucesso!')
             res.redirect('/cadastro');

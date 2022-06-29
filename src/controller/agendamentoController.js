@@ -8,7 +8,9 @@ module.exports = class AgendamentoController {
             raw: true
         })
 
-        res.render('./agendamentos', {agendamentos})
+        res.render('./agendamentos', {
+            agendamentos
+        })
     }
 
     static async save(req, res, next) {
@@ -70,7 +72,10 @@ module.exports = class AgendamentoController {
     static async remove(req, res) {
         const id = req.params.id
         await agendamento.destroy({
-            where: {id: id}});
+            where: {
+                id: id
+            }
+        });
         res.redirect('/agendamentos');
     }
 
@@ -78,24 +83,34 @@ module.exports = class AgendamentoController {
 
         const id = req.params.id
         const agenda = await agendamento.findOne({
-            where: {id: id}, raw: true});
-        res.render('editAgendamento', {agenda});
-   }
+            where: {
+                id: id
+            },
+            raw: true
+        });
+        res.render('editAgendamento', {
+            agenda
+        });
+    }
     static async updateSave(req, res) {
         const id = req.body.id
         const agenda = {
-            nome,
-            data,
-            hora
-        } = req.body
+            nome: req.body.nome,
+            data: req.body.data,
+            hora: req.body.hora,
+        }
 
         try {
-            await agendamento.update(agenda, {where: {id: id}});
+            await agendamento.update(agenda, {
+                where: {
+                    id: id
+                }
+            });
             req.flash('message', 'Agendamento atualizado com sucesso!');
             req.session.save(() => {
                 res.redirect('/agendamentos');
             })
-         } catch (error) {
+        } catch (error) {
             console.log(error);
         }
     }

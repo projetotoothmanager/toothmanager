@@ -41,22 +41,22 @@
                     <h2>Editar Prontuários</h2>
                 </div>
                 <div class="container-criarPront">
-                    <form action="/prontuarios/editProntuarios" method="POST">
+                    <form action="/prontuarios/editProntuarios/" method="POST">
                         <input type="hidden" name="id" value="<%= prontuarios.id%>">
                         <label for="">Nome:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.nome%>">
+                        <input type="text" name="nome" value="<%= prontuarios.nome%>">
                         <label for="">Horário:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.time%>">
+                        <input type="text" name="time" value="<%= prontuarios.time%>">
                         <label for="">Atendimento:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.atendimento%>">
+                        <input type="text" name="atendimento" value="<%= prontuarios.atendimento%>">
                         <label for="">Dentista:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.dentista%>">
+                        <input type="text" name="dentista" value="<%= prontuarios.dentista%>">
                         <label for="">Tratamento:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.tratamento%>">
+                        <input type="text" name="tratamento" value="<%= prontuarios.tratamento%>">
                         <label for="">Extração:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.extração%>">
+                        <input type="text" name="extracao" value="<%= prontuarios.extracao%>">
                         <label for="">Limpeza:</label>
-                        <input type="text" name="hora" value="<%= prontuarios.limpeza%>">
+                        <input type="text" name="limpeza" value="<%= prontuarios.limpeza%>">
                         <input type="submit" value="Editar Prontuario">
                     </form>
                 </div>
