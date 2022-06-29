@@ -94,7 +94,6 @@ module.exports = class ProntuarioController {
     }
     static async update(req, res) {
         const id = req.params.id
-
         const prontuarios = await prontuario.findOne({
             where: {
                 id: id
@@ -111,14 +110,14 @@ module.exports = class ProntuarioController {
 
         const id = req.body.id
         const prontuarios = {
-            nome,
-            time,
-            atendimento,
-            dentista,
-            tratamento,
-            extração,
-            limpeza,
-        } = req.body
+            nome: req.body.nome,
+            time: req.body.time,
+            atendimento: req.body.atendimento,
+            dentista: req.body.dentista,
+            tratamento: req.body.tratamento,
+            extracao: req.body.extracao,
+            limpeza: req.body.limpeza,
+        }
 
         try {
             await prontuario.update(prontuarios, {

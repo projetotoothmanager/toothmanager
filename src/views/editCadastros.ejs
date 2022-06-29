@@ -38,9 +38,10 @@
             </div>
             <% } %>
             <div class="container-cadastro">
-                <form action="/cadastro/editCadastros" method="POST">
+                <form action="/cadastro/editCadastros/<%= cadastros.id%>" method="POST">
                     <div class="dados-pessoais">
                         <h2>Editar Cadastro</h2>
+                         <input type="hidden" name="id" value="<%= cadastros.id%>">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="Nome" placeholder="Nome Completo" required value="<%= cadastros.nome%>">
                         <label for="CPF">CPF</label>
